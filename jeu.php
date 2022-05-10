@@ -12,7 +12,7 @@
 
     
     <button>
-    <a href="règles.php">
+    <a href="reglesjeu.php">
     Voir les règles
     </a>
     </button>
