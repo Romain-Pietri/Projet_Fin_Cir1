@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>A vos loupes !</title>
-</head>
-<body>
-    <header>
     <?php
     session_start();
 
@@ -21,7 +12,7 @@
 
     
     <button>
-    <a href="règles.php">
+    <a href="reglesjeu.php">
     Voir les règles
     </a>
     </button>

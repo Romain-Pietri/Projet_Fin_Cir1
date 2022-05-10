@@ -24,7 +24,6 @@
 	<a><img id="img" src="images/theme1.png"></a>
 	<a><img id="img" src="images/theme2.png"></a>
 	<a><img id="img" src="images/theme3.png"></a>
-	<a><img id="img" src="images/theme4.png"></a>
 	<br><br><br>
 
 	
@@ -34,7 +33,6 @@
 				<option value="theme1">1</option>
 				<option value="theme2">2</option>
 				<option value="theme3">3</option>
-				<option value="theme4">4</option>
 			</select>
 			<br><br>
 			<input type="submit" name="Envoyer" Value="Sélectionner"/>
