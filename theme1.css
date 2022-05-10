@@ -1,0 +1,56 @@
+/*police de la page*/
+* {
+  margin: 0;
+  font-family: 'Lato', 'sans-serif';
+}
+/*image de fond*/
+body{
+  background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("./images/bibli1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
+
+h1{
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+#logo {
+  margin: 0;
+  height: 200px;
+}
+
+
+.icon{
+  display: inline;
+  margin-right: 35px;
+}
+
+.reseaux{
+  width: 40px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#theme{
+  margin: 10px;
+  height: 25px;
+  float: right;
+  text-align: center;
+}
+
+#legal{
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  padding: 20px;
+  background-color: black;
+  color : white; 
+  font-weight: bold;
+  text-align: center;
+}
