@@ -14,8 +14,8 @@
     ?>
 
 <button>
-    <a href="r�gles.php">
-    Voir les r�gles
+    <a href="reglesjeu.php">
+    Voir les règles
     </a>
     </button>
 

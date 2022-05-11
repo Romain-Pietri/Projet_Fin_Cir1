@@ -16,9 +16,29 @@ h1{
   text-align: center;
 }
 
+.regles{
+  font-weight: bold;
+  color:black;
+  background-image:url(images/pap.png);
+  background-repeat: no-repeat;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.regles p{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0%;
+}
+
 #logo {
   margin: 0;
   height: 200px;
+}
+
+#loupe{
+  width: 250px;
+  margin-left: 15%;
 }
 
 #img{
