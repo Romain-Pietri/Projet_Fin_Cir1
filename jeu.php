@@ -4,25 +4,20 @@
     require "header.php";
     ?>
 
-    <button>
-    <a href="connexion.php">
-    Se connecter
-    </a>
-    </button>
+    <header>
 
-    
-    <button>
-    <a href="reglesjeu.php">
-    Voir les règles
-    </a>
-    </button>
+        <button> <a href="score.php"> Scores </a> </button>
+
+        <button> <a href="connexion.php"> Connect </a> </button>
+
+        <button> <a href="reglesjeu.php"> Rules </a> </button>
 
     </header>
 
     <main>
 
 
-
+        <js> </js>
 
 
 
@@ -32,7 +27,8 @@
     </main>
 
     <footer>
-    <?php require 'footer.php'; ?>
+
+        <?php require 'footer.php'; ?>
 
 
 
