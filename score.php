@@ -16,9 +16,9 @@
 
 <main>
     <?php
-    require(connexiondb.php);
+    require("connexiondb.php");
     $request="SELECT * FROM utilisateurs ORDER BY Score DESC";
-    
+
     $result=mysqli_query($connexion,$request);
     if ( $result == FALSE ){
         echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
