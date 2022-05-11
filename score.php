@@ -86,5 +86,5 @@
 
     </footer>
 
-</main>
+</body>
 </html>
