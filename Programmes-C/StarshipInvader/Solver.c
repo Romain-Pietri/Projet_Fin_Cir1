@@ -526,7 +526,7 @@ bool Solveur(Grille *g){
     }
     Grille *tmp=Solve(g,0,0);
     if(tmp!=NULL){
-        printGrille(tmp);
+        //printGrille(tmp);
         return true;
     }
     else{
@@ -534,6 +534,15 @@ bool Solveur(Grille *g){
         return false;
     }
     
+}
+Grille* Resoudre(Grille* g) {
+    Grille* tmp = Solve(g, 0, 0);
+    if (tmp != NULL) {
+        return tmp;
+    }
+    else {
+        return NULL;
+    }
 }
 /*
 int main(){
