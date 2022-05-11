@@ -4,7 +4,10 @@
     require "header.php";
     ?>
 
-    <header>
+
+        
+
+        <br>
 
         <button> <a href="score.php"> Scores </a> </button>
 
