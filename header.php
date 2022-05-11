@@ -21,6 +21,21 @@
 	?>
 	<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
 
-	<header>
+		<header>
+		<br>
+		<h1> Avoloupes ! </h1>
 		<a><img id="logo" src="images/logo.png"></a>
 		<a href="theme.php"><img id="theme" src="images/para.png"></a>
+		<br>
+
+        
+
+        <br>
+
+        <button> <a href="score.php"> Scores </a> </button>
+
+        <button> <a href="connexion.php"> Connect </a> </button>
+
+        <button> <a href="reglesjeu.php"> Rules </a> </button>
+
+    </header>
