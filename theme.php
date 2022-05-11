@@ -15,9 +15,9 @@
 		if (isset($_COOKIE['theme'])){ 
 			$style=$_COOKIE['theme'];	
 		}
-		else
-			
+		else{
 			$style="theme1";
+		}
 	?>
 	<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
 
