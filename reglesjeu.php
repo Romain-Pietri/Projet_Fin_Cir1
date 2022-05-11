@@ -5,7 +5,11 @@
 ?>
 
 <h1> Règles du jeu :</h1>
-<br><br>
+<br>
+<br>
+        <button> <a href="score.php"> Scores </a> </button>
+        <button> <a href="connexion.php"> Connect </a> </button>
+    </header>
 
 <div class=regles>
     <p><br><br>Bonjour inspecteur, Comme vous le savez ce manoir contient le cadavre de Sophie Connor, 28 ans.<br>

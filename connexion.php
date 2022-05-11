@@ -8,14 +8,11 @@
         
 
         <br>
-
         <button> <a href="score.php"> Scores </a> </button>
-
         <button> <a href="connexion.php"> Connect </a> </button>
-
         <button> <a href="reglesjeu.php"> Rules </a> </button>
-
     </header>
+    
 <main>
 <?php
 	if(empty($_SESSION["nom"])){
