@@ -4,55 +4,43 @@
     require "header.php";
     ?>
 
-    <header>
-
-        <button> <a href="score.php"> Scores </a> </button>
-
-        <button> <a href="connexion.php"> Connect </a> </button>
-
-        <button> <a href="reglesjeu.php"> Rules </a> </button>
+    <h1>Registration</h1>
+	<br>
 
     </header>
 
 <main>
-<form class="para" method="post" action="">
+
+<form class="formLetter" method="post" action="">
 	<fieldset>
-		<legend>Créez votre compte</legend>
-     		<label>Login :</label>
-     		<input type="text" name="log" placeholder="Entrez votre login" required>
+		<legend>Registration</legend>
+     		<label>Nickname :</label>
+     		<input type="text" name="log" placeholder="Enter your nickname" required>
+     		<br>
      		<label>Password :</label>
-     		<input type="text" name="pass"  placeholder="Entrez votre mot de passe" required>
-     		<input type="submit" name="envoi" value="Créer"/>
+     		<input type="password" name="pass"  placeholder="Enter your password" required>
+     		<br><br>
+     		<input type="submit" name="envoi" value="Register"/>
 	</fieldset>
-	</form>
-	<?php
+</form>
+
+<?php
 	if(isset($_POST["envoi"])){
-	$log=$_POST["log"];
-	$pass=$_POST["pass"];
-	require("connexiondb.php");
-	$request="INSERT INTO gadget (login,password) VALUES ('$log','$pass')";
-	$resultat=mysqli_query($connexion,$request);
-	if ( $resultat == FALSE ){
-					echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
-					die();
-				}
-	else{
-		echo '<div class="para">
-				<h1> Création réussie !</h1>
-				<br>
-				<p> Retournez à la page de login </p>';
-	}
-	mysqli_close($connexion);
-	}
+		$log = $_POST["log"];
+		$pass = $_POST["pass"];
+		require("connexiondb.php");
+		$request="INSERT INTO utilisateurs(login,password,Score) VALUES ('$log','$pass','0')";
+		$resultat=mysqli_query($connexion,$request);
+		if ( $resultat == FALSE ){
+						echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+						die();
+					}
+		mysqli_close($connexion);
+		header("Location:connexion.php");
+		}
 	
 	?>
+
 </main> 
-<footer>
-
-        <?php require 'footer.php'; ?>
-
-
-
-    </footer>
-</body>
-</html>
+<br><br>
+<?php require 'footer.php'; ?>

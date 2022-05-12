@@ -6,9 +6,15 @@
 
 <h1> Règles du jeu :</h1>
 <br>
+
+    <nav>
+        <ul>
+            <li><a href="score.php"> Scores </a></li>
+            <li><a href="jeu.php"> Game </a></li>
+        </ul>
+    </nav>
 <br>
-        <button> <a href="score.php"> Scores </a> </button>
-        <button> <a href="connexion.php"> Connect </a> </button>
+        
     </header>
 
 <div class=regles>

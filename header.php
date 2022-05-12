@@ -25,4 +25,5 @@
 		<header>
 		<a><img id="logo" src="images/logo.png"></a>
 		<a href="theme.php"><img id="theme" src="images/para.png"></a>
+		<a href="deco.php"><img id="theme" src="images/logout.png"></a>
 		<br>

@@ -1,7 +1,7 @@
 <footer>
 
 	    <dl>
-	    <dt><em>Téléphone</em></dt>
+	    <dt><em>Phone :</em></dt>
 	      <dd>(+33) (0) 6 24 31 06 38</dd>
 	  </dl>
 	    <ul class="icon">
@@ -12,7 +12,7 @@
 	  <br>
 	      <p>Website designed by Romain, Auguste, Raphael Alexandre and Alixe</p>
 	      <p>All rights reserved &#153</p>
-	      <a href="legal.php" id="legal"> Mention légales </a>
+	      <a href="legal.php" id="legal"> Legal mention </a>
 </footer>
 
 </body>

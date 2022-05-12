@@ -10,23 +10,103 @@ body{
   background-size: cover;
 } 
 
-.para{
-	margin : 50px auto 50px ;
-	color : white ;
-	width : 400px ;
-	border : solid white ;
-	border-radius: 20px;
-	text-align : center ;
-	padding: 20px;
-	background-color:rgba(0,0,0,0.65);
-}
-
+/*----------titles----------*/
 h1{
   font-weight: bold;
   color: white;
   text-align: center;
 }
+/*----------titles----------*/
 
+/*----------Logo----------*/
+#logo {
+  margin: 0;
+  height: 200px;
+}
+/*----------Logo----------*/
+
+/*----------Menu----------*/
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-image: url(images/bande.png);
+  overflow: hidden;
+}
+
+nav li a{
+  display: block;
+  color:  white;
+  padding: 8px 16px;
+  text-decoration: none;
+  float: left;
+  background-color: black;
+  margin-left: 10px;
+}
+
+nav li a:hover{
+    color:white;
+    background-color: gray;
+}
+/*----------Menu----------*/
+
+
+
+/*----------Formulaire----------*/
+.formLetter fieldset{
+  border : 2px solid white;
+  border-radius: 10px;
+  width : 60% ;
+  margin : auto ; 
+  padding : 25px;
+  color: white;
+}
+
+.formLetter fieldset:hover{
+  box-shadow : 2px 2px 5px gray;
+}
+
+.formLetter fieldset legend{
+  font-weight : bold;
+  text-shadow: 1px 1px 0 black; 
+}
+
+.formLetter fieldset label{
+  font-weight : bold ;
+  display : inline-block ;
+  width : 15% ;
+}
+
+.formLetter fieldset input[type="password"], input[type="text"]{
+  border-bottom : 1px solid black;
+  border-radius: 5px;
+  background-color : white;
+  width : 25%;
+}
+
+.formLetter input[type="password"]:focus, input[type="text"]:focus{
+  outline-style : none ; 
+  border-bottom : 1px solid purple;
+  background-color : white;
+}
+/*----------Formulaire----------*/
+
+
+/*----------Zone de texte----------*/
+.para{
+  margin : 50px auto 50px ;
+  color : white ;
+  width : 400px ;
+  border : solid white ;
+  border-radius: 20px;
+  text-align : center ;
+  padding: 20px;
+  background-color:rgba(0,0,0,0.65);
+}
+/*----------Zone de texte----------*/
+
+
+/*----------Regles du jeu----------*/
 .regles{
   font-weight: bold;
   color:black;
@@ -41,11 +121,29 @@ h1{
   margin-right: 10%;
   margin-top: 0%;
 }
+/*----------Regles du jeu----------*/
 
-#logo {
-  margin: 0;
-  height: 200px;
+
+/*----------Start----------*/
+#start{
+  height: 50px;
+  text-align: center;
 }
+/*----------Start----------*/
+
+
+/*----------Table score----------*/
+.table,td,th{
+  border: solid; 
+  border-collapse:collapse;
+  border-color: white;
+  text-align:center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*----------Table score----------*/
+
 
 #loupe{
   width: 250px;
@@ -77,6 +175,25 @@ h1{
   text-align: center;
 }
 
+#theme{
+  margin: 10px;
+  height: 25px;
+  float: right;
+  text-align: center;
+}
+
+
+
+
+/*----------Footer----------*/
+footer {
+  padding: 20px;
+  background-color: black;
+  color : white; 
+  font-weight: bold;
+  text-align: center;
+}
+
 .icon{
   display: inline;
   margin-right: 35px;
@@ -90,22 +207,8 @@ ul{
   list-style-type: none;
 }
 
-#theme{
-  margin: 10px;
-  height: 25px;
-  float: right;
-  text-align: center;
-}
-
 #legal{
   color: white;
   cursor: pointer;
 }
-
-footer {
-  padding: 20px;
-  background-color: black;
-  color : white; 
-  font-weight: bold;
-  text-align: center;
-}
+/*----------Footer----------*/
