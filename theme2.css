@@ -30,26 +30,23 @@ nav ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #e5f9ff;
+  background-image: url(images/bande.png);
   overflow: hidden;
 }
 
 nav li a{
   display: block;
-  color:  black;
+  color:  white;
   padding: 8px 16px;
   text-decoration: none;
   float: left;
-}
-
-nav li a.active{
-    background-color:#0A2463;
-    color:white;
+  background-color: black;
+  margin-left: 10px;
 }
 
 nav li a:hover{
     color:white;
-    background-color:#3E92CC;
+    background-color: gray;
 }
 /*----------Menu----------*/
 
@@ -133,6 +130,19 @@ nav li a:hover{
   text-align: center;
 }
 /*----------Start----------*/
+
+
+/*----------Table score----------*/
+.table,td,th{
+  border: solid; 
+  border-collapse:collapse;
+  border-color: white;
+  text-align:center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*----------Table score----------*/
 
 
 #loupe{

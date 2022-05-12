@@ -16,12 +16,4 @@
 
     </main>
 
-    <footer>
-
-        <?php require 'footer.php'; ?>
-
-    </footer>
-
-
-</body>
-</html>
+<?php require 'footer.php'; ?>
