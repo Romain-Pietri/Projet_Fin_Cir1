@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <title>ATESPUTAINDELOUPE</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-</head>
 <?php
     session_start();
 
     require "header.php";
     ?>
+</header>
 <body>
 
     <div id="x"></div>

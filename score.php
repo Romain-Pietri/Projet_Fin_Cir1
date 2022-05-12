@@ -31,7 +31,7 @@
         $count=mysqli_num_rows($result);
         echo"<table class='table'>
             <tr>
-            <th>Pseudo </th>
+            <th>Nickname </th>
             <th>Score </th>
             </tr>";
         if($count<10){
@@ -48,7 +48,7 @@
 
             
 
-            while($i<12){
+            while($i!=10+$count){
                 echo"<tr>";
                 echo"
                 <td> ---------- </td>
