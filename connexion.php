@@ -64,10 +64,9 @@
 					mysqli_close($connexion);
 					echo '<div class="para">
 				<h1> Successful connection !</h1>
+
 				<br>
-				<p> You can start your investigation! </p>
-				<br>
-				<a href="reglesjeu.php"><img id="start" src="images/starting.png"></a>
+				<a href="reglesjeu.php"><img id="start" src="images/start.png"></a>
 				</div>';
 				}
 			}
