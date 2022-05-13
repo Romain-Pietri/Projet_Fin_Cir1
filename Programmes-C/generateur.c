@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <random.h>
+#include <stdbool.h>
+#include <string.h>
+#include <time.h>
 
-
-int createGrid(int taille) {
-    int tab[taille][taille] = { 0 };
+void createGrid(int *tab[],int taille){
     for (int i = 0; i < taille; i++) {
         for (int j = 0; j < taille; j++) {
-            tab[i][j] = rand(0, 2);
+            tab[i][j] = rand()%2;
         }
     }
-    return(tab);
 }
 
-bool isRow3(int tab,int taille) {
+bool isRow3(int *tab[],int taille) {
     for (int i = 1; i < taille-1; i++) {
         for (int j = 1; i < taille-1; i++) {
             if (tab[i][j] == tab[i - 1][j - 1]) {
@@ -26,8 +25,8 @@ bool isRow3(int tab,int taille) {
     return false;
 }
 
-bool isCol3(int tab, int taille) {
-    for (int 1 = 0; i < taille - 1; i++) {
+bool isCol3(int *tab[], int taille) {
+    for (int i = 0; i < taille - 1; i++) {
         for (int j = 1; i < taille - 1; i++) {
             if (tab[j][i] == tab[j - 1][i - 1]) {
                 if (tab[j][i] == tab[j + 1][i + 1]) {
@@ -39,7 +38,7 @@ bool isCol3(int tab, int taille) {
     return false;
 }
 
-bool isSameRow(int tab, int taille) {
+bool isSameRow(int *tab[], int taille) {
     for (int i=0;i<taille-1;i++){
         int k=1;
         while(i+k<4){
@@ -55,12 +54,13 @@ bool isSameRow(int tab, int taille) {
             }
         }
     }
+    return false;
 }
 
-bool isSameCol(int tab, int taille) {
+bool isSameCol(int *tab[], int taille) {
     for (int i=0;i<taille-1;i++){
         int k=1;
-        while(j+k<4){
+        while(i+k<4){
             int samecount=0;
             for(int j=0;j<taille-1;j++){
                 if(tab[j][i]==tab[j+k][i]){
@@ -79,5 +79,6 @@ bool isSameCol(int tab, int taille) {
 
 
 int main() {
-    createGrid(4, 4);
+    int tab[4][4];
+    createGrid(tab, 4);
 }
