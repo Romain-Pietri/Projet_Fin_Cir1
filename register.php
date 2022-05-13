@@ -27,8 +27,9 @@
 <?php
 	if(isset($_POST["envoi"])){
 		$log = $_POST["log"];
-		$pass = $_POST["pass"];
+		$pass = hash('sha256', $_POST['pass']);
 		require("connexiondb.php");
+		
 		$request="INSERT INTO utilisateurs(login,password,Score) VALUES ('$log','$pass','0')";
 		$resultat=mysqli_query($connexion,$request);
 		if ( $resultat == FALSE ){
