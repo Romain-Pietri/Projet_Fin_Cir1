@@ -45,7 +45,7 @@
 	if(isset($_POST["send"])){
 
 			$login=$_POST["login"];
-			$mdp=$_POST["passwd"];
+			$mdp=hash('sha256', $_POST['passwd']);
 
 			require("connexiondb.php");
 
