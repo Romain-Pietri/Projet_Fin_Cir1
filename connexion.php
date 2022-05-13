@@ -4,7 +4,7 @@
     require "header.php";
 ?>
 
-	<h1>Welcome to Avosloupes! Please login for a better experience !</h1>
+	<h1>Welcome to Starship invader ! Please login for a better experience !</h1>
 	<br>
     </header>
     
