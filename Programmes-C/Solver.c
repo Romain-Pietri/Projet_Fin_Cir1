@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/*
+Structure grille, contient la taille de l'espace de jeu et le tableau buffer de la grille
+
+*/   
 typedef struct Grille{
     int taille;
     int tab[16][16];
