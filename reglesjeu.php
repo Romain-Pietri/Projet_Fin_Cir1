@@ -4,7 +4,7 @@
     require "header.php";
 ?>
 
-<h1> Règles du jeu :</h1>
+<h1> Game Rules :</h1>
 <br>
 
     <nav>
@@ -18,11 +18,11 @@
     </header>
 
 <div class=regles>
-    <p><br><br>Bonjour, les règles du jeu sont simples :<br>
-    Il ne peut y avoir plus de deux symboles identiques à côté<br>
-    Il ne peut pas y avoir deux lignes identiques ni deux colonnes identiques<br>
-    Chaque ligne et chaque colonne à un nombre identique de chaque symbole
-    <br><br>A vous de jouer !</p>
+    <p><br><br>Hello, the game's rules are simple :<br>
+    There can't be more than 2 same symbols next to each other<br>
+    There can't be 2 identical rows or 2 identical columns<br>
+    Each row and each column have an identical number of each symbol
+    <br><br>Your time to play !</p>
     <br><br><br>
     <img id="loupe" src="images/loupe.png">
     <br><br><br>
