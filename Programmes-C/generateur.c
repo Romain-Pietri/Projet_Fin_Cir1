@@ -4,19 +4,35 @@
 #include <string.h>
 #include <time.h>
 
-void createGrid(int *tab[],int taille){
-    for (int i = 0; i < taille; i++) {
-        for (int j = 0; j < taille; j++) {
-            tab[i][j] = rand()%2;
+typedef struct Grille{
+    int taille;
+    int tab[16][16];
+}Grille;
+
+/*
+Alloue de la mémoire dynamiquement pour la grille
+*/
+Grille * Newgrille(){
+    
+    Grille *tmp;
+    tmp =(Grille*)malloc(sizeof(Grille));
+    if (tmp != NULL) {
+        tmp->taille = 0;
+        for(int i=0;i<16;i++){
+            for(int j=0;j<16;j++){
+                tmp->tab[i][j] = -1;
+            }
         }
+
     }
+    return tmp;
 }
 
-bool isRow3(int *tab[],int taille) {
-    for (int i = 1; i < taille-1; i++) {
-        for (int j = 1; i < taille-1; i++) {
-            if (tab[i][j] == tab[i - 1][j - 1]) {
-                if (tab[i][j] == tab[i + 1][j + 1]) {
+bool isRow3(Grille *grid) {
+    for (int i = 1; i < grid->taille-1; i++) {
+        for (int j = 1; i < grid->taille-1; i++) {
+            if (grid->tab[i][j] == grid->tab[i - 1][j - 1]) {
+                if (grid->tab[i][j] == grid->tab[i + 1][j + 1]) {
                     return true;
                 }
             }
@@ -25,11 +41,11 @@ bool isRow3(int *tab[],int taille) {
     return false;
 }
 
-bool isCol3(int *tab[], int taille) {
-    for (int i = 0; i < taille - 1; i++) {
-        for (int j = 1; i < taille - 1; i++) {
-            if (tab[j][i] == tab[j - 1][i - 1]) {
-                if (tab[j][i] == tab[j + 1][i + 1]) {
+bool isCol3(Grille* grid) {
+    for (int i = 0; i < grid->taille - 1; i++) {
+        for (int j = 1; i < grid->taille - 1; i++) {
+            if (grid->tab[j][i] == grid->tab[j - 1][i - 1]) {
+                if (grid->tab[j][i] == grid->tab[j + 1][i + 1]) {
                     return true;
                 }
             }
@@ -38,18 +54,18 @@ bool isCol3(int *tab[], int taille) {
     return false;
 }
 
-bool isSameRow(int *tab[], int taille) {
-    for (int i=0;i<taille-1;i++){
+bool isSameRow(Grille* grid) {
+    for (int i=0;i<grid->taille-1;i++){
         int k=1;
-        while(i+k<4){
+        while(i+k<grid->taille){
             int samecount=0;
-            for(int j=0;j<taille-1;j++){
-                if(tab[i][j]==tab[i+k][j]){
+            for(int j=0;j<grid->taille-1;j++){
+                if(grid->tab[i][j]==grid->tab[i+k][j]){
                     samecount=samecount+1;
                 }
             }
             k=k+1;
-            if (samecount==4){
+            if (samecount==grid->taille){
                 return true;
             }
         }
@@ -57,18 +73,18 @@ bool isSameRow(int *tab[], int taille) {
     return false;
 }
 
-bool isSameCol(int *tab[], int taille) {
-    for (int i=0;i<taille-1;i++){
+bool isSameCol(Grille* grid) {
+    for (int i=0;i<grid->taille-1;i++){
         int k=1;
-        while(i+k<4){
+        while(i+k<grid->taille){
             int samecount=0;
-            for(int j=0;j<taille-1;j++){
-                if(tab[j][i]==tab[j+k][i]){
+            for(int j=0;j<grid->taille-1;j++){
+                if(grid->tab[j][i]==grid->tab[j+k][i]){
                     samecount=samecount+1;
                 }
             }
             k=k+1;
-            if (samecount==4){
+            if (samecount==grid->taille){
                 return true;
             }
         }
@@ -76,9 +92,56 @@ bool isSameCol(int *tab[], int taille) {
     return false;
 }
 
+/*
+Affiche la grille fournie en paramètre
+*/
+void printGrille(Grille * g){
+    for(int i=0;i<16;i++){
+        for(int j=0;j<16;j++){
+            printf("%3d ",g->tab[i][j]);
+        }
+        printf("\n");
+    }
+}
+/*
+Compte le nombre le nombre de valeur dans une colone
+*/
+int countElemCol(Grille *g,int col,int val){
+    int count=0;
+    for(int i=0;i<16;i++){
+        if(g->tab[i][col]==val){
+            count++;
+        }
+    }
+    return count;
+}
+/*
+Compte le nombre le nombre de valeur dans une ligne
+*/
+int countElemLigne(Grille *g,int ligne,int val){
+    int count=0;
+    for(int i=0;i<16;i++){
+        if(g->tab[ligne][i]==val){
+            count++;
+        }
+    }
+    return count;
+}
+
+Grille* randomFill(Grille* grid, int taille){
+    grid->taille=taille;
+    for (int i=0;i<grid->taille;i++){
+        for (int j=0;j<grid->taille;j++){
+            grid->tab[i][j]=rand()%2;
+        }
+    }
+    return grid;
+}
 
 
 int main() {
-    int tab[4][4];
-    createGrid(tab, 4);
+    Grille* tmp=Newgrille();
+    Grille* grid=randomFill(tmp,4);
+    printGrille(grid);
+    return EXIT_SUCCESS;
 }
