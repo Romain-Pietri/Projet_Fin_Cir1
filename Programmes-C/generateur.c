@@ -28,68 +28,86 @@ Grille * Newgrille(){
     return tmp;
 }
 
-bool isRow3(Grille *grid) {
-    for (int i = 1; i < grid->taille-1; i++) {
-        for (int j = 1; i < grid->taille-1; i++) {
-            if (grid->tab[i][j] == grid->tab[i - 1][j - 1]) {
-                if (grid->tab[i][j] == grid->tab[i + 1][j + 1]) {
-                    return true;
+int isRow3(Grille* grid,int numrow){
+    if(numrow>grid->taille){
+        return EXIT_FAILURE;
+    }
+    int ThreeInRow=0;
+        for (int j=0;j<grid->taille;j++){
+            if(j==0){
+                if(grid->tab[numrow][j]==grid->tab[numrow][j+1] && grid->tab[numrow][j+1]==grid->tab[numrow][j+2]){
+                    return 1;
+                }
+            }
+            else if(j==grid->taille-1){
+                if(grid->tab[numrow][j]==grid->tab[numrow][j-1] && grid->tab[numrow][j-1]==grid->tab[numrow][j-2]){
+                    return 1;
+                }
+            }
+            else{
+                if(grid->tab[numrow][j]==grid->tab[numrow][j-1] && grid->tab[numrow][j-1]==grid->tab[numrow][j+1]){
+                   return 1;
                 }
             }
         }
-    }
-    return false;
+    return 0;
 }
 
-bool isCol3(Grille* grid) {
-    for (int i = 0; i < grid->taille - 1; i++) {
-        for (int j = 1; i < grid->taille - 1; i++) {
-            if (grid->tab[j][i] == grid->tab[j - 1][i - 1]) {
-                if (grid->tab[j][i] == grid->tab[j + 1][i + 1]) {
-                    return true;
+int isCol3(Grille* grid,int numcol){
+    if(numcol>grid->taille){
+        return EXIT_FAILURE;
+    }
+    int ThreeInCol=0;
+        for (int i=0;i<grid->taille;i++){
+            if(i==0){
+                if(grid->tab[i][numcol]==grid->tab[i+1][numcol] && grid->tab[i+1][numcol]==grid->tab[i+2][numcol]){
+                    return 1;
+                }
+            }
+            else if(i==grid->taille-1){
+                if(grid->tab[i][numcol]==grid->tab[i-1][numcol] && grid->tab[i-1][numcol]==grid->tab[i-2][numcol]){
+                    return 1;
+                }
+            }
+            else{
+                if(grid->tab[i][numcol]==grid->tab[i+1][numcol] && grid->tab[i+1][numcol]==grid->tab[i-1][numcol]){
+                   return 1;
                 }
             }
         }
-    }
-    return false;
+    return 0;
 }
 
-bool isSameRow(Grille* grid) {
+int isSameRow(Grille* grid,int numrow) {
+    int samerow=0;
     for (int i=0;i<grid->taille-1;i++){
-        int k=1;
-        while(i+k<grid->taille){
             int samecount=0;
             for(int j=0;j<grid->taille-1;j++){
-                if(grid->tab[i][j]==grid->tab[i+k][j]){
+                if(grid->tab[numrow][j]==grid->tab[i][j]){
                     samecount=samecount+1;
                 }
             }
-            k=k+1;
-            if (samecount==grid->taille){
-                return true;
+            if (samecount==grid->taille && i!=numrow){
+                return 1;
             }
-        }
     }
-    return false;
+    return 0;
 }
 
-bool isSameCol(Grille* grid) {
-    for (int i=0;i<grid->taille-1;i++){
-        int k=1;
-        while(i+k<grid->taille){
+int isSameCol(Grille* grid,int numcol) {
+    int samecol=0;
+    for (int j=0;j<grid->taille-1;j++){
             int samecount=0;
-            for(int j=0;j<grid->taille-1;j++){
-                if(grid->tab[j][i]==grid->tab[j+k][i]){
+            for(int i=0;i<grid->taille-1;i++){
+                if(grid->tab[i][numcol]==grid->tab[i][j]){
                     samecount=samecount+1;
                 }
             }
-            k=k+1;
-            if (samecount==grid->taille){
-                return true;
+            if (samecount==grid->taille && j!=numcol){
+                return 1;
             }
-        }
     }
-    return false;
+    return 0;
 }
 
 /*
@@ -139,9 +157,11 @@ Grille* randomFill(Grille* grid, int taille){
 }
 
 
+
 int main() {
     Grille* tmp=Newgrille();
     Grille* grid=randomFill(tmp,4);
     printGrille(grid);
+    
     return EXIT_SUCCESS;
 }
