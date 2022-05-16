@@ -219,3 +219,20 @@ bool checkElem(Grille *g,int ligne,int col,int val){
     }
     return true;
 }
+/*
+Verifie si la grille est concordante ou non
+*/
+bool VerifGrille(Grille *g){
+    int i;
+    for(i=0;i<g->taille;i++){
+        for(int j=1;j<g->taille-1;++i){
+            if((g->tab[i][j-1]==g->tab[i][j] && g->tab[i][j]==g->tab[i][j+1]) || (g->tab[i-1][j]==g->tab[i][j] && g->tab[i][j]==g->tab[i+1][j]) || g->tab[i][j]==-1){
+                return false;
+            }
+        }
+        if(countElemCol(g,i, 0)==g->taille/2 || countElemCol(g,i,1)==g->taille/2 || countElemLigne(g,i,0)==g->taille/2 || countElemLigne(g,i,1)==g->taille/2){
+            return true;
+        }
+    }
+    return false;
+}
