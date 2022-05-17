@@ -2,10 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Solver.h"
-/*
-Structure grille, contient la taille de l'espace de jeu et le tableau buffer de la grille
 
-*/   
 
 
 /*
@@ -22,7 +19,6 @@ Grille * Newgrille(){
                 tmp->tab[i][j] = -1;
             }
         }
-
     }
     return tmp;
 }
