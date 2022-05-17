@@ -3,6 +3,46 @@
 
     require "header.php";
     ?>
+    <style>
+        .input{
+            color : white;
+
+        }
+
+        table {
+
+        }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+          
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            width : 75px;
+            height : 75px;
+        }
+          
+        table#t01 tr {
+            background-color: #eee;
+            color : black;
+        }
+          
+          
+        table#t01 th {
+            background-color: black;
+            color: white;
+        }
+        
+        .boutonjeu{
+            text-decoration : none;
+            color : black;
+        }
+    </style>
 </header>
 <body>
 <?php
@@ -25,17 +65,46 @@
     }
 ?>
 
+    <div id ="container">
+            
+        
+        <table id="t01">
+        <script>
+            // truc pour récuperer le tableau du générateur
+            var contenu = [];
+            <?php
+            switch ($taille) {
+                case 4:
+                    echo "var contenu = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];";
+                    break;
+                case 6:
+                    echo "var contenu = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]];";
+                    break;
+                case 8:
+                    echo "var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];";
+                    break;
+            }
+            
 
-    <script>
+            echo "for (var j = 0; j < $taille; j++) {"; 
+                echo 'document.write("<tr>");';    
+                echo "for (var k = 0; k < $taille; k++) {";
+                ?>
+                document.write(" <td> <a href=# class='boutonjeu'>" + (contenu[j][k]) + "</a>");
+                }
+                document.write("</tr>");
+            }
+           
+            
+            
+            var img1 = document.createElement("img1");
+            img1.src = "./Images-jeu/img1.png";
 
-    /*var img = document.createElement("img");
-    img.src = "./Images-jeu/maison.png";
+            var img2 = document.createElement("img2");
+            img2.src = "./Images-jeu/img2.png";
 
-    var div = document.getElementById("x");
-    div.appendChild(img);
-    div.setAttribute("style", "text-align:center");*/
-
-    </script>
+        </script>
+    </div>
 
 </body>
 <?php require 'footer.php'; ?>
