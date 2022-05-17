@@ -23,7 +23,12 @@
 	<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
 
 		<header>
-		<a><img id="logo" src="images/log.png"></a>
-		<a href="theme.php"><img id="theme" src="images/para.png"></a>
-		<a href="deco.php"><img id="theme" src="images/logout.png"></a>
-		<br>
+				<a><img id="logo" src="images/log.png"></a>
+				<a href="theme.php"><img id="theme" src="images/para.png"></a>
+				<a href="deco.php"><img id="theme" src="images/logout.png"></a>
+			<nav class="menu">
+				<a href="jeu.php"> Game </a>
+		        <a href="reglesjeu.php"> Rules </a>
+		        <a href="connexion.php"> Login </a>
+		    </nav>
+				<br>

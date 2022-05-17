@@ -7,12 +7,6 @@
 <h1> Game Rules :</h1>
 <br>
 
-    <nav>
-        <ul>
-            <li><a href="score.php"> Scores </a></li>
-            <li><a href="jeu.php"> Game </a></li>
-        </ul>
-    </nav>
 <br>
         
     </header>

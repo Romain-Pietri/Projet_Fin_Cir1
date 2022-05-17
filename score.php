@@ -7,14 +7,8 @@
 <h1> Scoreboard :</h1>
 <br>
 
-    <nav>
-        <ul>
-            <li><a href="jeu.php"> Game </a></li>
-            <li><a href="reglesjeu.php"> Rules </a></li>
-        </ul>
-    </nav>
 <br>
-
+</header>
 
 <main>
     <?php
