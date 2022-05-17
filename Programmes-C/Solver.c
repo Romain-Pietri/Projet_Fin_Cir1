@@ -276,29 +276,45 @@ bool checkElem(Grille *g,int ligne,int col,int val){
 Verifie si la grille est concordante ou non
 */
 bool VerifGrille(Grille *g){
-    int i;
-    for(i=0;i<g->taille;i++){
-        if(isUniqueCol(g, i)==false || isUniqueLigne(g, i)==false){
+    for(int i=0;i<g->taille;++i){
+        if(countElemCol(g, i,0)!=countElemCol(g, i, 1) || countElemLigne(g, i,0)!=countElemLigne(g, i,1) || (countElemCol(g, i, 0)!=g->taille/2 && countElemLigne(g, i, 0)!=g->taille/2)){
             return false;
         }
-        for(int j=1;j<g->taille-1;++i){
-            if((g->tab[i][j-1]==g->tab[i][j] && g->tab[i][j]==g->tab[i][j+1]) || (g->tab[i-1][j]==g->tab[i][j] && g->tab[i][j]==g->tab[i+1][j]) || g->tab[i][j]==-1){
-                return false;
+        if(!isUniqueCol(g,i) || !isUniqueLigne(g, i)) return false;
+        for(int j=1;j<g->taille-1;++j){
+            if(i==0 || i==g->taille-1){
+                if(g->tab[i][j-1]==g->tab[i][j] && g->tab[i][j+1]==g->tab[i][j]){
+                    return false;
+                }
             }
+            else{
+                if((g->tab[i-1][j]==g->tab[i][j] && g->tab[i+1][j]==g->tab[i][j] ) || (g->tab[i][j-1]==g->tab[i][j] && g->tab[i][j+1]==g->tab[i][j])){
+                    return false;
+                }
+            }
+
         }
-        if(countElemCol(g,i, 0)==g->taille/2 || countElemCol(g,i,1)==g->taille/2 || countElemLigne(g,i,0)==g->taille/2 || countElemLigne(g,i,1)==g->taille/2){
-            return true;
-        }
+        
     }
-    return false;
+    return true;
 }
 /*
 Resout la grille avec Backtracking
 */
 Grille *Solve(Grille *g, int ligne, int col){
     Grille *clone=cloneGrille(g);
-    printf("\n");
-    printGrille(clone,g->taille);
+    if(g->tab[ligne][col]!=-1){
+        if (col<g->taille-1){
+            return Solve(g, ligne, col+1);
+        }
+        else if (ligne<g->taille-1){
+            return Solve(g, ligne+1, 0);
+        }
+        else{
+            return g;
+        }
+    }
+
     for(int i=0 ; i<2;++i){
         if(g->tab[ligne][col]==-1) clone->tab[ligne][col]++;
         if(col<g->taille-1){
@@ -347,11 +363,13 @@ int main(){
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
     };
 
-    initGrille(g,4, tab);
+    initGrille(g,8, tab);
+
     //printf("%d",checkElem(g,0, 0, 0));
+    printf("\n%d",VerifGrille(g));
     Grille *tmp=Solve(g,0,0);
     if(tmp!=NULL){
-        printGrille(tmp,4);
+        printGrille(tmp,tmp->taille);
     }
     else{
         printf("Pas de solution\n");
