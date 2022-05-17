@@ -26,25 +26,26 @@ h1{
 /*----------Logo----------*/
 
 /*----------Menu----------*/
-nav a{
-  margin: 10px;
-  height: 25px;
-  float: right;
-
-  display: block;
+nav ul{
   list-style-type: none;
-  text-decoration: none;
-
-  color:  white;
-  
-
-  background-image: url(images/bandeau1.png);
+  margin: 10px;
+  padding: 0;
+  background-color: red;
   overflow: hidden;
 }
 
-nav a:hover{
+nav li a{
+  display: block;
+  color:  black;
+  padding: 8px 16px;
+  text-decoration: none;
+  float: rights;
+}
+
+nav li a:hover{
     color:white;
-    background-color: gray;
+    background-color:#3E92CC;
+}
 }
 /*----------Menu----------*/
 

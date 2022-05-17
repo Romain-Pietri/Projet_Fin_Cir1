@@ -27,8 +27,10 @@
 				<a href="theme.php"><img id="theme" src="images/para.png"></a>
 				<a href="deco.php"><img id="theme" src="images/logout.png"></a>
 			<nav class="menu">
-				<a href="jeu.php"> Game </a>
-		        <a href="reglesjeu.php"> Rules </a>
-		        <a href="connexion.php"> Login </a>
+				<ul>
+					<li><a href="jeu.php"> Game </a></li>
+			        <li><a href="reglesjeu.php"> Rules </a></li>
+			        <li><a href="connexion.php"> Login </a></li>
+		    	</ul>
 		    </nav>
 				<br>
