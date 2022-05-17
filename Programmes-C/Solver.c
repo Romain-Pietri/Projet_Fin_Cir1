@@ -1,15 +1,12 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "Solver.h"
 /*
 Structure grille, contient la taille de l'espace de jeu et le tableau buffer de la grille
 
 */   
-typedef struct Grille{
-    int taille;
-    int tab[16][16];
-}Grille;
+
 
 /*
 Alloue de la mémoire dynamiquement pour la grille
