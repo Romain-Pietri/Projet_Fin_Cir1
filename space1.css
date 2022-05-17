@@ -36,8 +36,7 @@ nav ul{
 
 nav li a{
   display: block;
-  color:  black;
-  padding: 8px 16px;
+  color:  white;
   text-decoration: none;
   float: rights;
 }
