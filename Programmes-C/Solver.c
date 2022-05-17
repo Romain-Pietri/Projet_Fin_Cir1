@@ -14,8 +14,8 @@ Grille * Newgrille(){
     tmp =(Grille*)malloc(sizeof(Grille));
     if (tmp != NULL) {
         tmp->taille = 0;
-        for(int i=0;i<16;i++){
-            for(int j=0;j<16;j++){
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
                 tmp->tab[i][j] = -1;
             }
         }
@@ -25,10 +25,10 @@ Grille * Newgrille(){
 /*
 initalise la grille
 */
-void initGrille(Grille *grid, int taille, int tab[16][16]){
+void initGrille(Grille *grid, int taille, int tab[8][8]){
     grid->taille=taille;
-    for(int i=0;i<16;i++){
-        for(int j=0;j<16;j++){
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
             grid->tab[i][j] = tab[i][j];
         }
     }
@@ -41,8 +41,8 @@ Grille * cloneGrille(Grille * g){
     tmp =(Grille*)malloc(sizeof(Grille));
     if (tmp != NULL) {
         tmp->taille = g->taille;
-        for(int i=0;i<16;i++){
-            for(int j=0;j<16;j++){
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
                 tmp->tab[i][j] = g->tab[i][j];
             }
         }
@@ -53,9 +53,9 @@ Grille * cloneGrille(Grille * g){
 /*
 Affiche la grille fournie en paramètre
 */
-void printGrille(Grille * g, int taille){
-    for(int i=0;i<taille;i++){
-        for(int j=0;j<taille;j++){
+void printGrille(Grille * g){
+    for(int i=0;i<g->taille;i++){
+        for(int j=0;j<g->taille;j++){
             printf("%3d ",g->tab[i][j]);
         }
         printf("\n");
@@ -66,7 +66,7 @@ Compte le nombre le nombre de valeur dans une colone
 */
 int countElemCol(Grille *g,int col,int val){
     int count=0;
-    for(int i=0;i<16;i++){
+    for(int i=0;i<g->taille;i++){
         if(g->tab[i][col]==val){
             count++;
         }
@@ -78,7 +78,7 @@ Compte le nombre le nombre de valeur dans une ligne
 */
 int countElemLigne(Grille *g,int ligne,int val){
     int count=0;
-    for(int i=0;i<16;i++){
+    for(int i=0;i<g->taille;i++){
         if(g->tab[ligne][i]==val){
             count++;
         }
@@ -334,38 +334,42 @@ Grille *Solve(Grille *g, int ligne, int col){
     }
     return NULL;
 }
-int main(){
+/*
+Remplie la grille avec les solutions facile à trouver
+*/
+bool inteligent(Grille *g){
+    return false;
+}
+/*
+Resout la grille avec Backtracking et l'intelligence
+*/
 
-    Grille *g=Newgrille();
-    int tab[16][16]={
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-    };
-
-    initGrille(g,8, tab);
-
-    //printf("%d",checkElem(g,0, 0, 0));
-    printf("\n%d",VerifGrille(g));
+bool Solveur(Grille *g){
+    while(inteligent(g)){
+        NULL;
+    }
     Grille *tmp=Solve(g,0,0);
     if(tmp!=NULL){
-        printGrille(tmp,tmp->taille);
+        printGrille(tmp);
+        return true;
     }
     else{
-        printf("Pas de solution\n");
+        printf("Aucune solution\n");
+        return false;
     }
-    return 0;
+}
+int main(){
+    Grille *g=Newgrille();
+    int tab[8][8]={
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1}      
+    };
+    initGrille(g,8, tab);
+    Solveur(g);
 }
