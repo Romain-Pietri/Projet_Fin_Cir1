@@ -3,11 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <time.h>
-
-typedef struct Grille{
-    int taille;
-    int tab[16][16];
-}Grille;
+#include "Solver.h"
 
 /*
 Alloue de la mémoire dynamiquement pour la grille
@@ -27,7 +23,7 @@ Grille * Newgrille(){
     }
     return tmp;
 }
-
+/* Cherche une série de 3 fois le même chiffre sur une ligne donnée en paramètres */
 int isRow3(Grille* grid,int numrow){
     if(numrow>grid->taille){
         return EXIT_FAILURE;
@@ -52,7 +48,7 @@ int isRow3(Grille* grid,int numrow){
         }
     return 0;
 }
-
+/* Cherche une série de 3 fois le même chiffre sur une colonne donnée en paramètres */
 int isCol3(Grille* grid,int numcol){
     if(numcol>grid->taille){
         return EXIT_FAILURE;
@@ -77,7 +73,7 @@ int isCol3(Grille* grid,int numcol){
         }
     return 0;
 }
-
+/* vérifie si la ligne donnée en paramètre est identique aux autres lignes de la grille */
 int isSameRow(Grille* grid,int numrow) {
     int samerow=0;
     for (int i=0;i<grid->taille-1;i++){
@@ -93,7 +89,7 @@ int isSameRow(Grille* grid,int numrow) {
     }
     return 0;
 }
-
+/* vérifie si la colonne donnée en paramètre est identique aux autres colonnes de la grille */
 int isSameCol(Grille* grid,int numcol) {
     int samecol=0;
     for (int j=0;j<grid->taille-1;j++){
@@ -110,17 +106,6 @@ int isSameCol(Grille* grid,int numcol) {
     return 0;
 }
 
-/*
-Affiche la grille fournie en paramètre
-*/
-void printGrille(Grille * g){
-    for(int i=0;i<16;i++){
-        for(int j=0;j<16;j++){
-            printf("%3d ",g->tab[i][j]);
-        }
-        printf("\n");
-    }
-}
 /*
 Compte le nombre le nombre de valeur dans une colone
 */
@@ -145,7 +130,18 @@ int countElemLigne(Grille *g,int ligne,int val){
     }
     return count;
 }
-
+/*
+Affiche la grille fournie en paramètre
+*/
+void printGrille(Grille * g, int taille){
+    for(int i=0;i<taille;i++){
+        for(int j=0;j<taille;j++){
+            printf("%3d ",g->tab[i][j]);
+        }
+        printf("\n");
+    }
+}
+/* Remplit la grille avec des 0 et des 1 aléatoirement*/
 Grille* randomFill(Grille* grid, int taille){
     grid->taille=taille;
     for (int i=0;i<grid->taille;i++){
@@ -156,12 +152,14 @@ Grille* randomFill(Grille* grid, int taille){
     return grid;
 }
 
+Grille* GrilleOk(Grille* grid){
 
+    return grid;
+}
 
 int main() {
     Grille* tmp=Newgrille();
     Grille* grid=randomFill(tmp,4);
-    printGrille(grid);
     
     return EXIT_SUCCESS;
 }
