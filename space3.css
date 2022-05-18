@@ -21,31 +21,33 @@ h1{
 /*----------Logo----------*/
 #logo {
   margin: 0;
-  height: 200px;
+  height: 150px;
 }
 /*----------Logo----------*/
 
 /*----------Menu----------*/
-nav a{
-  margin: 10px;
-  height: 25px;
-  float: right;
-
-  display: block;
+nav ul{
   list-style-type: none;
-  text-decoration: none;
-
-  color:  white;
-  
-  float: left;
-
-  background-image: url(images/bandeau1.png);
-  overflow: hidden;
 }
 
-nav a:hover{
+nav li a{
+  margin: 10px;
+  padding: 8px 16px;
+  text-align: center;
+
+  height: 25px;
+  float: right;
+  
+  display: block;
+  color:  white;
+  text-decoration: none;
+  background-color: black;
+  border-radius: 20px;
+}
+
+nav li a:hover{
     color:white;
-    background-color: gray;
+    background-color:gray;
 }
 /*----------Menu----------*/
 
@@ -152,11 +154,6 @@ nav a:hover{
 /*----------Table score----------*/
 
 
-#loupe{
-  width: 250px;
-  margin-left: 15%;
-}
-
 #img{
   height: 170px;
 }
@@ -182,14 +179,15 @@ nav a:hover{
   text-align: center;
 }
 
+
+/*----------Paramètre + deco----------*/
 #theme{
   margin: 10px;
-  height: 25px;
+  height: 30px;
   float: right;
   text-align: center;
 }
-
-
+/*----------Paramètre + deco----------*/
 
 
 /*----------Footer----------*/
