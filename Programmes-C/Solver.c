@@ -267,7 +267,7 @@ Verifie si la grille est concordante ou non
 */
 bool VerifGrille(Grille *g){
     for(int i=0;i<g->taille;++i){
-        if(countElemCol(g, i,0)!=countElemCol(g, i, 1) || countElemLigne(g, i,0)!=countElemLigne(g, i,1) || (countElemCol(g, i, 0)!=g->taille/2 && countElemLigne(g, i, 0)!=g->taille/2)){
+        if(countElemCol(g, i,0)!=countElemCol(g, i, 1) || countElemLigne(g, i,0)!=countElemLigne(g, i,1) || (countElemCol(g, i, 0)!=g->taille/2 || countElemLigne(g, i, 1)!=g->taille/2)){
             return false;
         }
         if(!isUniqueCol(g,i) || !isUniqueLigne(g, i)) return false;
@@ -291,6 +291,7 @@ bool VerifGrille(Grille *g){
 /*
 Resout la grille avec Backtracking
 */
+
 Grille *Solve(Grille *g, int ligne, int col){
     Grille *clone=cloneGrille(g);
     if(g->tab[ligne][col]!=-1){
@@ -375,27 +376,27 @@ bool inteligent(Grille *g){
             if(g->tab[i][j]==-1){           
                 if(i!=0 && i!=g->taille-1){
                     if(g->tab[i-1][j]==0 && g->tab[i+1][j]==0){
-                        g->tab[i][j]=0;
+                        g->tab[i][j]=1;
                         return true;
                     }
                     else if(g->tab[i-1][j]==1 && g->tab[i+1][j]==1){
-                        g->tab[i][j]=1;
+                        g->tab[i][j]=0;
                         return true;
                     }
                 }
                 if(j!=0 && j!=g->taille-1){
                     if(g->tab[i][j-1]==0 && g->tab[i][j+1]==0){
-                        g->tab[i][j]=0;
+                        g->tab[i][j]=1;
                         return true;
                     }
                     else if(g->tab[i][j-1]==1 && g->tab[i][j+1]==1){
-                        g->tab[i][j]=1;
+                        g->tab[i][j]=0;
                         return true;
                     }
                 }
                 if(i<=g->taille-3){
                     if(g->tab[i+1][j]==0 && g->tab[i+2][j]==0){
-                        g->tab[i][j]=0;
+                        g->tab[i][j]=1;
                         if(i+3<g->taille){
                             if(g->tab[i+3][j]==-1){
                                 g->tab[i+3][j]=0;
@@ -404,7 +405,7 @@ bool inteligent(Grille *g){
                         return true;
                     }
                     else if(g->tab[i+1][j]==1 && g->tab[i+2][j]==1){
-                        g->tab[i][j]=1;
+                        g->tab[i][j]=0;
                         if(i+3<g->taille){
                             if(g->tab[i+3][j]==-1){
                                 g->tab[i+3][j]=1;
@@ -415,7 +416,7 @@ bool inteligent(Grille *g){
                 }
                 if(j<=g->taille-3){
                     if(g->tab[i][j+1]==0 && g->tab[i][j+2]==0){
-                        g->tab[i][j]=0;
+                        g->tab[i][j]=1;
                         if(j+3<g->taille){
                             if(g->tab[i][j+3]==-1){
                                 g->tab[i][j+3]=0;
@@ -424,7 +425,7 @@ bool inteligent(Grille *g){
                         return true;
                     }
                     else if(g->tab[i][j+1]==1 && g->tab[i][j+2]==1){
-                        g->tab[i][j]=1;
+                        g->tab[i][j]=0;
                         if(j+3<g->taille){
                             if(g->tab[i][j+3]==-1){
                                 g->tab[i][j+3]=1;
@@ -435,7 +436,7 @@ bool inteligent(Grille *g){
                 }
                 if(i>=2){
                     if(g->tab[i-1][j]==0 && g->tab[i-2][j]==0){
-                        g->tab[i][j]=0;
+                        g->tab[i][j]=1;
                         if(i-3>=0){
                             if(g->tab[i-3][j]==-1){
                                 g->tab[i-3][j]=0;
@@ -444,7 +445,7 @@ bool inteligent(Grille *g){
                         return true;
                     }
                     else if(g->tab[i-1][j]==1 && g->tab[i-2][j]==1){
-                        g->tab[i][j]=1;
+                        g->tab[i][j]=0;
                         if(i-3>=0){
                             if(g->tab[i-3][j]==-1){
                                 g->tab[i-3][j]=1;
@@ -455,7 +456,7 @@ bool inteligent(Grille *g){
                 }
                 if(j>=2){
                     if(g->tab[i][j-1]==0 && g->tab[i][j-2]==0){
-                        g->tab[i][j]=0;
+                        g->tab[i][j]=1;
                         if(j-3>=0){
                             if(g->tab[i][j-3]==-1){
                                 g->tab[i][j-3]=0;
@@ -464,7 +465,7 @@ bool inteligent(Grille *g){
                         return true;
                     }
                     else if(g->tab[i][j-1]==1 && g->tab[i][j-2]==1){
-                        g->tab[i][j]=1;
+                        g->tab[i][j]=0;
                         if(j-3>=0){
                             if(g->tab[i][j-3]==-1){
                                 g->tab[i][j-3]=1;
@@ -497,13 +498,14 @@ bool Solveur(Grille *g){
         printf("Aucune solution\n");
         return false;
     }
+    
 }
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {1,-1,1,-1,-1,-1,-1,-1},
+        {-1,-1,1,-1,-1,-1,-1,-1},
+        {1,1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
@@ -513,4 +515,5 @@ int main(){
     initGrille(g,4, tab);
 
     Solveur(g);
+    printf("%d",VerifGrille(g));
 }
