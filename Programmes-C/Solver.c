@@ -53,12 +53,21 @@ Grille * cloneGrille(Grille * g){
 Affiche la grille fournie en paramètre
 */
 void printGrille(Grille * g){
+    printf("\n");
     for(int i=0;i<g->taille;i++){
         for(int j=0;j<g->taille;j++){
-            printf("%3d ",g->tab[i][j]);
+            printf(" |%3d ",g->tab[i][j]);
         }
-        printf("\n");
+        printf("|\n");
+        if(i!=g->taille-1){
+            for(int k=0;k<g->taille;k++){
+                printf("------");
+
+            }
+            printf("\n");
+        }
     }
+    printf("\n");
 }
 /*
 Compte le nombre le nombre de valeur dans une colone
@@ -336,9 +345,6 @@ Grille *Solve(Grille *g, int ligne, int col){
 Remplie la grille avec les solutions facile à trouver
 */
 bool inteligent(Grille *g){
-    printf("\n");
-    printGrille(g);
-    printf("\n");
     for(int i=0; i<g->taille; ++i){
         if(countElemCol(g, i, 0)==g->taille/2 && countElemCol(g, i, 1)!=g->taille/2){
             for(int j=0; j<g->taille; ++j){
@@ -399,7 +405,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=1;
                         if(i+3<g->taille){
                             if(g->tab[i+3][j]==-1){
-                                g->tab[i+3][j]=0;
+                                g->tab[i+3][j]=1;
                             }
                         }
                         return true;
@@ -408,7 +414,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=0;
                         if(i+3<g->taille){
                             if(g->tab[i+3][j]==-1){
-                                g->tab[i+3][j]=1;
+                                g->tab[i+3][j]=0;
                             }
                         }
                         return true;
@@ -419,7 +425,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=1;
                         if(j+3<g->taille){
                             if(g->tab[i][j+3]==-1){
-                                g->tab[i][j+3]=0;
+                                g->tab[i][j+3]=1;
                             }
                         }
                         return true;
@@ -428,7 +434,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=0;
                         if(j+3<g->taille){
                             if(g->tab[i][j+3]==-1){
-                                g->tab[i][j+3]=1;
+                                g->tab[i][j+3]=0;
                             }
                         }
                         return true;
@@ -439,7 +445,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=1;
                         if(i-3>=0){
                             if(g->tab[i-3][j]==-1){
-                                g->tab[i-3][j]=0;
+                                g->tab[i-3][j]=1;
                             }
                         }
                         return true;
@@ -448,7 +454,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=0;
                         if(i-3>=0){
                             if(g->tab[i-3][j]==-1){
-                                g->tab[i-3][j]=1;
+                                g->tab[i-3][j]=0;
                             }
                         }
                         return true;
@@ -459,7 +465,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=1;
                         if(j-3>=0){
                             if(g->tab[i][j-3]==-1){
-                                g->tab[i][j-3]=0;
+                                g->tab[i][j-3]=1;
                             }
                         }
                         return true;
@@ -468,7 +474,7 @@ bool inteligent(Grille *g){
                         g->tab[i][j]=0;
                         if(j-3>=0){
                             if(g->tab[i][j-3]==-1){
-                                g->tab[i][j-3]=1;
+                                g->tab[i][j-3]=0;
                             }
                         }
                         return true;
@@ -487,8 +493,6 @@ bool Solveur(Grille *g){
     while(inteligent(g)){
         NULL;
     }
-    printGrille(g);
-    printf("\n");
     Grille *tmp=Solve(g,0,0);
     if(tmp!=NULL){
         printGrille(tmp);
@@ -503,17 +507,16 @@ bool Solveur(Grille *g){
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
-        {1,-1,1,-1,-1,-1,-1,-1},
-        {-1,-1,1,-1,-1,-1,-1,-1},
-        {1,1,-1,-1,-1,-1,-1,-1},
+        {-1,0 ,0 ,-1,0 ,-1,-1,-1},
+        {-1,-1,-1, 1,0 ,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,0 ,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,0 ,0 ,-1,-1,-1},
+        {-1,0 ,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1}      
+        {-1,-1,-1,-1,-1,-1,-1,-1}     
     };
-    initGrille(g,4, tab);
+    initGrille(g,8, tab);
 
     Solveur(g);
-    printf("%d",VerifGrille(g));
 }
