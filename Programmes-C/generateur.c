@@ -130,17 +130,6 @@ int countElemLigne(Grille *g,int ligne,int val){
     }
     return count;
 }
-/*
-Affiche la grille fournie en paramètre
-*/
-void printGrille(Grille * g, int taille){
-    for(int i=0;i<taille;i++){
-        for(int j=0;j<taille;j++){
-            printf("%3d ",g->tab[i][j]);
-        }
-        printf("\n");
-    }
-}
 /* Remplit la grille avec des 0 et des 1 aléatoirement*/
 Grille* randomFill(Grille* grid, int taille){
     grid->taille=taille;
@@ -152,8 +141,52 @@ Grille* randomFill(Grille* grid, int taille){
     return grid;
 }
 
-Grille* GrilleOk(Grille* grid){
+Grille* ModifLigne(Grille* grid,int i){
+    while(countElemLigne(grid,i, 1)!=countElemLigne(grid,i,0)&& isRow3(grid,i)&&isSameRow(grid,i)){
+        for (int j=0;j<grid->taille-1;j++){
+            grid->tab[i][j]=rand()%2;
+        }
+    }    
+    return grid;
+}
 
+Grille* ModifCol(Grille* grid,int i){
+    while(countElemCol(grid,i, 1)!=countElemCol(grid,i,0)&& isCol3(grid,i)&&isSameCol(grid,i)){
+        for (int j=0;j<grid->taille-1;j++){
+            grid->tab[j][i]=rand()%2;
+        }
+    }    
+    return grid;
+}
+
+bool GrilleOk(Grille* grid){
+        for(int i=0;i<grid->taille;++i){
+        if(countElemCol(grid, i,0)!=countElemCol(grid, i, 1) || countElemLigne(grid, i,0)!=countElemLigne(grid, i,1) || (countElemCol(grid, i, 0)!=grid->taille/2 || countElemLigne(grid, i, 1)!=grid->taille/2)){
+            return false;
+        }
+        if(!isUniqueCol(grid,i) || !isUniqueLigne(grid, i)) return false;
+        for(int j=1;j<grid->taille-1;++j){
+            if(i==0 || i==grid->taille-1){
+                if(grid->tab[i][j-1]==grid->tab[i][j] && grid->tab[i][j+1]==grid->tab[i][j]){
+                    return false;
+                }
+            }
+            else{
+                if((grid->tab[i-1][j]==grid->tab[i][j] && grid->tab[i+1][j]==grid->tab[i][j] ) || (grid->tab[i][j-1]==grid->tab[i][j] && grid->tab[i][j+1]==grid->tab[i][j])){
+                    return false;
+                }
+            }
+
+        }
+        
+    }
+    return true;
+}
+
+Grille* ModifGrille(Grille* grid){
+    while(!GrilleOk(grid)){
+
+    }
     return grid;
 }
 
