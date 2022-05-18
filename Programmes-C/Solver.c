@@ -335,24 +335,19 @@ Grille *Solve(Grille *g, int ligne, int col){
 Remplie la grille avec les solutions facile à trouver
 */
 bool inteligent(Grille *g){
+    printf("\n");
+    printGrille(g);
+    printf("\n");
     for(int i=0; i<g->taille; ++i){
         if(countElemCol(g, i, 0)==g->taille/2 && countElemCol(g, i, 1)!=g->taille/2){
             for(int j=0; j<g->taille; ++j){
-                if(g->tab[i][j]==-1){
-                    g->tab[i][j]=0;
+                if(g->tab[j][i]==-1){
+                    g->tab[j][i]=1;
                 }
             }
             return true;
         }
         if(countElemLigne(g, i, 0)==g->taille/2 && countElemLigne(g, i, 1)!=g->taille/2){
-            for(int j=0; j<g->taille; ++j){
-                if(g->tab[j][i]==-1){
-                    g->tab[j][i]=0;
-                }
-            }
-            return true;
-        }
-        if(countElemCol(g, i, 0)==g->taille/2 && countElemCol(g, i, 1)==g->taille/2){
             for(int j=0; j<g->taille; ++j){
                 if(g->tab[i][j]==-1){
                     g->tab[i][j]=1;
@@ -360,10 +355,18 @@ bool inteligent(Grille *g){
             }
             return true;
         }
-        if(countElemLigne(g, i, 0)==g->taille/2 && countElemLigne(g, i, 1)==g->taille/2){
+        if(countElemCol(g, i, 1)==g->taille/2 && countElemCol(g, i, 0)!=g->taille/2){
             for(int j=0; j<g->taille; ++j){
                 if(g->tab[j][i]==-1){
-                    g->tab[j][i]=1;
+                    g->tab[j][i]=0;
+                }
+            }
+            return true;
+        }
+        if(countElemLigne(g, i, 1)==g->taille/2 && countElemLigne(g, i, 0)!=g->taille/2){
+            for(int j=0; j<g->taille; ++j){
+                if(g->tab[i][j]==-1){
+                    g->tab[i][j]=0;
                 }
             }
             return true;
@@ -483,6 +486,8 @@ bool Solveur(Grille *g){
     while(inteligent(g)){
         NULL;
     }
+    printGrille(g);
+    printf("\n");
     Grille *tmp=Solve(g,0,0);
     if(tmp!=NULL){
         printGrille(tmp);
@@ -505,6 +510,7 @@ int main(){
         {-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1}      
     };
-    initGrille(g,8, tab);
+    initGrille(g,4, tab);
+
     Solveur(g);
 }
