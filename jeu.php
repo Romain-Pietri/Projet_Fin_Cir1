@@ -50,6 +50,8 @@
 </header>
 <body>
 <?php
+
+
     if(!isset($_POST["Envoyer"])){
         echo '<legend class="input">Choisissez la taille de la grille :</legend>
     <form method="post" action="jeu.php">
@@ -65,68 +67,56 @@
     }
     else {
         $taille = $_POST["taille"];
-        echo $taille;
     }
+
+
 ?>
 
     <div id ="container">
             
         
         <table id="t01">
-        <script>
-            // truc pour récuperer le tableau du générateur
-            var contenu = [];
+        
+            
             <?php
-            switch ($taille) {
-                case 4:
-                    echo "var contenu = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];";
-                    break;
-                case 6:
-                    echo "var contenu = [[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]];";
-                    break;
-                case 8:
-                    echo "var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];";
-                    break;
-            }
-            
+            $contenu = [];
 
-            echo "for (var j = 0; j < $taille; j++) {"; 
-                echo 'document.write("<tr>");';    
-                echo "for (var k = 0; k < $taille; k++) {";
-                ?>
-                document.write(" <td> ");
-                document.write(" <button class = 'boutonjeu' onclick='modifValeurs(j,k)' type='button'> <img class = 'img' src = 'images/img1.png'> </button>");
+            for ($j = 1; $j <= $taille; $j++) { 
+                echo '<tr>';    
+                for ($k = 1; $k <= $taille; $k++) {
+                
+                echo "<td> ";
+                echo "<button class = 'boutonjeu' onclick = 'modifValeurs($j, $k)' type='button'> <img class='img' id= '$j$k' src = 'images/img0.png'> </button>";
 
-                document.write(" </td> "); 
+                echo " </td> " ; 
                 }
-                document.write("</tr>");
+                echo "</tr>" ;
+                
             }
+            ?>
+            <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
-
-                /*
-                var btn = document.createElement("BUTTON");        // Créer un élément <button>
-                var t = document.createTextNode((contenu[j][k]));       // Créer un noeud textuel
-                btn.appendChild(t);                                // Ajouter le texte au bouton
-                document.body.appendChild(btn);                    // Ajoute la balise <button> à la balise <body>
-                */
-
-
-                /*
-                function creationbouton() {
-                    var btn =  document.createElement('button'); //créer le bouton
-                    var input = document.getElementById('newevent');//récupérer l'input
-                    btn.setAttribute('name', input .value); //lui donner son nom
-                    input.parentNode.insertBefore(btn, input.nextSibling);//l'insérer dans le dom où on veut: ici après l'input 
-                    //(insérer parmi les fils du parent de l'input, avant le suivant de l'input)
+            
+         <script> 
+            
+            var taille = document.getElementById("variable").value;
+            var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+            function modifValeurs(x, y) {
+                let n = contenu[x-1][y-1];
+                n = (n + 1) % 3;
+                contenu[x-1][y-1] = n;
+                console.log("n = " + n);
+                z = x*10 + y;
+                if (n == 1) {
+                    document.getElementById(z).src = "images/img1.png";
                 }
-                */
-            
-            
-            var img1 = document.createElement("img1");
-            img1.src = "./Images-jeu/img1.png";
-
-            var img2 = document.createElement("img2");
-            img2.src = "./Images-jeu/img2.png";
+                if (n == 2) {
+                    document.getElementById(z).src = "images/img2.png";
+                }
+                if (n == 0) {
+                    document.getElementById(z).src = "images/img0.png";
+                }              
+            }
 
         </script>
     </div>
