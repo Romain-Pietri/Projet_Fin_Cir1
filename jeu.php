@@ -6,7 +6,6 @@
     <style>
         .input{
             color : white;
-
         }
 
         table {
@@ -18,13 +17,12 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
-          
+            
         th,
         td {
-            padding: 15px;
             text-align: center;
-            width : 75px;
-            height : 75px;
+            width : 100px;
+            height : 100px;
         }
           
         table#t01 tr {
@@ -39,8 +37,14 @@
         }
         
         .boutonjeu{
-            text-decoration : none;
             color : black;
+            height : 100%;
+            width : 100%;
+        }
+
+        .img{
+            height : 100%;
+            width : 100%;
         }
     </style>
 </header>
@@ -90,11 +94,32 @@
                 echo 'document.write("<tr>");';    
                 echo "for (var k = 0; k < $taille; k++) {";
                 ?>
-                document.write(" <td> <a href=# class='boutonjeu'>" + (contenu[j][k]) + "</a>");
+                document.write(" <td> ");
+                document.write(" <button class = 'boutonjeu' onclick='modifValeurs(j,k)' type='button'> <img class = 'img' src = 'images/img1.png'> </button>");
+
+                document.write(" </td> "); 
                 }
                 document.write("</tr>");
             }
-           
+
+
+                /*
+                var btn = document.createElement("BUTTON");        // Créer un élément <button>
+                var t = document.createTextNode((contenu[j][k]));       // Créer un noeud textuel
+                btn.appendChild(t);                                // Ajouter le texte au bouton
+                document.body.appendChild(btn);                    // Ajoute la balise <button> à la balise <body>
+                */
+
+
+                /*
+                function creationbouton() {
+                    var btn =  document.createElement('button'); //créer le bouton
+                    var input = document.getElementById('newevent');//récupérer l'input
+                    btn.setAttribute('name', input .value); //lui donner son nom
+                    input.parentNode.insertBefore(btn, input.nextSibling);//l'insérer dans le dom où on veut: ici après l'input 
+                    //(insérer parmi les fils du parent de l'input, avant le suivant de l'input)
+                }
+                */
             
             
             var img1 = document.createElement("img1");
