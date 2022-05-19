@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/romain/Documents/Projet/Projet'
+make: Leaving directory '/home/romain/Documents/Projet/Projet'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
