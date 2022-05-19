@@ -8,7 +8,6 @@
 Alloue de la mémoire dynamiquement pour la grille
 */
 Grille * Newgrille(){
-    
     Grille *tmp;
     tmp =(Grille*)malloc(sizeof(Grille));
     if (tmp != NULL) {
@@ -504,6 +503,7 @@ bool Solveur(Grille *g){
     }
     
 }
+/*
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
@@ -519,4 +519,4 @@ int main(){
     initGrille(g,8, tab);
 
     Solveur(g);
-}
+}*/
