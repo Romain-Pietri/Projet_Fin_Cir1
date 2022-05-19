@@ -6,11 +6,8 @@
 #include "Solver.h"
 #include <time.h>
 
-
-
 /* Remplit la grille avec des 0 et des 1 aléatoirement*/
-Grille* randomFill(Grille* grid, int taille){
-    srand(time(NULL));
+void randomFill(Grille* grid, int taille){
     int val;
     grid->taille=taille;
     for (int i=0;i<grid->taille;i++){
@@ -28,15 +25,24 @@ Grille* randomFill(Grille* grid, int taille){
 
             }
         }
-    return grid;
+}
+/*
+Reset la grilles avec des -1
+*/
+void resetGrid(Grille* grid){
+    for (int i=0;i<grid->taille;i++){
+        for (int j=0;j<grid->taille;j++){
+            grid->tab[i][j]=-1;
+        }
+    }
 }
 
+
 int main() {
-    
+    srand(time(NULL));
     Grille* tmp=Newgrille();
-    do{
-    Grille* grid=randomFill(tmp,4);
-    }while(!VerifGrille(tmp));
+    do{resetGrid(tmp);randomFill(tmp,4);}while(!VerifGrille(tmp));
+    
+    printf("%d",VerifGrille(tmp));
     printGrille(tmp);
-    return EXIT_SUCCESS;
 }

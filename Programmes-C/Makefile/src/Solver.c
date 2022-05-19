@@ -342,25 +342,56 @@ Grille *Solve(Grille *g, int ligne, int col){
     return NULL;
 }
 /*
+Compte le nombre de -1 d'affiler sur une ligne s'il est égal a 3 alors retourne false sinon true
+*/
+bool InrowLigne(Grille * g,int ligne){
+    int row=0;
+    for(int i=0;i<g->taille;++i){
+        if(g->tab[ligne][i]==-1) row++;
+        else{row=0;}
+        if(row==3) return true;
+    }
+    return false;
+}
+/*
+Compte le nombre de -1 d'affiler sur une colonne s'il est égal a 3 alors retourne false sinon true
+*/
+bool InrowCol(Grille * g,int col){
+    int row=0;
+    for(int i=0;i<g->taille;++i){
+        if(g->tab[i][col]==-1) row++;
+        else{row=0;}
+        if(row==3) return true;
+    }
+    return false;
+}
+
+
+/*
 Remplie la grille avec les solutions facile à trouver
 */
 bool inteligent(Grille *g){
     for(int i=0; i<g->taille; ++i){
         if(countElemCol(g, i, 0)==g->taille/2 && countElemCol(g, i, 1)!=g->taille/2){
+            if(InrowCol(g,i)){
             for(int j=0; j<g->taille; ++j){
+                
                 if(g->tab[j][i]==-1){
                     g->tab[j][i]=1;
                 }
             }
-            return true;
+            return true;}
+            return false;
         }
         if(countElemLigne(g, i, 0)==g->taille/2 && countElemLigne(g, i, 1)!=g->taille/2){
+            if(InrowLigne(g,i)){
             for(int j=0; j<g->taille; ++j){
                 if(g->tab[i][j]==-1){
                     g->tab[i][j]=1;
                 }
             }
-            return true;
+            return true;}
+            return false;
         }
         if(countElemCol(g, i, 1)==g->taille/2 && countElemCol(g, i, 0)!=g->taille/2){
             for(int j=0; j<g->taille; ++j){
@@ -499,7 +530,7 @@ bool Solveur(Grille *g){
         return true;
     }
     else{
-        printf("Aucune solution\n");
+        //printf("Aucune solution\n");
         return false;
     }
     
