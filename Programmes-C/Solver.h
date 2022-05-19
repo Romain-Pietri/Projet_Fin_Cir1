@@ -7,7 +7,7 @@ typedef struct Grille{
     int tab[8][8];
 }Grille;
 
-Grille * NewGrille();
+Grille * Newgrille();
 void initGrille(Grille *grid, int taille, int tab[8][8]);
 Grille * cloneGrille(Grille * g);
 void printGrille(Grille * g);
