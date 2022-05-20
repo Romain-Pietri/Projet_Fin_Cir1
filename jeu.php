@@ -121,7 +121,5 @@
         </script>
     </div>
 
-</body>
-<?php } require 'footer.php'; ?>
 
-</html>
+<?php } require 'footer.php'; ?>
