@@ -110,8 +110,8 @@ nav li a:hover{
 /*----------Regles du jeu----------*/
 .regles{
   font-weight: bold;
-  color:black;
-  background-image:url(images/pap.png);
+  color: white;
+  background-image:url(images/test.png);
   background-repeat: no-repeat;
   margin-left: 30%;
   margin-right: 30%;

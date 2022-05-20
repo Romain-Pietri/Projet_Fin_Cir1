@@ -10,7 +10,7 @@
 	      <a href="https://bit.ly/37R8OVQ"><img class="reseaux" src="images/instagram.png" alt="fb"/></a>
 	    </ul>
 	  <br>
-	      <p>Website designed by Romain, Auguste, Raphael Alexandre and Alixe</p>
+	      <p>Website designed by Romain, Auguste, Raphael, Alexandre and Alixe</p>
 	      <p>All rights reserved &#153</p>
 	      <a href="legal.php" id="legal"> Legal mention </a>
 </footer>
