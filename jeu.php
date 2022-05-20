@@ -67,7 +67,7 @@
     }
     else {
         $taille = $_POST["taille"];
-    }
+    
 
 
 ?>
@@ -122,6 +122,6 @@
     </div>
 
 </body>
-<?php require 'footer.php'; ?>
+<?php } require 'footer.php'; ?>
 
 </html>

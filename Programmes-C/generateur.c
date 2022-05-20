@@ -5,6 +5,7 @@
 #include <time.h>
 #include "Solver.h"
 #include <time.h>
+#include "Generateur.h"
 
 /* Remplit la grille avec des 0 et des 1 aléatoirement*/
 void randomFill(Grille* grid, int taille){
