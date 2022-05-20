@@ -526,7 +526,7 @@ bool Solveur(Grille *g){
     }
     Grille *tmp=Solve(g,0,0);
     if(tmp!=NULL){
-        printGrille(tmp);
+        //printGrille(tmp);
         return true;
     }
     else{

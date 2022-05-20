@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <time.h>
-#include "Solver.h"
+#include "generateur.h"
 #include <time.h>
 
 void randomFill(Grille *g,int taille){
@@ -23,8 +23,8 @@ void randomFill(Grille *g,int taille){
             lower=8;
             break;
         case 8:
-            upper=19;
-            lower=16;
+            upper=16;
+            lower=14;
             break;
 
     }
