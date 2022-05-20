@@ -60,9 +60,9 @@ Grille * GenerateGrid(int taille){
     return tmp;
 }
 
-
+/*
 int main() {
     
     Grille * g=GenerateGrid(6);
     printGrille(g);
-}
+}*/
