@@ -15,12 +15,12 @@ void randomFill(Grille *g,int taille){
     int lower;
     switch (taille) {
         case 4:
-            upper=8;
+            upper=6;
             lower=5;
             break;
         case 6:
-            upper=12;
-            lower=10;
+            upper=11;
+            lower=8;
             break;
         case 8:
             upper=19;
@@ -63,6 +63,6 @@ Grille * GenerateGrid(int taille){
 
 int main() {
     
-    Grille * g=GenerateGrid(4);
+    Grille * g=GenerateGrid(6);
     printGrille(g);
 }
