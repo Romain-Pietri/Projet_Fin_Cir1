@@ -1,0 +1,6 @@
+﻿  generateur.c
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\generateur.c(10,15): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Solver.c
+  Génération de code en cours...
+MSVCRTD.lib(exe_main.obj) : error LNK2019: symbole externe non résolu main référencé dans la fonction "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\x64\Debug\StarshipInvader.exe : fatal error LNK1120: 1 externes non résolus

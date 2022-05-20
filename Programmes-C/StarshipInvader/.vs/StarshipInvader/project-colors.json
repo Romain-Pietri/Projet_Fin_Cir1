@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ec9310d3-7779-43b4-9933-d448dac69cd4": {
+      "ProjectGuid": "ec9310d3-7779-43b4-9933-d448dac69cd4",
+      "DisplayName": "StarshipInvader",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
