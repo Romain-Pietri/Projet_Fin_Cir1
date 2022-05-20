@@ -2,7 +2,7 @@
     session_start();
 
     require "header.php";
-?>
+?> 
 
 	<h1>Welcome to Starship invader ! Please login for a better experience !</h1>
 	<br>
