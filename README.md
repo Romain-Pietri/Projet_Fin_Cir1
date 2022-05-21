@@ -23,6 +23,10 @@ les règles sont simples
 
 ## Auteur
 
-- [@Romain](https://www.github.com/)
+- [@Romain](https://github.com/Romain-Pietri)
+- [@Alexandre](https://github.com/AlexandreISEN)
+- [@Alixe](https://github.com/AlixeM)
+- [@Auguste](https://github.com/AugusteBuriez)
+- [@Raphaël](https://github.com/RaphSoko)
 
 
