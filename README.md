@@ -1,5 +1,5 @@
 
-<img src="https://cdn.discordapp.com/attachments/645712831563431994/977635675425898496/unknown.png" width="40" height="40">
+<img src="https://cdn.discordapp.com/attachments/645712831563431994/977635675425898496/unknown.png" width="80" height="80">
 # Starship Invader
 
 Projet de fin d'année de l'équipe Gadget (Cir 1 Isen Lille)
