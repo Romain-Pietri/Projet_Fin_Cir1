@@ -1,10 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_DEPRECATE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include "generateur.h"
 #include <time.h>
-#define _CRT_SECURE_NO_WARNINGS
-#define _CRT_SECURE_NO_DEPRECATE
+
 /*
 tranforme les char en int
 */

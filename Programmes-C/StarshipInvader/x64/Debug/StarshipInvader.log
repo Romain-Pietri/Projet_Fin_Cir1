@@ -1,6 +1,5 @@
 ﻿  parseur.c
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(22,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(37,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(57,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(132,25): warning C4013: 'Resoudre' non défini(e) ; extern retournant int pris par défaut
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(132,28): warning C4047: '=' : les niveaux d'indirection de 'Grille *' et de 'int' sont différents
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(134,25): warning C4013: 'Resoudre' non défini(e) ; extern retournant int pris par défaut
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(134,28): warning C4047: '=' : les niveaux d'indirection de 'Grille *' et de 'int' sont différents
+parseur.obj : error LNK2019: symbole externe non résolu Resoudre référencé dans la fonction main
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\x64\Debug\StarshipInvader.exe : fatal error LNK1120: 1 externes non résolus
