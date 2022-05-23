@@ -50,35 +50,7 @@
 </header>
 <body>
 <?php
-        require("connexiondb.php");
-
-			$requete="SELECT * FROM ";//La requere SQL
-			$resultat = mysqli_query($connexion,$requete); //Executer la requete
-			
-			if ( $resultat == FALSE ){
-				echo "<p>Erreur d'ex�cution de la requete :".mysqli_error($connexion)."</p>" ;
-				die();
-			}
-			else
-			{
-				$nbreLignes= ...; //Nombre de ligne du retour de la requete
-				
-				echo "Le Nombre des adh�rents est : $nbreLignes <br>";
-				
-				//lire le tableau des resulats ligne par ligne
-				if(...>0){
-					while(...){
-						foreach ($UneLigne as ..) {
-							echo  "...";
-						}
-					}
-				}
-				else
-					echo "aucune ligne";
-				
-				die();//Fermer la connexion
-			}
-
+     
     if(!isset($_POST["Envoyer"])){
         echo '<legend class="input">Choisissez la taille de la grille :</legend>
     <form method="post" action="jeu.php">
@@ -95,8 +67,123 @@
     else {
         $taille = $_POST["taille"];
     
-     $initial_array1 = [0,0,0,0,0,0,0,0];
-     $initial_array = [$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1];
+    require("connexiondb.php");
+	    
+	$requete="SELECT Ligne FROM grilles WHERE ID = 1 ";
+	$resultat = mysqli_query($connexion,$requete);
+			
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array1 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+		$requete="SELECT Ligne FROM grilles WHERE ID = 2 ";
+	$resultat = mysqli_query($connexion,$requete);
+		
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array2 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+
+	$requete="SELECT Ligne FROM grilles WHERE ID = 3 ";
+	$resultat = mysqli_query($connexion,$requete);
+			
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array3 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+
+	$requete="SELECT Ligne FROM grilles WHERE ID = 4 ";
+	$resultat = mysqli_query($connexion,$requete);
+			
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array4 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+	$requete="SELECT Ligne FROM grilles WHERE ID = 5 ";
+	$resultat = mysqli_query($connexion,$requete);
+			
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array5 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+
+	$requete="SELECT Ligne FROM grilles WHERE ID = 6 ";
+	$resultat = mysqli_query($connexion,$requete);
+		
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array6 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+	$requete="SELECT Ligne FROM grilles WHERE ID = 7 ";
+	$resultat = mysqli_query($connexion,$requete);
+		
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array7 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+	$requete="SELECT Ligne FROM grilles WHERE ID = 8 ";
+	$resultat = mysqli_query($connexion,$requete);
+		
+	if ( $resultat == FALSE ){
+		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		die();
+	}
+	else
+	{
+		while($UneLigne = mysqli_fetch_assoc($resultat)){
+			$initial_array8 = unserialize($UneLigne["Ligne"]);        
+		}
+	}
+	$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
+
+
+    
+
+
+    $initial_array1 = [0,0,0,0,0,0,0,0];
+    $initial_array = [$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1,$initial_array1];
 
 ?>
 
@@ -131,7 +218,7 @@
 
             
          <script>
-            var initial_array1 = <?php echo '["' . implode('", "', $initial_array1) . '"]'; ?>;
+			var initial_array1 = <?php echo '["' . implode('", "', $initial_array1) . '"]'; ?>;
             var initial_array2 = <?php echo '["' . implode('", "', $initial_array2) . '"]'; ?>;
             var initial_array3 = <?php echo '["' . implode('", "', $initial_array3) . '"]'; ?>;
             var initial_array4 = <?php echo '["' . implode('", "', $initial_array4) . '"]'; ?>;
@@ -185,7 +272,6 @@
                         }   
                     }
                 }
-                console.log("cactus");
             }
             
             afficher(<?php echo $taille ?>);
@@ -196,3 +282,4 @@
 <?php } require 'footer.php'; ?>
 
 </html>
+
