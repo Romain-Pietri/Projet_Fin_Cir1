@@ -51,7 +51,7 @@ char* readJson(char* filename){
 /*
 Ouvre le fichier ./json.json et écrit
 */
-void writeJson(char* filename, Grille *g,int verif){
+void writeJson(char* filename, Grille *g,int verif,int id){
     FILE* fd = fopen(filename, "w");
     if (fd == NULL) {
         printf("Erreur d'ouverture du fichier %s\n", filename);
@@ -69,7 +69,7 @@ void writeJson(char* filename, Grille *g,int verif){
             fprintf(fd, "],[");
         }
     }
-    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":4,\"verif\":%d}",g->taille,verif);
+    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":%d,\"verif\":%d}",g->taille,id,verif);
     fclose(fd);
 }
 /*
@@ -113,7 +113,7 @@ int main(){
     int taille;
     int id;
     int request;
-    char *chaine = readJson("../json.json");
+    char *chaine = readJson("..\\json.json");
     recup(chaine,tab,&taille,&id,&request);
     if(request==0 || request==1){
         /*
@@ -123,28 +123,27 @@ int main(){
         Id = 3 Verif
         Id = 4 Verif Generate
                 */
-        if(id==0) writeJson("../json.json",GenerateGrid(taille),1);
+        if(id==0) writeJson("..\\json.json",GenerateGrid(taille),1,id);
         if(id==1) {
             Grille *g = Newgrille();
             initGrille(g, taille, tab);
             g=Resoudre(g);
-            writeJson("../json.json",g,1);
-            
+            writeJson("..\\json.json",g,1,id);
             }
         if(id==2) { 
             Grille *g = Newgrille();
             initGrille(g, taille, tab);
-            if(inteligent(g)) writeJson("../json.json",g,1);
+            if(inteligent(g)) writeJson("..\\json.json",g,1,id);
             else{
-                writeJson("../json.json",g,0);
+                writeJson("..\\json.json",g,0,id);
             }
         }
         if(id==3) {
             Grille *g = Newgrille();
             initGrille(g, taille, tab);
-            if(VerifGrille(g)) writeJson("../json.json",g,1);
+            if(VerifGrille(g)) writeJson("..\\json.json",g,1,id);
             else{
-                writeJson("../json.json",g,0);
+                writeJson("..\\json.json",g,0,id);
             }
         }
         if(id==4){
@@ -152,10 +151,9 @@ int main(){
             Grille *g2 = Newgrille();
             initGrille(g, taille, tab);
             initGrille(g2, taille, tab);
-            printGrille(g);
-            if(Solveur(g)){ writeJson("../json.json",g2,1);}
+            if(Solveur(g)){ writeJson("..\\json.json",g2,1,id);}
             else{
-                writeJson("../json.json",g2,0);
+                writeJson("..\\json.json",g2,0,id);
             }
         }
     }
