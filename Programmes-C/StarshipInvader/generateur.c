@@ -3,8 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <time.h>
-#include "Solver.h"
-#include <time.h>
+#include "generateur.h"
 
 void randomFill(Grille *g,int taille){
     srand(time(NULL));
