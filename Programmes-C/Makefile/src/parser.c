@@ -51,7 +51,7 @@ char* readJson(char* filename){
 /*
 Ouvre le fichier ./json.json et écrit
 */
-void writeJson(char* filename, Grille *g){
+void writeJson(char* filename, Grille *g,int verif){
     FILE* fd = fopen(filename, "w");
     if (fd == NULL) {
         printf("Erreur d'ouverture du fichier %s\n", filename);
@@ -69,7 +69,7 @@ void writeJson(char* filename, Grille *g){
             fprintf(fd, "],[");
         }
     }
-    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":0}",g->taille);
+    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":0,\"verif\":%d}",g->taille,verif);
     fclose(fd);
 }
 /*
@@ -108,17 +108,44 @@ void affiche(int tab[8][8]){
 }
 int main(){
     //printJson("./json.json");
-    writeJson("./test.json",GenerateGrid(4));
+    //writeJson("./test.json",GenerateGrid(4));
     int tab[8][8];
     int taille;
     int id;
     int request;
-    char *chaine = readJson("./test.json");
+    char *chaine = readJson("../json.json");
     recup(chaine,tab,&taille,&id,&request);
-    printf("%d\n",taille);
-    printf("%d\n",id);
-    printf("%d\n",request);
-    affiche(tab);
-    
+    if(request==0 || request==1){
+        /*
+        Id = 0 generate
+        Id = 1 solve
+        Id = 2 Indice ( intéligent)
+        Id = 4 Verif ( random)
+        */
+        if(id==0) writeJson("../json.json",GenerateGrid(taille),1);
+        if(id==1) {
+            Grille *g = Newgrille();
+            initGrille(g, taille, tab);
+            g=Resoudre(g);
+            writeJson("../json.json",g,1);
+            
+            }
+        if(id==2) { 
+            Grille *g = Newgrille();
+            initGrille(g, taille, tab);
+            if(inteligent(g)) writeJson("../json.json",g,1);
+            else{
+                writeJson("../json.json",g,0);
+            }
+        }
+        if(id==3) {
+            Grille *g = Newgrille();
+            initGrille(g, taille, tab);
+            if(VerifGrille(g)) writeJson("../json.json",g,1);
+            else{
+                writeJson("../json.json",g,0);
+            }
+        }
+    }
     return 0;
 }

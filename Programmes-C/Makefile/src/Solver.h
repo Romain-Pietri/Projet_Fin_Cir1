@@ -20,3 +20,4 @@ bool VerifGrille(Grille *g);
 Grille *Solve(Grille *g, int ligne, int col);
 bool Solveur(Grille *g);
 bool inteligent(Grille *g);
+Grille * Resoudre(Grille *g);
