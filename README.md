@@ -16,7 +16,7 @@ les règles sont simples
 : 
 
 - Vous ne pouvez aligner au maximum deux Fusées/Soucoupes
-- Les lignes et les colones doivent contenir autant de Fusée que de Soucoupes
+- Les lignes et les colones doivent contenir autant de Fusées que de Soucoupes
 - Les lignes et les colones doivent toutes être différentes les unes avec les autres
 
 
