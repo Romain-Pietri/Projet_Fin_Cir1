@@ -69,7 +69,7 @@ void writeJson(char* filename, Grille *g,int verif){
             fprintf(fd, "],[");
         }
     }
-    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":0,\"verif\":%d}",g->taille,verif);
+    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":4,\"verif\":%d}",g->taille,verif);
     fclose(fd);
 }
 /*
@@ -87,7 +87,7 @@ void recup(char *chaine, int tab[8][8],int *taille,int *id , int *request){
             j++;
         }
         if(chaine[k]>='0' && chaine[k]<='9'){
-            tab[i][j]=charToInt(chaine[k])-1;
+            tab[j][i]=charToInt(chaine[k])-1;
             i++;
         }
     }
@@ -120,8 +120,9 @@ int main(){
         Id = 0 generate
         Id = 1 solve
         Id = 2 Indice ( intéligent)
-        Id = 4 Verif ( random)
-        */
+        Id = 3 Verif
+        Id = 4 Verif Generate
+                */
         if(id==0) writeJson("../json.json",GenerateGrid(taille),1);
         if(id==1) {
             Grille *g = Newgrille();
@@ -144,6 +145,17 @@ int main(){
             if(VerifGrille(g)) writeJson("../json.json",g,1);
             else{
                 writeJson("../json.json",g,0);
+            }
+        }
+        if(id==4){
+            Grille *g = Newgrille();
+            Grille *g2 = Newgrille();
+            initGrille(g, taille, tab);
+            initGrille(g2, taille, tab);
+            printGrille(g);
+            if(Solveur(g)){ writeJson("../json.json",g2,1);}
+            else{
+                writeJson("../json.json",g2,0);
             }
         }
     }
