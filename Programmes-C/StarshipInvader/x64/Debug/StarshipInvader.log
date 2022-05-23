@@ -1,4 +1,6 @@
 ﻿  parseur.c
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(12,12): warning C4047: 'fonction' : les niveaux d'indirection de 'FILE *' et de 'FILE **' sont différents
-C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(12,9): warning C4024: 'fclose' : types différents pour le paramètre formel et réel 1
-  StarshipInvader.vcxproj -> C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\x64\Debug\StarshipInvader.exe
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(22,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(37,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(57,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(132,25): warning C4013: 'Resoudre' non défini(e) ; extern retournant int pris par défaut
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\parseur.c(132,28): warning C4047: '=' : les niveaux d'indirection de 'Grille *' et de 'int' sont différents
