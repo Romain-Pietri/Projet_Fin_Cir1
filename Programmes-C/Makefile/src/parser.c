@@ -113,7 +113,7 @@ int main(){
     int taille;
     int id;
     int request;
-    char *chaine = readJson("..\\json.json");
+    char *chaine = readJson("../json.json");
     recup(chaine,tab,&taille,&id,&request);
     if(request==0 || request==1){
         /*
@@ -123,27 +123,27 @@ int main(){
         Id = 3 Verif
         Id = 4 Verif Generate
                 */
-        if(id==0) writeJson("..\\json.json",GenerateGrid(taille),1,id);
+        if(id==0) writeJson("../json.json",GenerateGrid(taille),1,id);
         if(id==1) {
             Grille *g = Newgrille();
             initGrille(g, taille, tab);
             g=Resoudre(g);
-            writeJson("..\\json.json",g,1,id);
+            writeJson("../json.json",g,1,id);
             }
         if(id==2) { 
             Grille *g = Newgrille();
             initGrille(g, taille, tab);
-            if(inteligent(g)) writeJson("..\\json.json",g,1,id);
+            if(inteligent(g)) writeJson("../json.json",g,1,id);
             else{
-                writeJson("..\\json.json",g,0,id);
+                writeJson("../json.json",g,0,id);
             }
         }
         if(id==3) {
             Grille *g = Newgrille();
             initGrille(g, taille, tab);
-            if(VerifGrille(g)) writeJson("..\\json.json",g,1,id);
+            if(VerifGrille(g)) writeJson("../json.json",g,1,id);
             else{
-                writeJson("..\\json.json",g,0,id);
+                writeJson("../json.json",g,0,id);
             }
         }
         if(id==4){
@@ -151,9 +151,9 @@ int main(){
             Grille *g2 = Newgrille();
             initGrille(g, taille, tab);
             initGrille(g2, taille, tab);
-            if(Solveur(g)){ writeJson("..\\json.json",g2,1,id);}
+            if(Solveur(g)){ writeJson("../json.json",g2,1,id);}
             else{
-                writeJson("..\\json.json",g2,0,id);
+                writeJson("../json.json",g2,0,id);
             }
         }
     }
