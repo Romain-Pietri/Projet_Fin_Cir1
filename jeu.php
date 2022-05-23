@@ -212,7 +212,7 @@
             ?>
             
             <form method = "post" action = "verfi">
-                <input type = "submit" name="Verifier "
+                <input type = "submit" name="Verifier ">
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
@@ -278,8 +278,8 @@
         </script>
     </div>
 
-</body>
+
 <?php } require 'footer.php'; ?>
 
-</html>
+
 
