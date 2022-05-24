@@ -12,6 +12,7 @@ body{
 
 /*----------titles----------*/
 h1{
+  font-family: 'OCR A Std', 'monospace';
   font-weight: bold;
   color: white;
   text-align: center;
@@ -111,7 +112,7 @@ nav li a:hover{
 .regles{
   font-weight: bold;
   color: white;
-  background-image:url(images/test.png);
+  background-image:url("images/test.png");
   background-repeat: no-repeat;
   margin-left: 30%;
   margin-right: 30%;
@@ -127,19 +128,30 @@ nav li a:hover{
 
 /*----------Start----------*/
 #start{
-  height: 50px;
-  margin-right: auto;
-  margin-left: auto;
+  height: 100px;
+  display: block;
+  margin: 0px auto;
 }
-/*----------Start----------*/
 
 
-/*----------Debut----------*/
+#bulle{
+  height: 220px;
+  text-align: center;
+  float: right;
+  margin: 0px;
+}
+
+
+#gadget{
+  margin-left: 60px;
+
+}
+
 .debut{
   color: white;
   text-align: center;
 }
-/*----------Debut----------*/
+/*----------Start----------*/
 
 
 /*----------Table score----------*/
