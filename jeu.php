@@ -203,27 +203,42 @@
             ?>
             
             <form method = "post" action = "verfi">
-                <input type="submit" name="Verifier" Value="Verifier"/>
+                <input type="submit" name="Verify" Value="Verify"/>
+            </form>
+			<form method = "post" action = "indice">
+                <input type="submit" name="Hint" Value="Hint"/>
+            </form>
+			<form method = "post" action = "solve">
+                <input type="submit" name="Solve" Value="Solve"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
 
             
          <script>
-		 console.log( <?php echo $initial_array1 ?>);
-			var initial_array1 = <?php echo '["'.implode('", "', $initial_array1). '"]'; ?>;
-			var initial_array2 = <?php echo '["'.implode('", "', $initial_array2). '"]'; ?>;
-			var initial_array3 = <?php echo '["'.implode('", "', $initial_array3). '"]'; ?>;
-			var initial_array4 = <?php echo '["'.implode('", "', $initial_array4). '"]'; ?>;
-			var initial_array5 = <?php echo '["'.implode('", "', $initial_array5). '"]'; ?>;
-			var initial_array6 = <?php echo '["'.implode('", "', $initial_array6). '"]'; ?>;
-			var initial_array7 = <?php echo '["'.implode('", "', $initial_array7). '"]'; ?>;
-			var initial_array8 = <?php echo '["'.implode('", "', $initial_array8). '"]'; ?>;
+			var initial_array1 = <?php echo '['.implode(', ', $initial_array1). ']'; ?>;
+			var initial_array2 = <?php echo '['.implode(', ', $initial_array2). ']'; ?>;
+			var initial_array3 = <?php echo '['.implode(', ', $initial_array3). ']'; ?>;
+			var initial_array4 = <?php echo '['.implode(', ', $initial_array4). ']'; ?>;
+			var initial_array5 = <?php echo '['.implode(', ', $initial_array5). ']'; ?>;
+			var initial_array6 = <?php echo '['.implode(', ', $initial_array6). ']'; ?>;
+			var initial_array7 = <?php echo '['.implode(', ', $initial_array7). ']'; ?>;
+			var initial_array8 = <?php echo '['.implode(', ', $initial_array8). ']'; ?>;
 			var initial_array = [initial_array1, initial_array2, initial_array3, initial_array4, initial_array5, initial_array6, initial_array7, initial_array8];
-			var contenu = initial_array;
-var taille = document.getElementById("variable").value;
+			var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+			for (let x = 0; x < 8; x++) {
+				for (let y = 0; y <8; y++){
+					if(initial_array[x][y] == 1){
+						contenu[x][y] = 1;
+					}
+					else if(initial_array[x][y] == 2){
+						contenu[x][y] = 2;
+					}
+				}
+			}
+			var taille = document.getElementById("variable").value;
 
-
+	
 			function afficher(size) {
 				for (let x = 1; x <= size; x++) {
 					for (let y = 1; y <= size; y++) {
@@ -264,7 +279,8 @@ var taille = document.getElementById("variable").value;
 				if (n == 0) {
 					document.getElementById(z).src = "images/img0.png";
 				}
-				console.log(contenu);
+				console.log("contenu : " + contenu);
+				console.log("initial_array : " + initial_array);
 			}
 				afficher(<?php echo $taille ?>);
 		</script>
