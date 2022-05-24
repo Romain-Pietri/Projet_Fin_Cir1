@@ -75,7 +75,7 @@ void writeJson(char* filename, Grille* g, int verif) {
             fprintf(fd, "],[");
         }
     }
-    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":4,\"verif\":%d}", g->taille, verif);
+    fprintf(fd, "]],\"length\":%d,\"request\":1,\"id\":0,\"verif\":%d}", g->taille, verif);
     fclose(fd);
 }
 /*
@@ -119,7 +119,7 @@ int main() {
     int taille;
     int id;
     int request;
-    char path[20] = "./json.json"; 
+    char path[30] = "Programmes-C/json.json"; 
     char* chaine = readJson(path);
     recup(chaine, tab, &taille, &id, &request);
     if (request == 0) {
