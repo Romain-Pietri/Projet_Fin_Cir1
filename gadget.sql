@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 20 mai 2022 à 13:10
+-- Généré le : mar. 24 mai 2022 à 09:42
 -- Version du serveur :  5.7.24
 -- Version de PHP : 8.0.1
 
@@ -28,9 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `grilles` (
-  `Ligne` varchar(64) NOT NULL,
+  `Ligne` varchar(256) NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `grilles`
+--
+
+INSERT INTO `grilles` (`Ligne`, `ID`) VALUES
+('a:8:{i:0;i:1;i:1;i:2;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 1),
+('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 2),
+('a:8:{i:0;i:2;i:1;i:0;i:2;i:0;i:3;i:2;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 3),
+('a:8:{i:0;i:1;i:1;i:0;i:2;i:0;i:3;i:1;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 4),
+('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 5),
+('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 6),
+('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 7),
+('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:0;}', 8);
 
 -- --------------------------------------------------------
 
