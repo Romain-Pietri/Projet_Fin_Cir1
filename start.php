@@ -12,7 +12,7 @@
 
 <?php
     if(isset($_SESSION["login"])){
-        echo "<a href='jeu.php'><img id=start' src='images/start.png'></a>";
+        echo "<a href='jeu.php'><img id='start' src='images/start.png'></a>";
     }
     else{
         echo "<a href='connexion.php'><img id='start' src='images/start.png'></a>";
