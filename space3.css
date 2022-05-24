@@ -128,7 +128,8 @@ nav li a:hover{
 /*----------Start----------*/
 #start{
   height: 50px;
-  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 /*----------Start----------*/
 

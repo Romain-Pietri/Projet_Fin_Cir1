@@ -6,7 +6,7 @@
 
 <h1>Starship<br>Invader</h1>
 
-<p class="debut">Hello young astronaut! I’m Captain Gadget <br> Welcome to Starship invader, our mission is to maintain the peace between us and the aliens helping them park their ships. You will have more details in the parking rules. Let's start !<p>
+<p class="debut"><br><br>Hello young astronaut! I’m Captain Gadget <br> Welcome to Starship invader, our mission is to maintain the peace between us and the aliens helping them park their ships. <br>You will have more details in the parking rules. Let's start !<br><br><p>
 
 <?php
     if(isset($_SESSION["login"])){
