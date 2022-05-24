@@ -66,6 +66,7 @@
     }
     else {
         $taille = $_POST["taille"];
+        $_SESSION['taille'] = $taille;
     
     require("connexiondb.php");
 	    
