@@ -216,6 +216,7 @@
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
+
             
          <script>
 			var initial_array1 = <?php echo '["' . implode('", "', $initial_array1) . '"]'; ?>;
@@ -231,55 +232,54 @@
             var taille = document.getElementById("variable").value;
             var contenu = [[0,0,0,0,2,0,0,0],[0,0,0,0,1,0,0,0],[0,0,0,0,2,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[2,0,0,0,0,0,1,0]];
             
-            function modifValeurs(x, y) {
-
-                let n = contenu[x-1][y-1];
-                n = (n + 1) % 3;
-                if (initial_array[x-1][y-1] == 1) {
-                    n = 1;
-                }
-                if (initial_array[x-1][y-1] == 2) {
-                    n = 2;
-                }
-                contenu[x-1][y-1] = n;
-                z = x*10 + y;
-                if (n == 1) {
-                    document.getElementById(z).src = "images/img1.png";
-                }
-                if (n == 2) {
-                    document.getElementById(z).src = "images/img2.png";
-                }
-                if (n == 0) {
-                    document.getElementById(z).src = "images/img0.png";
-                }
-                console.log(contenu);
-            }
 
             function afficher(size) {
-                for (let x = 1; x <= size; x++){
-                    for (let y = 1; y <= size; y++){
-                        let n = contenu[x-1][y-1];
-                        contenu[x-1][y-1] = n;
-                        z = x*10 + y;
-                        if (n == 1) {
-                            document.getElementById(z).src = "images/img1.png";
-                        }
-                        if (n == 2) {
-                            document.getElementById(z).src = "images/img2.png";
-                        }
-                        if (n == 0) {
-                            document.getElementById(z).src = "images/img0.png";
-                        }   
-                    }
-                }
-            }
+		        for (let x = 1; x <= size; x++){
+		            for (let y = 1; y <= size; y++){
+		                let n = contenu[x-1][y-1];
+		                contenu[x-1][y-1] = n;
+		                z = x*10 + y;
+		                if (n == 1) {
+		                    document.getElementById(z).src = "images/img1.png";
+		                }
+		                if (n == 2) {
+		                    document.getElementById(z).src = "images/img2.png";
+		                }
+		                if (n == 0) {
+		                    document.getElementById(z).src = "images/img0.png";
+		                }   
+		            }
+		        }
+
+
+			function modifValeurs(x, y) {
+
+			    let n = contenu[x-1][y-1];
+			    n = (n + 1) % 3;
+			    if (initial_array[x-1][y-1] == 1) {
+			        n = 1;
+			    }
+			    if (initial_array[x-1][y-1] == 2) {
+			        n = 2;
+			    }
+			    contenu[x-1][y-1] = n;
+			    z = x*10 + y;
+			    if (n == 1) {
+			        document.getElementById(z).src = "images/img1.png";
+			    }
+			    if (n == 2) {
+			        document.getElementById(z).src = "images/img2.png";
+			    }
+			    if (n == 0) {
+			        document.getElementById(z).src = "images/img0.png";
+			    }
+			        console.log(contenu);
+			    }
+
+            
             
             afficher(<?php echo $taille ?>);
         </script>
     </div>
 
-
-<?php } require 'footer.php'; ?>
-
-
-
+<?php  require ('footer.php'); } ?>
