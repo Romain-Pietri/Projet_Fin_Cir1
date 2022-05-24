@@ -203,7 +203,13 @@
             ?>
             
             <form method = "post" action = "verfi">
-                <input type="submit" name="Verifier" Value="Verifier"/>
+                <input type="submit" name="Verify" Value="Verify"/>
+            </form>
+			<form method = "post" action = "indice">
+                <input type="submit" name="Hint" Value="Hint"/>
+            </form>
+			<form method = "post" action = "solve">
+                <input type="submit" name="Solve" Value="Solve"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
