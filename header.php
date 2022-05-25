@@ -31,7 +31,7 @@
 					<li><a href="jeu.php"> Game </a></li>
 			        <li><a href="reglesjeu.php"> Rules </a></li>
 			        <li><a href="connexion.php"> Login </a></li>
-			        <li><a href="score.php"> Leaderboard </a></li>
+			        <li><a href="score.php"> Score </a></li>
 		    	</ul>
 		    </nav>
 		    <a><img id="logo" src="images/log.png"></a>
