@@ -5,10 +5,10 @@
 			$id=$_COOKIE['id'];
 		}
 		else{
-			setcookie("ID" , $id , time()+(365*24*3600));
+			setcookie("id" , $id , time()+(365*24*3600));
 		}
 	}
-	header("Location: jeu.php");
+	header("Location: interface.php");
 
 
 	if(isset($_POST['Hint'])){
@@ -17,21 +17,21 @@
 			$id=$_COOKIE['id'];
 		}
 		else{
-			setcookie("ID" , $id , time()+(365*24*3600));
+			setcookie("id" , $id , time()+(365*24*3600));
 		}
 	}
-	header("Location: jeu.php");
+	header("Location: interface.php");
 
 
-	if(isset($_POST['Solver'])){
+	if(isset($_POST['Solve'])){
 		$id=3;
 		if (isset($_COOKIE['id'])){ 
 			$id=$_COOKIE['id'];
 		}
 		else{
-			setcookie("ID" , $id , time()+(365*24*3600));
+			setcookie("id" , $id , time()+(365*24*3600));
 		}
 	}
-	header("Location: jeu.php");
+	header("Location: interface.php");
 	
 ?>

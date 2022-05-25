@@ -271,6 +271,6 @@
 			}
 				afficher(<?php echo $taille ?>);
 		</script>
+		<?php require ('footer.php'); } ?>
     </div>
 
-<?php  require ('footer.php'); } ?>

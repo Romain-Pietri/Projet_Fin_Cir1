@@ -5,13 +5,13 @@ if(isset($_COOKIE['id'])){
         generator();
     }
     if($_COOKIE['id']==1){
-        solver();
+        verif();
     }
     if($_COOKIE['id']==2){
         indice();
     }
     if($_COOKIE['id']==3){
-        verif();
+        solver();
     }
     if($_COOKIE['id']==4){
         verifgen();
@@ -46,7 +46,7 @@ function generator(){
     mysqli_close($connexion);
 }
 
-function solver(){
+function verif(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=1;
@@ -57,10 +57,10 @@ function solver(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
-        //faisable => envoyer tableau dans BD
+        header("location:won.php");
     }
     else{
-        //pas faisable
+        header("location:lost.php");
     }
 }
 
@@ -74,9 +74,10 @@ function indice(){
     sleep(6);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
+    header("location:jeu.php");
 }
 
-function verif(){
+function solver(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=3;
@@ -87,10 +88,10 @@ function verif(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
-        header("location:won.php");
+        //faisable => envoyer tableau dans BD
     }
     else{
-        header("location:lost.php");
+        //pas faisable
     }
 }
 
