@@ -1,7 +1,8 @@
 <?php  
     session_start();
+    require "header.php";
 
-    if(!isset($_SESSION["taille"]) && !isset($_POST["Envoyer"])){
+    if(!isset($_SESSION["taille"])){
 
         echo '<legend class="input">Choisissez la taille de la grille :</legend>
     <form method="post" action="jeu.php">
@@ -16,8 +17,7 @@
         
     }
     else{
-        $_SESSION["taille"] = $_POST["taille"];
         header("jeu.php");
     }
-
+    require "footer.php";
 ?>
