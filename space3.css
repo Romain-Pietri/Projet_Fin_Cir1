@@ -212,10 +212,6 @@ footer {
   color : white; 
   font-weight: bold;
   text-align: center;
-  position: fixed; 
-  bottom:0; 
-  left: 0; 
-  right:0; 
 }
 
 .icon{
@@ -234,5 +230,12 @@ ul{
 #legal{
   color: white;
   cursor: pointer;
+}
+
+#footer{
+  position: fixed; 
+  bottom:0; 
+  left: 0; 
+  right:0; 
 }
 /*----------Footer----------*/
