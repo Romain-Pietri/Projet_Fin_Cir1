@@ -51,7 +51,7 @@
 <body>
 <?php
      
-    if(!isset($_POST["Envoyer"])){
+    if(!isset($_SESSION['taille'])){
         echo '<legend class="input">Choisissez la taille de la grille :</legend>
     <form method="post" action="jeu.php">
         <input type="radio" name="taille" id="taille" value="4"/>
@@ -202,13 +202,9 @@
             
             ?>
             
-            <form method = "post" action = "verfi">
+            <form method="post" action = "cookies.php">
                 <input type="submit" name="Verify" Value="Verify"/>
-            </form>
-			<form method = "post" action = "indice">
                 <input type="submit" name="Hint" Value="Hint"/>
-            </form>
-			<form method = "post" action = "solve">
                 <input type="submit" name="Solve" Value="Solve"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />

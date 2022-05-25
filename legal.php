@@ -14,7 +14,7 @@
 		<br>
 		In accordance with the provisions of Articles 6-III and 19 of Law No. 2004-575 of June 21, 2004 for the
 		Confidence in the digital economy, known as L.C.E.N., it is brought to the attention of users and
-		visitors, hereinafter the "User", of the site https://www.BibliothequeDelInfini.fr/, hereinafter the "Site", these
+		visitors, hereinafter the "User", of the site https://www.StarshipInvader.fr/, hereinafter the "website", these
 		Legal Notice.
 		<br>
 		The connection and navigation on the Site by the User implies full and unreserved acceptance
@@ -23,18 +23,18 @@
 		<br><br>
 		<strong>ARTICLE 1 - THE PUBLISHER</strong>
 		<br>
-		Editing and management of the publication of the Site is provided by Lily Malowa, domiciled at 1 rue de Mars
-		Lille, whose e-mail address is BibliothequeDelInfini@gmail.com.
+		Editing and management of the publication of the Site is provided by Inspecteur gadget, domiciled at 1 rue demars
+		Lille, whose e-mail address is StarshipInvader@gmail.com.
 		hereinafter the "Publisher".
 		<br><br>
 		<strong>ARTICLE 2 - THE HOST</strong>
 		<br>
-		The host of the Site is the company ISS compagnie, whose head office is located at 1 rue de Mars
-		Lille, with the telephone number: 0320379823
+		The host of the Site is the company ISS compagnie, whose head office is located at 1 rue demars
+		Lille, with the telephone number: (+33) (0) 6 24 31 06 38
 		<br><br>
 		<strong>ARTICLE 3 - ACCESS TO THE SITE</strong>
 		<br>
-		The Site is accessible anywhere, 7 days a week, 24 hours a day, except in cases of force majeure, interruption
+		The wesite is accessible anywhere, 7 days a week, 24 hours a day, except in cases of force majeure, interruption
 		programmed or not and which may result from a need for maintenance.
 		In the event of modification, interruption or suspension of the Site, the Publisher cannot be held responsible.
 		<br><br>

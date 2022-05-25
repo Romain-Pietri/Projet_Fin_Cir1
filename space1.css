@@ -194,6 +194,12 @@ nav li a:hover{
   text-align: center;
 }
 
+#lost{
+  height: 300px;
+  display: block;
+  margin: 0px auto;
+}
+
 
 /*----------Paramètre + deco----------*/
 #theme{
