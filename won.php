@@ -9,7 +9,7 @@
 </header>
 <main>
 <?php
-if ($taille==4){
+if($taille==4){
 ?>
 <div class="regles">
 <br>
@@ -55,5 +55,6 @@ else if($taille==8){
 </main>
 
 <?php
+}
     require "footer.php";
 ?>
