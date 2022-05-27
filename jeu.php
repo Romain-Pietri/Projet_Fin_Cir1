@@ -20,8 +20,8 @@
         th,
         td {
             text-align: center;
-            width : 100px;
-            height : 100px;
+            width : 75px;
+            height : 75px;
         }
           
         table#t01 tr {

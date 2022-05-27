@@ -28,7 +28,16 @@
 				<a href="deco.php"><img id="theme" src="images/logout.png"></a>
 			<nav>
 				<ul>
-					<li><a href="jeu.php"> Game </a></li>
+					<li>
+					<?php 
+					if(!isset($_SESSION['taille'])){
+						echo '<a href="taille.php"> Game </a>';
+					}
+					else{
+							echo'<a href="jeu.php"> Game </a>';
+					}
+					?>
+					</li>
 			        <li><a href="reglesjeu.php"> Rules </a></li>
 			        <li><a href="connexion.php"> Login </a></li>
 			        <li><a href="score.php"> Score </a></li>
