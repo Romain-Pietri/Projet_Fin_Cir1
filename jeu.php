@@ -203,6 +203,18 @@
 
             
          <script>
+			
+			function createCookies() {
+				document.cookie = 'Ligne1 = ' + contenu[0] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne2 = ' + contenu[1] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne3 = ' + contenu[2] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne4 = ' + contenu[3] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne5 = ' + contenu[4] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne6 = ' + contenu[5] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne7 = ' + contenu[6] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne8 = ' + contenu[7] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+			}
+
 			var initial_array1 = <?php echo '['.implode(', ', $initial_array1). ']'; ?>;
 			var initial_array2 = <?php echo '['.implode(', ', $initial_array2). ']'; ?>;
 			var initial_array3 = <?php echo '['.implode(', ', $initial_array3). ']'; ?>;
@@ -213,18 +225,22 @@
 			var initial_array8 = <?php echo '['.implode(', ', $initial_array8). ']'; ?>;
 			var initial_array = [initial_array1, initial_array2, initial_array3, initial_array4, initial_array5, initial_array6, initial_array7, initial_array8];
 			var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+			
 			for (let x = 0; x < 8; x++) {
-				for (let y = 0; y <8; y++){
+				for (let y = 0; y < 8; y++){
 					if(initial_array[x][y] == 1){
 						contenu[x][y] = 1;
 					}
 					else if(initial_array[x][y] == 2){
 						contenu[x][y] = 2;
-					}
+					}					
 				}
 			}
+
 			var taille = document.getElementById("variable").value;
 
+
+			
 	
 			function afficher(size) {
 				for (let x = 1; x <= size; x++) {
@@ -242,8 +258,12 @@
 							document.getElementById(z).src = "images/img0.png";
 						}
 					}
+
+					createCookies();
 				}
 			}
+
+			
 
 			function modifValeurs(x, y) {
 
@@ -264,15 +284,19 @@
 					document.getElementById(z).src = "images/img2.png";
 				}
 				if (n == 0) {
-					document.getElementById(z).src = "images/img0.png";
+					document.getElementById(z).src = "images/img0	.png";
 				}
-				console.log("contenu : " + contenu);
-				console.log("initial_array : " + initial_array);
+				createCookies();
 			}
-				afficher(<?php echo $taille ?>);
+
+			afficher(<?php echo $taille; ?>);
+
 		</script>
     </div>
+	<?PHP
+		$_COOKIE["height"];
 
+	?>
 <footer id="footer">
 
 	    <dl>
