@@ -3,7 +3,7 @@
     require "header.php";
 
     if(isset($_SESSION["taille"])){
-        header("jeu.php");
+        header("Location: jeu.php");
     }
     else{
         echo '<legend class="input">Choisissez la taille de la grille :</legend>
@@ -14,7 +14,7 @@
 			<label for="6x6" class="input">6x6</label>
         <input type="radio" name="taille" id="taille" value="8"/>
 			<label for="8x8" class="input">8x8</label>    
-        <input type="submit" name="Envoyer" Value="Envoyer"/>
+        <input type="submit" name="Generate" Value="Generate"/>
     </form>';
     }
     require "footer.php";
