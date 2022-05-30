@@ -50,9 +50,9 @@
 <body>
 <?php
     
-	if(isset($_POST["Envoyer"])){
-        $_SESSION["taille"] = $_POST["taille"];
-    }
+	if(isset($_POST["Generate"])){
+		$_SESSION["taille"] = $_POST["taille"];
+	}
     if(!isset($_SESSION["taille"])){
         header("Location: taille.php");
     }

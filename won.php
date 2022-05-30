@@ -55,7 +55,6 @@ else if($taille==8){
 <br>
 <p> You can try to do it faster, to get a better score and appear in the leaderboard !</p>
 <br>
-<?php echo '<a href="taille.php"> New game </a>'; ?>
 </div>
 
 
