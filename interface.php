@@ -1,19 +1,35 @@
 <?php
-
+require("connexiondb.php");
 if(isset($_COOKIE['id'])){
-    if($_COOKIE['id']==0){
+
+    if(($_COOKIE['id']) == 0){
+        echo $_COOKIE['id'];
+        $request = "DELETE FROM grilles";
+        $exe=mysqli_query($connexion,$request);
+        if( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
+                die();
+        }
         generator();
     }
-    if($_COOKIE['id']==1){
+
+    if(($_COOKIE['id']) == 1){
+        echo $_COOKIE['id'];
         verif();
     }
-    if($_COOKIE['id']==2){
+
+    if(($_COOKIE['id']) == 2){
+        echo $_COOKIE['id'];
         indice();
     }
-    if($_COOKIE['id']==3){
+
+    if(($_COOKIE['id']) == 3){
+        echo $_COOKIE['id'];
         solver();
     }
-    if($_COOKIE['id']==4){
+
+    if(($_COOKIE['id']) == 4){
+        echo $_COOKIE['id'];
         verifgen();
     }
     
@@ -34,18 +50,19 @@ function generator(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $tab=$data->tableau;//envoyer tableau dans BD
-    $id=1;
+    $id = 1;
     for ($i=0;$i<8;$i++){
         $seri=serialize($tab[$i]);
         $request="INSERT INTO grilles (Ligne,ID) VALUES ('$seri','$id')";
         $exe=mysqli_query($connexion,$request);
-        if ( $exe == FALSE ){
-                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+        if( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
                 die();
         }
-        $id=$id+1;
+        $id = $id + 1;
     }
     mysqli_close($connexion);
+    header("Location : jeu.php");
 }
 
 function verif(){
@@ -73,7 +90,7 @@ function indice(){
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     header("location:jeu.php");
