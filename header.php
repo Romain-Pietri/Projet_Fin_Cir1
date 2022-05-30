@@ -10,38 +10,32 @@
 </head>
 
 <body>
-
-	<?php		
-		if (isset($_COOKIE['theme'])){ 
-			$style=$_COOKIE['theme'];	
-		}
-
-		else {
-			$style="space1";
-		}
-	?>
-	<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
-
 		<header>
-				
-				<a href="theme.php"><img id="theme" src="images/para.png"></a>
-				<a href="deco.php"><img id="theme" src="images/logout.png"></a>
+
 			<nav>
-				<ul>
-					<li>
-					<?php 
-					if(!isset($_SESSION['taille'])){
-						echo '<a href="taille.php"> Game </a>';
-					}
-					else{
-							echo'<a href="jeu.php"> Game </a>';
-					}
-					?>
-					</li>
-			        <li><a href="reglesjeu.php"> Rules </a></li>
-			        <li><a href="connexion.php"> Login </a></li>
-			        <li><a href="score.php"> Score </a></li>
-		    	</ul>
-		    </nav>
+			  <a href="taille.php">GAME</a>
+			  <a href="score.php">SCORE</a>
+			  <a href="regles.php">RULES</a>
+			  <div id="indicator"></div>
+			</nav>
+			<a href="parametres.php"><img id="parametres" src="images/para.png"></a>
+			<a href="deco.php"><img id="parametres" src="images/logout.png"></a>
+
 		    <a><img id="logo" src="images/log.png"></a>
-				<br>
+
+		    <?php		
+				if (isset($_COOKIE['theme'])){ 
+					$style=$_COOKIE['theme'];	
+				}
+
+				else {
+					$style="space1";
+				}
+			?>
+			<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
+
+			<?php
+			if($_COOKIE['music']==0){
+				echo'<audio autoplay><source src="images/music.mp3" type="audio/mpeg"></audio>';
+			}
+			?>

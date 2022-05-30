@@ -4,39 +4,38 @@
     require "header.php";
 ?> 
 
-	<h1>Welcome to Starship invader ! Please login for a better experience !</h1>
-	<br>
     </header>
-    
+    <img id="title" src="images/titre.gif">
 <main>
+	<img id="gadget" src="images/gadget1.gif">
 
-<!--Menu-->
 <?php
-	if(empty($_SESSION["nom"])){
+	if(empty($_SESSION["login"])){
 ?>
+ 
+<form action="" method="post">
+	<legend id="connect">PLAYER NAME:</legend>
+	<input type="text" name="login" required>
+	<legend>PASSWORD:</legend>
+	<input type="password" name="passwd" required>
 
-	<form class="formLetter" action="" method="post">
-     	<fieldset>
-     		<legend>Login :</legend>
-     		<label>Nickname :</label>
-     		<input type="text" name="login" placeholder="Enter your nickname" required>
-     		<br>
-     		<label>Password :</label>
-     		<input type="password" name="passwd" placeholder="Enter your password" required>
-     		<br><br>
-     		<input type="submit" name="send" value="Connect"/>
-     		<br>
-     		<p> No account ?<a href='register.php'> Registration</a></p>
-     	</fieldset>
-     </form>
+	<input type="submit" name="send" value="CONNECT"/>
+	<p> No account ?<a href='register.php'> Registration</a></p>
+
+</form>
 
 <?php
 	}
 		else
-			echo'<div class="para">
+			echo'<div class="logout">
 				<h1> Logout here!</h1>
 				<br>
-				<a href="deco.php"><img id="start" src="images/logout.png"></a>
+				<a href="deco.php"><img id="logout" src="images/logout.png"></a>
+				</div>
+				<div class="logout">
+				<h1> Go back to game !</h1>
+				<br>
+				<a href="taille.php"><img id="logout" src="images/log.png"></a>
 				</div>';
 		?>
 
@@ -60,14 +59,9 @@
 			while($ligne=mysqli_fetch_assoc($result)){
 
 				if($ligne['login']==$login && $ligne['password']==$mdp){
-					$_SESSION["nom"]=$login;
+					$_SESSION["login"]=$login;
 					mysqli_close($connexion);
-					echo '<div class="para">
-				<h1> Successful connection !</h1>
-
-				<br>
-				<a href="reglesjeu.php"><img id="start" src="images/start.png"></a>
-				</div>';
+					header("location:regles.php");
 				}
 			}
 	}
@@ -76,4 +70,3 @@
 	
 </main>
 <br><br>
-<?php require 'footer.php'; ?>
