@@ -1,5 +1,5 @@
 <?php
-
+require("connexiondb.php");
 if(isset($_COOKIE['id'])){
     if($_COOKIE['id']==0){
         generator();
@@ -35,6 +35,12 @@ function generator(){
     $data=json_decode($json);
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
+    $request="DELETE FROM grilles";
+    $exe=mysqli_query($connexion,$request);
+        if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+        }
     for ($i=0;$i<8;$i++){
         $seri=serialize($tab[$i]);
         $request="INSERT INTO grilles (Ligne,ID) VALUES ('$seri','$id')";
