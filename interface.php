@@ -36,7 +36,7 @@ function generator(){
     $request="DELETE FROM grilles";
     $exe=mysqli_query($connexion,$request);
         if ( $exe == FALSE ){
-                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                echo "<p>Problème :".mysqli_error($connexion)."</p>" ;
                 die();
         }
     for ($i=0;$i<8;$i++){
