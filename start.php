@@ -1,25 +1,42 @@
-<?php
-    session_start();
+<?php 
+session_start();
+if(isset($_COOKIE['music'])&&$_COOKIE['music']!=1){
+	$music=0;
+}
+setcookie("music" , $music , time()+(365*24*3600));
 
-    require "header.php";
 ?>
 
-<h1>Starship Invader</h1>
-<br>
+	   <?php		
+			if (isset($_COOKIE['theme'])){ 
+				$style=$_COOKIE['theme'];	
+			}
+			else {
+				$style="space1";
+			}
+		?>
+		<link rel="stylesheet" href ="space1.css"/>
 
-<img id="bulle" src="images/bulle.png">
-<img id="gadget" src="images/gadget1.gif">
+		<?php
+			if($_COOKIE['music']==0){
+				echo'<audio autoplay><source src="images/music.mp3" type="audio/mpeg"></audio>';
+			}
+		?>
 
-<?php
-    if(isset($_SESSION["login"])){
-        echo "<a href='jeu.php'><img id='start' src='images/start.png'></a>";
-    }
-    else{
-        echo "<a href='connexion.php'><img id='start' src='images/start.png'></a>";
-    }
-?>
+	</header>
+
+	<main>
+		<img id="title" src="images/titre.gif">
+		<img id="speak" src="images/bulle.gif">
+		<img id="gadget" src="images/gadget1.gif">
 
 
-<br>
+		<a id="button" href="connexion.php">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        START
+    	</a>
 
-<?php require 'footer.php'; ?>
+	</main>

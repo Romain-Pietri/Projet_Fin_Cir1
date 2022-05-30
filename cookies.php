@@ -1,6 +1,4 @@
 <?php
-	require("save.php");
-
 	if(isset($_POST['Verify'])){
 		$id=1;
 		if (isset($_COOKIE['id'])){ 
