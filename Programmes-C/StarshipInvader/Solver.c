@@ -537,6 +537,10 @@ bool Solveur(Grille *g){
     
 }
 Grille* Resoudre(Grille* g) {
+    while(inteligent(g)){
+        NULL;
+    }
+    printGrille(g);
     Grille* tmp = Solve(g, 0, 0);
     if (tmp != NULL) {
         return tmp;
@@ -549,15 +553,16 @@ Grille* Resoudre(Grille* g) {
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,-1,-1,-1,-1,-1}     
+        {-1,-1,-1,-1,-1, 0,-1,-1},
+        { 1, 0, 0, 1,-1,-1, 1,-1},
+        {-1, 0,-1,-1,-1,-1,-1, 0},
+        {-1,-1, 1,-1, 0,-1,-1,-1},
+        { 1,-1,-1, 0,-1, 1,-1,-1},
+        {-1, 0,-1,-1,-1,-1, 0,-1},
+        {-1,-1,-1,-1, 1,-1, 0,-1},
+        { 0,-1, 0,-1,-1,-1,-1, 1}     
     };
-    initGrille(g,4, tab);
-    printf("%d",VerifGrille(g));
+    initGrille(g,8, tab);
+    printGrille(g);
+    printGrille(Resoudre(g));
 }
