@@ -21,10 +21,12 @@ if(isset($_COOKIE['id'])){
 else{
     echo "le cookie n'existe pas";
 }
+
 function generator(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=0;
+    $data->length=$_SESSION['taille'];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
