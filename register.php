@@ -9,7 +9,7 @@
 
     </header>
 
-<style>.error{color: red;}</style>
+<style>.error{color: red;margin-left:375px ;}</style>
 
 <main>
 
@@ -40,22 +40,19 @@
 
 		?>
 
-<form class="formLetter" method="post" action="">
-	<fieldset>
-		<legend>Registration</legend>
-     		<label>Nickname :</label>
+<form method="post" action="">
+     		<legend>Nickname :</legend>
      		<input type="text" name="log" placeholder="Enter your nickname" required>
      		<br>
-     		<label>Password :</label>
+     		<legend>Password :</legend>
      		<input type="password" name="pass"  placeholder="Enter your password" required>
      		<span class="error"> <?php echo $passErr;?></span>
      		<br>
-     		<label>Confirmation :</label>
-     		<input type="password" name="confirm"  placeholder="Enter your password" required>
+     		<legend>Confirmation :</legend>
+     		<input type="password" name="confirm"  placeholder="Confirm your password" required>
      		<span class="error"> <?php echo $confirmErr;?></span>
      		<br><br>
      		<input type="submit" name="envoi" value="Register"/>
-	</fieldset>
 </form>
 
 <?php
@@ -77,4 +74,3 @@
 
 </main> 
 <br><br>
-<?php require 'footer.php'; ?>

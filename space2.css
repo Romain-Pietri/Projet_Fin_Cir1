@@ -1,103 +1,54 @@
-/*police de la page*/
-* {
-  margin: 0;
-  font-family: 'Lato', 'sans-serif';
-}
-/*image de fond*/
 body{
-  background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("images/space2.png");
+  background-image: url("images/space2.gif");
   background-repeat: no-repeat;
   background-size: cover;
 } 
 
-/*----------titles----------*/
 h1{
   font-family: 'OCR A Std', 'monospace';
   font-weight: bold;
   color: white;
   text-align: center;
 }
-/*----------titles----------*/
 
-/*----------Logo----------*/
+h2{
+  color: transparent;
+}
+
+#title{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#speak{
+  height: 220px;
+  display: block;
+  margin-left: 220px;
+  margin-top: 10px;
+}
+
+#gadget{
+  height: 300px;
+  position: fixed; 
+  bottom:0; 
+  left: 0; 
+}
+
+#parametres{
+  margin-left: 10px;
+  margin-right: 5px;
+  height: 30px;
+  float: right;
+  margin-top: 10px;
+}
+
 #logo {
   margin: 0;
-  height: 150px;
-}
-/*----------Logo----------*/
-
-/*----------Menu----------*/
-nav ul{
-  list-style-type: none;
+  height: 120px;
 }
 
-nav li a{
-  margin: 10px;
-  padding: 8px 16px;
-  text-align: center;
-
-  height: 25px;
-  float: right;
-  
-  display: block;
-  color:  white;
-  text-decoration: none;
-  background-image: url("images/cadre.png");
-  background-repeat: no-repeat;
-  background-size: 70px 40px;
-  border-radius: 10px;
-}
-
-nav li a:hover{
-    color:white;
-    background-color:gray;
-}
-/*----------Menu----------*/
-
-
-
-/*----------Formulaire----------*/
-.formLetter fieldset{
-  border : 2px solid white;
-  border-radius: 10px;
-  width : 60% ;
-  margin : auto ; 
-  padding : 25px;
-  color: white;
-}
-
-.formLetter fieldset:hover{
-  box-shadow : 2px 2px 5px gray;
-}
-
-.formLetter fieldset legend{
-  font-weight : bold;
-  text-shadow: 1px 1px 0 black; 
-}
-
-.formLetter fieldset label{
-  font-weight : bold ;
-  display : inline-block ;
-  width : 15% ;
-}
-
-.formLetter fieldset input[type="password"], input[type="text"]{
-  border-bottom : 1px solid black;
-  border-radius: 5px;
-  background-color : white;
-  width : 25%;
-}
-
-.formLetter input[type="password"]:focus, input[type="text"]:focus{
-  outline-style : none ; 
-  border-bottom : 1px solid purple;
-  background-color : white;
-}
-/*----------Formulaire----------*/
-
-
-/*----------Zone de texte----------*/
-.para{
+.logout{
   margin : 50px auto 50px ;
   color : white ;
   width : 400px ;
@@ -107,56 +58,20 @@ nav li a:hover{
   padding: 20px;
   background-color:rgba(0,0,0,0.65);
 }
-/*----------Zone de texte----------*/
 
-
-/*----------Regles du jeu----------*/
-.regles{
-  font-weight: bold;
-  color: white;
-  background-image:url("images/test.png");
-  background-repeat: no-repeat;
-  margin-left: 30%;
-  margin-right: 30%;
+.logout:hover{
+    box-shadow: 0 0 20px white;
 }
 
-.regles p{
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 0%;
-}
-/*----------Regles du jeu----------*/
-
-
-/*----------Start----------*/
-#start{
-  height: 100px;
-  display: block;
-  margin: 0px auto;
+#logout{
+    height: 60px;
 }
 
-
-#bulle{
-  height: 220px;
-  text-align: center;
-  float: right;
-  margin: 0px;
+#logout:hover{
+    transition: 0.5s;
+    height: 80px;
 }
 
-
-#gadget{
-  margin-left: 60px;
-
-}
-
-.debut{
-  color: white;
-  text-align: center;
-}
-/*----------Start----------*/
-
-
-/*----------Table score----------*/
 .table,td,th{
   border: solid; 
   border-collapse:collapse;
@@ -166,76 +81,287 @@ nav li a:hover{
   margin-left: auto;
   margin-right: auto;
 }
-/*----------Table score----------*/
-
 
 #img{
-  height: 170px;
+    height: 200px;
 }
 
-.mention{
-  color: white;
+select{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#ca{
-  text-decoration: none;
-  color: white;
-  font-size: 15px;
+/*----------Button start----------*/
+#button{
+    font-size: 25px;
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 20px 0;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    text-align: center;
+    float: right;
+    margin-right: 550px;
 }
 
-.button{
-  border : 2px solid white;
-  border-radius: 10px;
-  width : 10% ;
-  margin : auto ; 
-  padding : 10px;
-  color: white;
-  background-color: black;
-  text-align: center;
+#button:hover{
+    background: #368343;
+    color: white;
+    box-shadow: 0 0 5px #368343,
+                0 0 25px #368343,
+                0 0 50px #368343,
+                0 0 200px #368343;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+#button:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+#button:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+#button span{
+    position: absolute;
+    display: block;
+}
+#button span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#368343);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+#button span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#368343);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+#button span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#368343);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
 }
 
+#button span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#368343);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+/*----------Bouton start----------*/
 
-/*----------Paramètre + deco----------*/
-#theme{
-  margin: 10px;
+
+/*----------Formulaire----------*/
+legend{
+    text-align: center;
+    color: white;
+    font-family: bold;
+}
+
+#connect{
+    margin-top: 100px;
+}
+
+input[type=text],input[type=password]{
+    background-color: transparent;
+    color: white;
+    width:40%;
+    border:2px solid #368343368343;
+    border-radius:4px;
+    display: block;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+input[type=submit]{
+    color: white;
+    background-color: transparent;
+    border-color: #368343368343;
+    width: 15%;
+    display: block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover{
+    background-color: #368343368343;
+    border-color: white;
+    box-shadow: 0 0 8px dodgerBlue;
+    width: 20%;
+    transition: 0.5s;
+}
+  
+input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
+    background-color: #368343368343;
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+p{
+    color: white;
+    text-align: center;
+}
+/*----------Formulaire----------*/
+
+/*----------Menu----------*/
+nav {
+  
   height: 30px;
-  float: right;
-  text-align: center;
+  margin-top: 20px;
+  position: absolute;
+  width: 319px;
+  display: block;
+  margin-left: 850px;
+  transform: translateY(-50%);
 }
-/*----------Paramètre + deco----------*/
 
-
-/*----------Footer----------*/
-footer {
-  padding: 20px;
-  background-color: black;
-  color : white; 
+nav a {
+  position: relative;
+  width: 33.333%;
+  display: table-cell;
+  text-align: center;
+  color: #949494;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
-  text-align: center;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
 }
 
-.icon{
-  display: inline;
-  margin-right: 35px;
+nav a:before,
+nav a:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
 }
 
-.reseaux{
-  width: 40px;
+nav a:before {
+  top: 0;
+  left: 10px;
+  width: 6px;
+  height: 6px;
 }
 
-ul{
-  list-style-type: none;
+nav a:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
 }
 
-#legal{
-  color: white;
-  cursor: pointer;
+nav a:nth-child(1):before {
+  background-color: #368343;
 }
 
-#footer{
-  position: fixed; 
-  bottom:0; 
-  left: 0; 
-  right:0; 
+nav a:nth-child(1):after {
+  background-color: red;
 }
-/*----------Footer----------*/
+
+nav a:nth-child(2):before {
+  background-color: #368343;
+}
+
+nav a:nth-child(2):after {
+  background-color: white;
+}
+
+nav a:nth-child(3):before {
+  background-color: purple;
+}
+
+nav a:nth-child(3):after {
+  background-color: #368343;
+}
+
+#indicator {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: 0.2s ease left;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+  background: linear-gradient(130deg, #000099, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+  left: 34%;
+  background: linear-gradient(130deg, #000099, white);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+  left: 70%;
+  background: linear-gradient(130deg, purple, #000099);
+}
+

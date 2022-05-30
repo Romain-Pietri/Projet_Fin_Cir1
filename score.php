@@ -79,5 +79,3 @@
 </main>
 
 <footer>
-
-<?php require 'footer.php'; ?>
