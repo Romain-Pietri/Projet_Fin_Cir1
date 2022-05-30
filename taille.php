@@ -3,7 +3,7 @@
     require "header.php";
 
     if(isset($_SESSION["taille"])){
-        header("jeu.php");
+        header("Location: jeu.php");
     }
     else{
         echo '<legend class="input">Choisissez la taille de la grille :</legend>

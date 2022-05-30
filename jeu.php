@@ -54,7 +54,7 @@
         $_SESSION["taille"] = $_POST["taille"];
     }
     if(!isset($_SESSION["taille"])){
-        header("taille.php");
+        header("Location: taille.php");
     }
     else{
     $taille = $_SESSION["taille"];
