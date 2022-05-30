@@ -5,7 +5,7 @@
     if(!isset($_SESSION["taille"])){
 
         echo '<legend class="input">Choisissez la taille de la grille :</legend>
-    <form method="post" action="jeu.php">
+    <form method="post" action="cookies.php">
         <input type="radio" name="taille" id="taille" value="4"/>
 			<legend for="4x4" class="input">4x4</legend>
 		<input type="radio" name="taille" id="taille" value="6"/>
