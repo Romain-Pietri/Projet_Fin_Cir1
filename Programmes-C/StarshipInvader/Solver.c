@@ -281,6 +281,7 @@ bool VerifGrille(Grille *g){
         }
         if(!isUniqueCol(g,i) || !isUniqueLigne(g, i)) return false;
         for(int j=1;j<g->taille-1;++j){
+            if(g->tab[i][j]==-1) return false;
             if(i==0 || i==g->taille-1){
                 if(g->tab[i][j-1]==g->tab[i][j] && g->tab[i][j+1]==g->tab[i][j]){
                     return false;
@@ -544,20 +545,19 @@ Grille* Resoudre(Grille* g) {
         return NULL;
     }
 }
-/*
+
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
-        {-1,0 ,0 ,-1,0 ,-1,-1,-1},
-        {-1,-1,-1, 1,0 ,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
-        {-1,0 ,-1,-1,-1,-1,-1,-1},
-        {-1,-1,-1,0 ,0 ,-1,-1,-1},
-        {-1,0 ,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
+        {-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1},
         {-1,-1,-1,-1,-1,-1,-1,-1}     
     };
-    initGrille(g,8, tab);
-
-    Solveur(g);
-}*/
+    initGrille(g,4, tab);
+    printf("%d",VerifGrille(g));
+}
