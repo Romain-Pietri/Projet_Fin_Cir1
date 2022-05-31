@@ -52,7 +52,7 @@
      		<input type="password" name="confirm"  placeholder="Confirm your password" required>
      		<span class="error"> <?php echo $confirmErr;?></span>
      		<br><br>
-     		<input type="submit" name="envoi" value="Register"/>
+     		<input type="submit" class="submit" name="envoi" value="Register"/>
 </form>
 
 <?php
