@@ -17,6 +17,6 @@
         
     }
     else{
-        header("jeu.php");
+        header("Location : jeu.php");
     }
 ?>
