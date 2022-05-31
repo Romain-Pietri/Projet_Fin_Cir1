@@ -60,7 +60,7 @@
 		
 		require("connexiondb.php");
 		
-		$request="INSERT INTO utilisateurs(login,password,Score) VALUES ('$log','$pass','0')";
+		$request="INSERT INTO utilisateurs(login,password,Score,Indice,Money) VALUES ('$log','$pass','0','5','0')";
 		$resultat=mysqli_query($connexion,$request);
 		if ( $resultat == FALSE ){
 						echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
