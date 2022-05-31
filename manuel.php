@@ -1,5 +1,6 @@
 <?php
 require("header.php");
+?> 
 
 <div id ="container">
             
@@ -23,9 +24,7 @@ require("header.php");
             ?>
             
             <form method="post" action = "cookies.php">
-                <input type="submit" name="Verify" Value="Verify"/>
-                <input type="submit" name="Hint" Value="Hint"/>
-                <input type="submit" name="Solve" Value="Solve"/>
+                <input type="submit" name="Create" Value="Create"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
