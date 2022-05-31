@@ -165,8 +165,8 @@
             
             <form method="post" action = "cookies.php">
                 <input type="submit" id="verif" name="Verify" Value="Verify"/>
-                <input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
                 <input type="submit" id="solve" name="Solve" Value="Solve"/>
+                <input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 

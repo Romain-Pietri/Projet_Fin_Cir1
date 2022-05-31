@@ -130,7 +130,11 @@ table#t01 tr {
 }
 
 #hint{
-    margin-right: 20px;
+    display: block;
+    margin-right: 390px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 5px 5px;
 }
 
 /*----------Jeu.php----------*/
@@ -281,7 +285,7 @@ input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
     box-shadow:0 0 8px 0 dodgerBlue;
 }
 
-.submit{
+input[type=submit]{
     color: white;
     background-color: transparent;
     border-color: #000099;
@@ -294,7 +298,7 @@ input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
     border-radius: 10px;
 }
 
-.submit:hover{
+input[type=submit]:hover{
     background-color: #000099;
     border-color: white;
     box-shadow: 0 0 8px dodgerBlue;
