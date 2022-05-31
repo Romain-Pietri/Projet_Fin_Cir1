@@ -57,7 +57,16 @@ else if($taille==8){
 <br>
 </div>
 
-
+<form class="formLetter" action="calculscore.php" method="post">
+        <fieldset>
+            <legend>Enregistrer le score</legend>
+            <label>Pseudo</label>
+            <input type="text" name="login" placeholder="test" required>
+            <br>
+            <input type="submit" name="valider" value="valider"/>
+            <br>
+        </fieldset>
+     </form>
 </main>
     
 <?php

@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    require("connexiondb.php");
 
 
 if ($_SESSION['taille'] == 4){
@@ -12,14 +12,20 @@ if ($_SESSION['taille'] == 6){
 if ($_SESSION['taille'] == 8){
     $taille = 1600;
 }
-
-$indice = $_SESSION['indice'];
 $login = $_SESSION['login'];
+
 
 
 if(isset($_POST["valider"])){
         
-        require("connexiondb.php");
+    $requete="SELECT Indice FROM utilisateurs WHERE login='$login'";
+    $exe=mysqli_query($connexion,$requete);
+    $return=mysqli_fetch_assoc($exe);
+    if ( $return == FALSE ){
+        echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+        die();
+    }
+    $indice=$return['Indice'];
 
         $request1="SELECT Score FROM utilisateurs WHERE login = '$login'";
         $resultat1=mysqli_query($connexion,$request1);
@@ -39,7 +45,7 @@ if(isset($_POST["valider"])){
             die();
         }
         mysqli_close($connexion);
-        header("Location:jeu.php");
+        header("Location:score.php");
         }
 
 ?>
