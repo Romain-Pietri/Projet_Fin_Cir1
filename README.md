@@ -15,9 +15,9 @@ Nous vous présentons Starship Invader, un jeu basé sur le principe du Binairo/
 les règles sont simples
 : 
 
-- Vous ne pouvez aligner au maximum deux Fusées/Soucoupes
-- Les lignes et les colones doivent contenir autant de Fusées que de Soucoupes
-- Les lignes et les colones doivent toutes être différentes les unes avec les autres
+- Vous ne pouvez aligner au maximum que deux Fusées/Soucoupes
+- Les lignes et les colonnes doivent contenir autant de Fusées que de Soucoupes
+- Les lignes et les colonnes doivent toutes être différentes les unes avec les autres
 
 
 
