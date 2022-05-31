@@ -39,7 +39,7 @@ function generator(){
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(4);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $tab=$data->tableau;//envoyer tableau dans BD
@@ -65,7 +65,7 @@ function verif(){
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
@@ -96,7 +96,7 @@ function solver(){
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
@@ -114,7 +114,7 @@ function verifgen(){
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
