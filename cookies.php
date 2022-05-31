@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require("save.php");
+	
 
 	if (isset($_COOKIE['id'])){ 
 		$_COOKIE['id'] = "";
@@ -14,18 +14,21 @@
 
 
 	if(isset($_POST['Verify'])){
+		require("save.php");
 		setcookie("id" , 1 , time()+(365*24*3600));
 		header("Location: interface.php");
 	}
 	
 
 	if(isset($_POST['Hint'])){
+		require("save.php");
 		setcookie("id" , 2 , time()+(365*24*3600));
 		header("Location: interface.php");
 	}
 	
 
 	if(isset($_POST['Solve'])){
+		require("save.php");
 		setcookie("id" , 3 , time()+(365*24*3600));
 		header("Location: interface.php");
 	}

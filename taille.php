@@ -12,7 +12,7 @@
 			<legend for="6x6" class="input">6x6</legend>
         <input type="radio" name="taille" id="taille" value="8"/>
 			<legend for="8x8" class="input">8x8</legend>    
-        <input type="submit" name="Envoyer" Value="Envoyer"/>
+        <input type="submit" name="Generate" Value="Generate"/>
     </form>';
         
     }
