@@ -23,19 +23,4 @@
 
 		    <a><img id="logo" src="images/log.png"></a>
 
-		    <?php		
-				if (isset($_COOKIE['theme'])){ 
-					$style=$_COOKIE['theme'];	
-				}
-
-				else {
-					$style="space1";
-				}
-			?>
-			<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
-
-			<?php
-			if($_COOKIE['music']==0){
-				echo'<audio autoplay><source src="images/music1.mp3" type="audio/mpeg"></audio>';
-			}
-			?>
+		    

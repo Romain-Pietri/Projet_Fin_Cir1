@@ -1,26 +1,25 @@
 <?php 
 session_start();
-if(isset($_COOKIE['music'])&&$_COOKIE['music']!=1){
+if(!isset($_COOKIE['music'])){
 	$music=0;
+	setcookie("music" , $music , time()+(365*24*3600));
 }
-setcookie("music" , $music , time()+(365*24*3600));
-
 ?>
 
-	   <?php		
-			if (isset($_COOKIE['theme'])){ 
-				$style=$_COOKIE['theme'];	
-			}
-			else {
-				$style="space1";
-			}
+	<?php		
+		if (isset($_COOKIE['theme'])){ 
+			$style=$_COOKIE['theme'];	
+		}
+		else {
+			$style="space1";
+		}
 		?>
-		<link rel="stylesheet" href ="space1.css"/>
+		<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
 
 		<?php
-			if($_COOKIE['music']==0){
-				echo'<audio autoplay><source src="images/music.mp3" type="audio/mpeg"></audio>';
-			}
+		if($_COOKIE['music']==0){
+			echo'<audio autoplay><source src="images/music1.mp3" type="audio/mpeg"></audio>';
+		}
 		?>
 
 	</header>
