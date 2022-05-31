@@ -1,5 +1,6 @@
 <?php
 require("connexiondb.php");
+session_start();
 if(isset($_COOKIE['id'])){
 
     if(($_COOKIE['id']) == 0){
@@ -33,20 +34,23 @@ else{
     echo "le cookie n'existe pas";
 }
 function generator(){
-    do{
-        $json=file_get_contents("Programmes-C/json.json");
+        $json=file_get_contents("json.json");
         $data=json_decode($json);
+        $data->tableau=[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+        $data->length=8;
+        $data->request=0;
         $data->id=0;
         $data->verif=0;
-        $data->length=$_SESSION["taille"];
+        
         $edata=json_encode($data, false);
-        file_put_contents("Programmes-C/json.json",$edata);
-        echo exec("Programmes-C/StarshipInvader/Programme.exe");
-        sleep(4);
-        $json=file_get_contents("Programmes-C/json.json");
-        $data=json_decode($json);
-    }while($data->verif==0);
 
+        file_put_contents("json.json",$edata);
+        echo exec("Programme.exe");
+        sleep(4);
+        $json=file_get_contents("json.json");
+        $data=json_decode($json);
+        
+        echo "cactus";
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
