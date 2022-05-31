@@ -15,36 +15,7 @@ h2{
   color: transparent;
 }
 
-        
-        table,
-        th,
-        td {
-            border: 1px solid white;
-            border-collapse: collapse;
-        }
-            
-        th,
-        td {
-            text-align: center;
-            width : 75px;
-            height : 75px;
-        }
-          
-        table#t01 tr {
-            background-color: #eee;
-            color : black;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-table{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-          
-        
+/*----------Start----------*/
 
 #title{
   display: block;
@@ -104,7 +75,15 @@ table{
     height: 80px;
 }
 
-.table,td,th{
+#img{
+    height: 200px;
+}
+
+/*----------Start----------*/
+
+
+/*----------Score----------*/
+.score,td,th{
   border: solid; 
   border-collapse:collapse;
   border-color: white;
@@ -114,20 +93,48 @@ table{
   margin-right: auto;
 }
 
-#img{
-    height: 200px;
+/*----------Score----------*/
+
+
+/*----------Jeu.php----------*/
+
+table,th,td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    display:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
+            
+th,td {
+    text-align: center;
+    width : 75px;
+    height : 75px;
+}
+          
+table#t01 tr {
+    background-color: #eee;
+    color : black;
+}
+
 
 .img{
     height : 100%;
-    width : 50px;
+    width : 100%;
 }
 
 .boutonjeu{
     color : black;
     height : 100%;
-    width : 50px;
+    width : 100%;
 }
+
+#hint{
+    position: absolute;
+    right: 0;
+}
+
+/*----------Jeu.php----------*/
 
 select{
     display: block;
@@ -408,3 +415,4 @@ nav a:nth-child(3):hover ~ #indicator {
   background: linear-gradient(130deg, purple, #000099);
 }
 
+/*----------Menu----------*/
