@@ -1,7 +1,7 @@
 <?php
     session_start();
     require "header.php";
-    ?>
+?>
 </header>
 <body>
 <?php
@@ -123,7 +123,7 @@
 		}
 	}
 	//$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
-	$initial_array = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+	$initial_array = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
 ?>
 
     <div id ="container">
@@ -146,13 +146,32 @@
             }
             
             ?>
+
+            <?php
+
+			   $login=$_SESSION['login'];
+	           require("connexiondb.php");
+			
+				$request="SELECT Indice,Moula FROM utilisateurs WHERE login='$login'";
+				$resultat=mysqli_query($connexion,$request);
+				if ( $resultat == FALSE ){
+								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+								die();
+							}
+				$indice=mysqli_fetch_assoc($resultat);
+				$hint=$indice['Indice'];
+				$moula=$indice['Moula'];
+				mysqli_close($connexion);
+            ?>
             
             <form method="post" action = "cookies.php">
-                <input type="submit" name="Verify" Value="Verify"/>
-                <input type="submit" name="Hint" Value="Hint"/>
-                <input type="submit" name="Solve" Value="Solve"/>
+                <input type="submit" id="verif" name="Verify" Value="Verify"/>
+                <input type="submit" id="solve" name="Solve" Value="Solve"/>
+                <input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
+
+            <p id="moula"><img id="sous" src="images/sous.png"><?php echo $moula;?></p>
 
 
             
@@ -238,7 +257,7 @@
 					document.getElementById(z).src = "images/img2.png";
 				}
 				if (n == 0) {
-					document.getElementById(z).src = "images/img0	.png";
+					document.getElementById(z).src = "images/img0.png";
 				}
 				createCookies();
 			}
@@ -246,27 +265,9 @@
 			afficher(<?php echo $taille; ?>);
 
 		</script>
+
     </div>
-	<?PHP
-		$_COOKIE["height"];
-
-	?>
-<footer id="footer">
-
-	    <dl>
-	    <dt><em>Phone :</em></dt>
-	      <dd>(+33) (0) 6 24 31 06 38</dd>
-	  </dl>
-	    <ul class="icon">
-	      <a href="https://bit.ly/3PCrXfs"><img class="reseaux" src="images/facebook.png" alt="fb"/></a>
-	      <a href="https://bitly.com/98K8eH"><img class="reseaux" src="images/twitter.png" alt="fb"/></a>
-	      <a href="https://bit.ly/37R8OVQ"><img class="reseaux" src="images/instagram.png" alt="fb"/></a>
-	    </ul>
-	  <br>
-	      <p>Website designed by Romain, Auguste, Raphael, Alexandre and Alixe</p>
-	      <p>All rights reserved &#153</p>
-	      <a href="legal.php" id="legal"> Legal mention </a>
-</footer>
+	
 
 </body>
 </html>

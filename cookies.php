@@ -32,5 +32,11 @@
 		setcookie("id" , 3 , time()+(365*24*3600));
 		header("Location: interface.php");
 	}
+
+	if(isset($_POST['Create'])){
+		require("save2.php");
+		setcookie("id" , 5 , time()+(365*24*3600));
+		header("Location: interface.php");
+	}
 	
 ?>

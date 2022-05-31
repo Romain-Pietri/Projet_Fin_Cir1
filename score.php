@@ -23,7 +23,7 @@
     else {
 
         $count=mysqli_num_rows($result);
-        echo"<table class='table'>
+        echo"<table class='score'>
             <tr>
             <th>Nickname </th>
             <th>Score </th>

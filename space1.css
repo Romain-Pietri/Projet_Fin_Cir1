@@ -15,6 +15,8 @@ h2{
   color: transparent;
 }
 
+/*----------Start----------*/
+
 #title{
   display: block;
   margin-left: auto;
@@ -73,7 +75,15 @@ h2{
     height: 80px;
 }
 
-.table,td,th{
+#img{
+    height: 200px;
+}
+
+/*----------Start----------*/
+
+
+/*----------Score----------*/
+.score,td,th{
   border: solid; 
   border-collapse:collapse;
   border-color: white;
@@ -83,17 +93,76 @@ h2{
   margin-right: auto;
 }
 
-#img{
-    height: 200px;
+/*----------Score----------*/
+
+
+/*----------Jeu.php----------*/
+
+table,th,td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    display:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
+            
+th,td {
+    text-align: center;
+    width : 75px;
+    height : 75px;
+}
+          
+table#t01 tr {
+    background-color: #eee;
+    color : black;
+}
+
+
+.img{
+    height : 100%;
+    width : 100%;
+}
+
+.boutonjeu{
+    color : black;
+    height : 100%;
+    width : 100%;
+}
+
+#hint{
+    display: block;
+    margin-right: 390px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 8px 2px;
+    width: 8%;
+    color: white;
+    border-color: #000099;
+    border-radius: 10px;
+}
+
+#moula{
+    position: absolute;
+    margin-right: 390px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 8px 2px;
+    width: 8%;
+    color: white;
+    border-color: #000099;
+    border-radius: 10px;
+}
+
+#sous{
+    height: 20px;
+}
+/*----------Jeu.php----------*/
 
 select{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 /*----------Button start----------*/
 #button{
@@ -227,7 +296,13 @@ input[type=text],input[type=password]{
     transition:.3s;
     margin-left: auto;
     margin-right: auto;
-  }
+}
+
+input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
+    background-color: #000099;
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
 
 input[type=submit]{
     color: white;
@@ -249,12 +324,6 @@ input[type=submit]:hover{
     width: 20%;
     transition: 0.5s;
 }
-  
-input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
-    background-color: #000099;
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
 
 p{
     color: white;
@@ -368,3 +437,4 @@ nav a:nth-child(3):hover ~ #indicator {
   background: linear-gradient(130deg, purple, #000099);
 }
 
+/*----------Menu----------*/

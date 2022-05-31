@@ -3,7 +3,6 @@ require("connexiondb.php");
 if(isset($_COOKIE['id'])){
 
     if(($_COOKIE['id']) == 0){
-        echo $_COOKIE['id'];
         $request = "DELETE FROM grilles";
         $exe=mysqli_query($connexion,$request);
         if( $exe == FALSE ){
@@ -14,22 +13,18 @@ if(isset($_COOKIE['id'])){
     }
 
     if(($_COOKIE['id']) == 1){
-        echo $_COOKIE['id'];
         verif();
     }
 
     if(($_COOKIE['id']) == 2){
-        echo $_COOKIE['id'];
         indice();
     }
 
     if(($_COOKIE['id']) == 3){
-        echo $_COOKIE['id'];
         solver();
     }
 
     if(($_COOKIE['id']) == 4){
-        echo $_COOKIE['id'];
         verifgen();
     }
     
@@ -38,15 +33,20 @@ else{
     echo "le cookie n'existe pas";
 }
 function generator(){
-    $json=file_get_contents('Programmes-C/json.json');
-    $data=json_decode($json);
-    $data->id=0;
-    $edata=json_encode($data, false);
-    file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
-    $json=file_get_contents('Programmes-C/json.json');
-    $data=json_decode($json);
+    do{
+        $json=file_get_contents("Programmes-C/json.json");
+        $data=json_decode($json);
+        $data->id=0;
+        $data->verif=0;
+        $data->length=$_SESSION["taille"];
+        $edata=json_encode($data, false);
+        file_put_contents("Programmes-C/json.json",$edata);
+        echo exec("Programmes-C/StarshipInvader/Programme.exe");
+        sleep(4);
+        $json=file_get_contents("Programmes-C/json.json");
+        $data=json_decode($json);
+    }while($data->verif==0);
+
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
@@ -67,10 +67,12 @@ function verif(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=1;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
@@ -85,6 +87,8 @@ function indice(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=2;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
@@ -98,10 +102,12 @@ function solver(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=3;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
@@ -116,10 +122,12 @@ function verifgen(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=4;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(6);
+    sleep(2);
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     if($data->verif==1){
