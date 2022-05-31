@@ -1,51 +1,7 @@
 <?php
     session_start();
     require "header.php";
-    ?>
-    <style>
-        .input{
-            color : white;
-        }
-
-        table {
-
-        }
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-            
-        th,
-        td {
-            text-align: center;
-            width : 75px;
-            height : 75px;
-        }
-          
-        table#t01 tr {
-            background-color: #eee;
-            color : black;
-        }
-          
-          
-        table#t01 th {
-            background-color: black;
-            color: white;
-        }
-        
-        .boutonjeu{
-            color : black;
-            height : 100%;
-            width : 100%;
-        }
-
-        .img{
-            height : 100%;
-            width : 100%;
-        }
-    </style>
+?>
 </header>
 <body>
 <?php
