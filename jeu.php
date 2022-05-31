@@ -146,10 +146,25 @@
             }
             
             ?>
+
+
+           <?php
+
+		   $login=$_SESSION['login'];
+           require("connexiondb.php");
+		
+			$request="SELECT Score,Moula FROM utilisateurs WHERE login='$login'";
+			$resultat=mysqli_query($connexion,$request);
+			if ( $resultat == FALSE ){
+							echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+							die();
+						}
+			mysqli_close($connexion);
+           ?>
             
             <form method="post" action = "cookies.php">
                 <input type="submit" name="Verify" Value="Verify"/>
-                <input type="submit" name="Hint" Value="Hint"/>
+                <input type="submit" name="Hint" Value="🔍<?php echo'$hint'?>"/>
                 <input type="submit" name="Solve" Value="Solve"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
