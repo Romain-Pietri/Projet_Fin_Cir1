@@ -15,6 +15,37 @@ h2{
   color: transparent;
 }
 
+        
+        table,
+        th,
+        td {
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+            
+        th,
+        td {
+            text-align: center;
+            width : 75px;
+            height : 75px;
+        }
+          
+        table#t01 tr {
+            background-color: #eee;
+            color : black;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+table{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+          
+        
+
 #title{
   display: block;
   margin-left: auto;
@@ -87,13 +118,22 @@ h2{
     height: 200px;
 }
 
+.img{
+    height : 100%;
+    width : 50px;
+}
+
+.boutonjeu{
+    color : black;
+    height : 100%;
+    width : 50px;
+}
+
 select{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 /*----------Button start----------*/
 #button{

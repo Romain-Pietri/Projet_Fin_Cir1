@@ -1,7 +1,11 @@
 <?php
     session_start();
     require "header.php";
+<<<<<<< Updated upstream
 ?>
+=======
+    ?>
+>>>>>>> Stashed changes
 </header>
 <body>
 <?php
@@ -254,7 +258,7 @@
 					document.getElementById(z).src = "images/img2.png";
 				}
 				if (n == 0) {
-					document.getElementById(z).src = "images/img0	.png";
+					document.getElementById(z).src = "images/img0.png";
 				}
 				createCookies();
 			}
@@ -267,7 +271,6 @@
 		$_COOKIE["height"];
 
 	?>
-<footer id="footer">
 
 </body>
 </html>
