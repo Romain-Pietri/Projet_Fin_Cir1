@@ -160,6 +160,7 @@
 							}
 				$indice=mysqli_fetch_assoc($resultat);
 				$hint=$indice['Indice'];
+				$moula=$indice['Moula'];
 				mysqli_close($connexion);
             ?>
             
@@ -169,6 +170,8 @@
                 <input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
+
+            <p id="moula"><img id="sous" src="images/sous.png"><?php echo $moula;?></p>
 
 
             

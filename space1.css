@@ -134,9 +134,28 @@ table#t01 tr {
     margin-right: 390px;
     margin-bottom: 10px;
     background-color: black;
-    padding: 5px 5px;
+    padding: 8px 2px;
+    width: 8%;
+    color: white;
+    border-color: #000099;
+    border-radius: 10px;
 }
 
+#moula{
+    position: absolute;
+    margin-right: 390px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 8px 2px;
+    width: 8%;
+    color: white;
+    border-color: #000099;
+    border-radius: 10px;
+}
+
+#sous{
+    height: 20px;
+}
 /*----------Jeu.php----------*/
 
 select{
