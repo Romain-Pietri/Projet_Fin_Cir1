@@ -262,10 +262,6 @@
 
 		</script>
     </div>
-	<?PHP
-		$_COOKIE["height"];
-
-	?>
 <footer id="footer">
 
 	    <dl>
