@@ -3,7 +3,6 @@ require("connexiondb.php");
 if(isset($_COOKIE['id'])){
 
     if(($_COOKIE['id']) == 0){
-        echo $_COOKIE['id'];
         $request = "DELETE FROM grilles";
         $exe=mysqli_query($connexion,$request);
         if( $exe == FALSE ){
@@ -14,22 +13,18 @@ if(isset($_COOKIE['id'])){
     }
 
     if(($_COOKIE['id']) == 1){
-        echo $_COOKIE['id'];
         verif();
     }
 
     if(($_COOKIE['id']) == 2){
-        echo $_COOKIE['id'];
         indice();
     }
 
     if(($_COOKIE['id']) == 3){
-        echo $_COOKIE['id'];
         solver();
     }
 
     if(($_COOKIE['id']) == 4){
-        echo $_COOKIE['id'];
         verifgen();
     }
     
