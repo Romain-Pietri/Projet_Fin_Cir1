@@ -36,6 +36,6 @@
 
 			<?php
 			if($_COOKIE['music']==0){
-				echo'<audio autoplay><source src="images/musique.mp3" type="audio/mpeg"></audio>';
+				echo'<audio autoplay><source src="images/music1.mp3" type="audio/mpeg"></audio>';
 			}
 			?>
