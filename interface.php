@@ -33,15 +33,20 @@ else{
     echo "le cookie n'existe pas";
 }
 function generator(){
-    $json=file_get_contents('Programmes-C/json.json');
-    $data=json_decode($json);
-    $data->id=0;
-    $edata=json_encode($data, false);
-    file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
-    sleep(4);
-    $json=file_get_contents('Programmes-C/json.json');
-    $data=json_decode($json);
+    do{
+        $json=file_get_contents("Programmes-C/json.json");
+        $data=json_decode($json);
+        $data->id=0;
+        $data->verif=0;
+        $data->length=$_SESSION["taille"];
+        $edata=json_encode($data, false);
+        file_put_contents("Programmes-C/json.json",$edata);
+        echo exec("Programmes-C/StarshipInvader/Programme.exe");
+        sleep(4);
+        $json=file_get_contents("Programmes-C/json.json");
+        $data=json_decode($json);
+    }while($data->verif==0);
+
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
@@ -62,6 +67,8 @@ function verif(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=1;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
@@ -80,6 +87,8 @@ function indice(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=2;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
@@ -93,6 +102,8 @@ function solver(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=3;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
@@ -111,6 +122,8 @@ function verifgen(){
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=4;
+    $data->verif=0;
+    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programmes-C/StarshipInvader/Programme.exe");
