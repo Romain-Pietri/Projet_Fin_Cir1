@@ -34,6 +34,7 @@ else{
     echo "le cookie n'existe pas";
 }
 function generator(){
+    
         $json=file_get_contents("json.json");
         $data=json_decode($json);
         $data->tableau=[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
@@ -45,11 +46,13 @@ function generator(){
         $edata=json_encode($data, false);
 
         file_put_contents("json.json",$edata);
+    do{
         echo exec("Programme.exe");
         sleep(4);
         $json=file_get_contents("json.json");
         $data=json_decode($json);
-        
+    }while ($data->verif==0) ;
+
         echo "cactus";
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
@@ -68,7 +71,7 @@ function generator(){
 }
 
 function verif(){
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('Programmes-/json.json');
     $data=json_decode($json);
     $data->id=1;
     $data->verif=0;
