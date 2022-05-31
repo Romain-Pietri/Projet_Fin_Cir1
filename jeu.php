@@ -2,6 +2,50 @@
     session_start();
     require "header.php";
     ?>
+    <style>
+        .input{
+            color : white;
+        }
+
+        table {
+
+        }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+            
+        th,
+        td {
+            text-align: center;
+            width : 75px;
+            height : 75px;
+        }
+          
+        table#t01 tr {
+            background-color: #eee;
+            color : black;
+        }
+          
+          
+        table#t01 th {
+            background-color: black;
+            color: white;
+        }
+        
+        .boutonjeu{
+            color : black;
+            height : 100%;
+            width : 100%;
+        }
+
+        .img{
+            height : 100%;
+            width : 100%;
+        }
+    </style>
 </header>
 <body>
 <?php
@@ -123,7 +167,7 @@
 		}
 	}
 	//$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
-	$initial_array = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+	$initial_array = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
 ?>
 
     <div id ="container">
@@ -147,24 +191,25 @@
             
             ?>
 
+            <?php
 
-           <?php
-
-		   $login=$_SESSION['login'];
-           require("connexiondb.php");
-		
-			$request="SELECT Score,Moula FROM utilisateurs WHERE login='$login'";
-			$resultat=mysqli_query($connexion,$request);
-			if ( $resultat == FALSE ){
-							echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
-							die();
-						}
-			mysqli_close($connexion);
-           ?>
+			   $login=$_SESSION['login'];
+	           require("connexiondb.php");
+			
+				$request="SELECT Indice,Moula FROM utilisateurs WHERE login='$login'";
+				$resultat=mysqli_query($connexion,$request);
+				if ( $resultat == FALSE ){
+								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+								die();
+							}
+				$indice=mysqli_fetch_assoc($resultat);
+				$hint=$indice['Indice'];
+				mysqli_close($connexion);
+            ?>
             
             <form method="post" action = "cookies.php">
                 <input type="submit" name="Verify" Value="Verify"/>
-                <input type="submit" name="Hint" Value="🔍<?php echo'$hint'?>"/>
+                <input type="submit" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
                 <input type="submit" name="Solve" Value="Solve"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
@@ -262,22 +307,11 @@
 
 		</script>
     </div>
-<footer id="footer">
+	<?PHP
+		$_COOKIE["height"];
 
-	    <dl>
-	    <dt><em>Phone :</em></dt>
-	      <dd>(+33) (0) 6 24 31 06 38</dd>
-	  </dl>
-	    <ul class="icon">
-	      <a href="https://bit.ly/3PCrXfs"><img class="reseaux" src="images/facebook.png" alt="fb"/></a>
-	      <a href="https://bitly.com/98K8eH"><img class="reseaux" src="images/twitter.png" alt="fb"/></a>
-	      <a href="https://bit.ly/37R8OVQ"><img class="reseaux" src="images/instagram.png" alt="fb"/></a>
-	    </ul>
-	  <br>
-	      <p>Website designed by Romain, Auguste, Raphael, Alexandre and Alixe</p>
-	      <p>All rights reserved &#153</p>
-	      <a href="legal.php" id="legal"> Legal mention </a>
-</footer>
+	?>
+<footer id="footer">
 
 </body>
 </html>
