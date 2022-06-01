@@ -9,7 +9,7 @@
 	if(isset($_POST["Generate"])){
 		$_SESSION["taille"] = $_POST["taille"];
 		setcookie("id" , 0 , time()+(365*24*3600));
-		header("Location: jeu.php");
+		header("Location: interface.php");
 	}
 
 
