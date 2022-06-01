@@ -60,6 +60,10 @@
 
 				if($ligne['login']==$login && $ligne['password']==$mdp){
 					$_SESSION["login"]=$login;
+					$request2="SELECT Indice FROM utilisateurs WHERE login='$login'";
+					$result2=mysqli_query($connexion,$request2);
+					$startindice=mysqli_fetch_assoc($result2);
+					$_SESSION["indice"]=$startindice;
 					mysqli_close($connexion);
 					header("location:regles.php");
 				}
