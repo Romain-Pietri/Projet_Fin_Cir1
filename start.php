@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_COOKIE['music'])){
-	$music=0;
+ 	$music=0;
 	setcookie("music" , $music , time()+(365*24*3600));
 }
 ?>
@@ -18,8 +18,8 @@ if(!isset($_COOKIE['music'])){
 
 		<?php
 		if($_COOKIE['music']==0){
-			echo'<audio autoplay><source src="images/music1.mp3" type="audio/mpeg"></audio>';
-		}
+		 	echo'<audio autoplay><source src="images/music1.mp3" type="audio/mpeg"></audio>';
+		 }
 		?>
 
 	</header>
