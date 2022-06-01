@@ -72,21 +72,21 @@ function generator(){
 function verif(){
     require("connexiondb.php");
     require("pulldb.php");
-    $json=file_get_contents('Programmes-/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
     $data->tableau= $tab;
     $data->length=$_SESSION["taille"];
     $data->request=0;
-    $data->id=1;
+    $data->id=3;
     $data->verif=0;
     
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
+    echo exec("Programme.exe");
     sleep(2);
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
-    if($data->verif==1){
+    if($data->verif == 1){
         header("location:won.php");
     }
     else{
@@ -114,7 +114,7 @@ function solver(){
     require("connexiondb.php");
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
-    $data->id=3;
+    $data->id=1;
     $data->verif=0;
     $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);

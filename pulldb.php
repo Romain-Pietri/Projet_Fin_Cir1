@@ -10,7 +10,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array1 = unserialize($UneLigne["Ligne"]);        
+			$initial_array1 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 		$requete="SELECT Ligne FROM clone WHERE ID = 2 ";
@@ -23,7 +23,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array2 = unserialize($UneLigne["Ligne"]);        
+			$initial_array2 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -37,7 +37,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array3 = unserialize($UneLigne["Ligne"]);        
+			$initial_array3 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -51,7 +51,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array4 = unserialize($UneLigne["Ligne"]);        
+			$initial_array4 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM clone WHERE ID = 5 ";
@@ -64,7 +64,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array5 = unserialize($UneLigne["Ligne"]);        
+			$initial_array5 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -78,7 +78,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array6 = unserialize($UneLigne["Ligne"]);        
+			$initial_array6 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM clone WHERE ID = 7 ";
@@ -91,7 +91,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array7 = unserialize($UneLigne["Ligne"]);        
+			$initial_array7 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM clone WHERE ID = 8 ";
@@ -104,7 +104,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array8 = unserialize($UneLigne["Ligne"]);        
+			$initial_array8 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$tab = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];

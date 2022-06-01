@@ -2,7 +2,7 @@
 
 	require("connexiondb.php");
 
-	$ligne= serialize($_COOKIE["Ligne1"]); 
+	$ligne= $_COOKIE["Ligne1"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 1";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -11,7 +11,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne2"]); 
+	$ligne= $_COOKIE["Ligne2"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 2";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -20,7 +20,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne3"]); 
+	$ligne= $_COOKIE["Ligne3"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 3";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -29,7 +29,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne4"]); 
+	$ligne= $_COOKIE["Ligne4"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 4";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -38,7 +38,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne5"]); 
+	$ligne= $_COOKIE["Ligne5"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 5";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -47,7 +47,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne6"]); 
+	$ligne= $_COOKIE["Ligne6"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 6";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -56,7 +56,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne7"]); 
+	$ligne= $_COOKIE["Ligne7"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 7";
 	$resultat = mysqli_query($connexion,$requete);
 			
@@ -65,7 +65,7 @@
 		die();
 	}
 
-	$ligne= serialize($_COOKIE["Ligne8"]); 
+	$ligne= $_COOKIE["Ligne8"]; 
 	$requete="UPDATE clone SET Ligne= '$ligne' WHERE ID = 8";
 	$resultat = mysqli_query($connexion,$requete);
 			

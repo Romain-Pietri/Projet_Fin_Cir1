@@ -177,14 +177,24 @@
          <script>
 			
 			function createCookies() {
-				document.cookie = 'Ligne1 = ' + contenu[0] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne2 = ' + contenu[1] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne3 = ' + contenu[2] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne4 = ' + contenu[3] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne5 = ' + contenu[4] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne6 = ' + contenu[5] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne7 = ' + contenu[6] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne8 = ' + contenu[7] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne1 = ' + JSON.stringify(contenu[0]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne2 = ' + JSON.stringify(contenu[1]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne3 = ' + JSON.stringify(contenu[2]) + ' ; max-age = 3600 ; path=/; samesite=lax' ; 
+				document.cookie = 'Ligne4 = ' + JSON.stringify(contenu[3]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne5 = ' + JSON.stringify(contenu[0]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne6 = ' + JSON.stringify(contenu[5]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne7 = ' + JSON.stringify(contenu[6]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne8 = ' + JSON.stringify(contenu[7]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+
+				/*document.cookie = 'Ligne1 = "a:8:{i:0;i:' + contenu[0][0] + ';i:1;i:' + contenu[0][1] + ';i:2;i:'+ contenu[0][2] + ';i:3;i:' + contenu[0][3]+ ';i:4;i:' + contenu[0][4] + ';i:5;i:' + contenu[0][5] + ';i:6;i:' + contenu[0][6]+ ';i:7;i:' + contenu[0][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne2 = "a:8:{i:0;i:' + contenu[1][0] + ';i:1;i:' + contenu[1][1] + ';i:2;i:'+ contenu[1][2] + ';i:3;i:' + contenu[1][3]+ ';i:4;i:' + contenu[1][4] + ';i:5;i:' + contenu[1][5] + ';i:6;i:' + contenu[1][6]+ ';i:7;i:' + contenu[1][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne3 = "a:8:{i:0;i:' + contenu[2][0] + ';i:1;i:' + contenu[2][1] + ';i:2;i:'+ contenu[2][2] + ';i:3;i:' + contenu[2][3]+ ';i:4;i:' + contenu[2][4] + ';i:5;i:' + contenu[2][5] + ';i:6;i:' + contenu[2][6]+ ';i:7;i:' + contenu[2][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ; 
+				document.cookie = 'Ligne4 = "a:8:{i:0;i:' + contenu[3][0] + ';i:1;i:' + contenu[3][1] + ';i:2;i:'+ contenu[3][2] + ';i:3;i:' + contenu[3][3]+ ';i:4;i:' + contenu[3][4] + ';i:5;i:' + contenu[3][5] + ';i:6;i:' + contenu[3][6]+ ';i:7;i:' + contenu[3][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne5 = "a:8:{i:0;i:' + contenu[4][0] + ';i:1;i:' + contenu[4][1] + ';i:2;i:'+ contenu[4][2] + ';i:3;i:' + contenu[4][3]+ ';i:4;i:' + contenu[4][4] + ';i:5;i:' + contenu[4][5] + ';i:6;i:' + contenu[4][6]+ ';i:7;i:' + contenu[4][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne6 = "a:8:{i:0;i:' + contenu[5][0] + ';i:1;i:' + contenu[5][1] + ';i:2;i:'+ contenu[5][2] + ';i:3;i:' + contenu[5][3]+ ';i:4;i:' + contenu[5][4] + ';i:5;i:' + contenu[5][5] + ';i:6;i:' + contenu[5][6]+ ';i:7;i:' + contenu[5][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne7 = "a:8:{i:0;i:' + contenu[6][0] + ';i:1;i:' + contenu[6][1] + ';i:2;i:'+ contenu[6][2] + ';i:3;i:' + contenu[6][3]+ ';i:4;i:' + contenu[6][4] + ';i:5;i:' + contenu[6][5] + ';i:6;i:' + contenu[6][6]+ ';i:7;i:' + contenu[6][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne8 = "a:8:{i:0;i:' + contenu[7][0] + ';i:1;i:' + contenu[7][1] + ';i:2;i:'+ contenu[7][2] + ';i:3;i:' + contenu[7][3]+ ';i:4;i:' + contenu[7][4] + ';i:5;i:' + contenu[7][5] + ';i:6;i:' + contenu[7][6]+ ';i:7;i:' + contenu[7][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
+				*/
 			}
 
 			var initial_array1 = <?php echo '['.implode(', ', $initial_array1). ']'; ?>;
