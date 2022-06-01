@@ -29,7 +29,7 @@
 		}
 	}
 		$requete="SELECT Ligne FROM grilles WHERE ID = 2 ";
-	$resultat = mysqli_query($connexion,$requete);
+		$resultat = mysqli_query($connexion,$requete);
 		
 	if ( $resultat == FALSE ){
 		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -122,8 +122,7 @@
 			$initial_array8 = unserialize($UneLigne["Ligne"]);        
 		}
 	}
-	//$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
-	$initial_array = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
+	$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
 ?>
 
     <div id ="container">
