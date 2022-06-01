@@ -83,12 +83,12 @@ h2{
 
 
 /*----------Score----------*/
-.score,td,th{
+table,td,th{
   border: solid; 
   border-collapse:collapse;
-  border-color: white;
+  border-color: red;
   text-align:center;
-  color: white;
+  color: red;
   margin-left: auto;
   margin-right: auto;
 }
@@ -98,15 +98,15 @@ h2{
 
 /*----------Jeu.php----------*/
 
-table,th,td {
+/*table,th,td {
     border: 1px solid white;
     border-collapse: collapse;
     display:auto;
     margin-left:auto;
     margin-right:auto;
-}
+}*/
             
-th,td {
+/*th,td {
     text-align: center;
     width : 75px;
     height : 75px;
@@ -115,7 +115,7 @@ th,td {
 table#t01 tr {
     background-color: #eee;
     color : black;
-}
+}*/
 
 
 .img{

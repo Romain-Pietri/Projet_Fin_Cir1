@@ -13,7 +13,7 @@ session_start();
 		<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
 
 	</header>
-
+	<audio autoplay id="myAudio" src="images/music1.mp3" preload="auto"></audio>
 	<main>
 		<img id="title" src="images/titre.gif">
 		<img id="speak" src="images/bulle.gif">

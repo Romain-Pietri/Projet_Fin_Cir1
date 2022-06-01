@@ -11,6 +11,10 @@
 </header>
 
 <main>
+
+
+    <img src="images/podium.png">
+    
     <?php
     require("connexiondb.php");
     $request="SELECT login,Score FROM utilisateurs ORDER BY Score DESC";

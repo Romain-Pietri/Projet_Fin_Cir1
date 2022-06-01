@@ -43,7 +43,7 @@
 		<li><a href="regles.php">Rules</a></li>
 		</ul>	
 	</span>
-	<audio autoplay id="myAudio" src="images/music1.mp3" preload="auto">
+	<audio id="myAudio" src="images/music1.mp3" preload="auto">
 	</audio>
 	
 	<span id="barright" class="bar_right">	
