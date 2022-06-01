@@ -54,7 +54,7 @@ char* readJson(char* filename) {
     return json;
 }
 /*
-Ouvre le fichier ./json.json et ï¿½crit
+Ouvre le fichier ./json.json et écrit
 */
 void writeJson(char* filename, Grille* g, int verif) {
     FILE* fd;
@@ -79,7 +79,7 @@ void writeJson(char* filename, Grille* g, int verif) {
     fclose(fd);
 }
 /*
-rï¿½cupere les info dans le char et les stock au endroit convenu
+récupere les info dans le char et les stock au endroit convenu
 */
 void recup(char* chaine, int tab[8][8], int* taille, int* id, int* request) {
 
@@ -126,7 +126,7 @@ int main() {
         /*
         Id = 0 generate
         Id = 1 solve
-        Id = 2 Indice ( intï¿½ligent)
+        Id = 2 Indice ( intéligent)
         Id = 3 Verif
         Id = 4 Verif Generate
                 */

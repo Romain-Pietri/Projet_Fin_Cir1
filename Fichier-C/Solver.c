@@ -549,7 +549,7 @@ Grille* Resoudre(Grille* g) {
         return NULL;
     }
 }
-/*
+
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
@@ -565,4 +565,4 @@ int main(){
     initGrille(g,8, tab);
     printGrille(g);
     printGrille(Resoudre(g));
-}*/
+}
