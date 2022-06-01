@@ -6,12 +6,6 @@
 <h1> Paramètres </h1>
 		<br><br>
 	</header>
-
-	<p> Paramètres du son :</p>
-	
-	<form method="post" action = "music.php">
-			<input type="submit" name="Pause" Value="Pause"/>
-	</form>
 	
 	<p> Paramètres du thème :</p>
 	<br>
