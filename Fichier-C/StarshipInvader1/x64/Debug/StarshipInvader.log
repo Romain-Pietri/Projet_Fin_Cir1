@@ -1,0 +1,2 @@
+﻿parseur.obj : error LNK2019: symbole externe non résolu Resoudre référencé dans la fonction main
+C:\MAMP\htdocs\Projet de fin d'année\Programmes-C\StarshipInvader\x64\Debug\StarshipInvader.exe : fatal error LNK1120: 1 externes non résolus
