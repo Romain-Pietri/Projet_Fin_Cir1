@@ -181,7 +181,7 @@
 				document.cookie = 'Ligne2 = ' + JSON.stringify(contenu[1]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 				document.cookie = 'Ligne3 = ' + JSON.stringify(contenu[2]) + ' ; max-age = 3600 ; path=/; samesite=lax' ; 
 				document.cookie = 'Ligne4 = ' + JSON.stringify(contenu[3]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne5 = ' + JSON.stringify(contenu[0]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
+				document.cookie = 'Ligne5 = ' + JSON.stringify(contenu[4]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 				document.cookie = 'Ligne6 = ' + JSON.stringify(contenu[5]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 				document.cookie = 'Ligne7 = ' + JSON.stringify(contenu[6]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 				document.cookie = 'Ligne8 = ' + JSON.stringify(contenu[7]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
