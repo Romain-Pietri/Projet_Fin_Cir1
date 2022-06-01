@@ -34,11 +34,11 @@ else{
     echo "le cookie n'existe pas";
 }
 function generator(){
-    
+        require("connexiondb.php");
         $json=file_get_contents("json.json");
         $data=json_decode($json);
         $data->tableau=[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-        $data->length=8;
+        $data->length=$_SESSION["taille"];
         $data->request=0;
         $data->id=0;
         $data->verif=0;
@@ -53,36 +53,40 @@ function generator(){
         $data=json_decode($json);
     }while ($data->verif==0) ;
 
-        echo "cactus";
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
         $seri=serialize($tab[$i]);
-        $request="INSERT INTO grilles (Ligne,ID) VALUES ('$seri','$id')";
-        $exe=mysqli_query($connexion,$request);
+        $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
+        $exe = mysqli_query($connexion,$request);
         if( $exe == FALSE ){
-                echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
-                die();
+                echo "<p>Erreur d'exécution de la requete :" . mysqli_error($connexion) . "</p>" ;
+                die(); 
         }
         $id = $id + 1;
     }
     mysqli_close($connexion);
-    header("Location : jeu.php");
+    header("Location:jeu.php");
 }
 
 function verif(){
-    $json=file_get_contents('Programmes-/json.json');
+    require("connexiondb.php");
+    require("pulldb.php");
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
-    $data->id=1;
-    $data->verif=0;
+    $data->tableau= $tab;
     $data->length=$_SESSION["taille"];
+    $data->request=0;
+    $data->id=3;
+    $data->verif=0;
+    
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
+    echo exec("Programme.exe");
     sleep(2);
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
-    if($data->verif==1){
+    if($data->verif == 1){
         header("location:won.php");
     }
     else{
@@ -91,6 +95,7 @@ function verif(){
 }
 
 function indice(){
+    require("connexiondb.php");
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=2;
@@ -98,34 +103,59 @@ function indice(){
     $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
+    echo exec("Programme.exe");
     sleep(2);
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
     header("location:jeu.php");
 }
 
 function solver(){
-    $json=file_get_contents('Programmes-C/json.json');
+    require("connexiondb.php");
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
-    $data->id=3;
-    $data->verif=0;
+    require("pull_initial_array.php");
+    $data->tableau= $initial_array;
     $data->length=$_SESSION["taille"];
+    $data->request=0;
+    $data->id=1;
+    $data->verif=0;
+    
+    $request = "DELETE FROM grilles";
+    $exe=mysqli_query($connexion,$request);
+    if( $exe == FALSE ){
+            echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
+            die();
+    }
+
+
+
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
+    echo exec("Programme.exe");
     sleep(2);
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
-    if($data->verif==1){
-        //faisable => envoyer tableau dans BD
+
+    $tab=$data->tableau;//envoyer tableau dans BD
+    $id=1;
+    for ($i=0;$i<8;$i++){
+        $seri=serialize($tab[$i]);
+        $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
+        $exe = mysqli_query($connexion,$request);
+        if( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :" . mysqli_error($connexion) . "</p>" ;
+                die(); 
+        }
+        $id = $id + 1;
     }
-    else{
-        //pas faisable
-    }
+    mysqli_close($connexion);
+    header("Location:jeu.php");
+
 }
 
 function verifgen(){
+    require("connexiondb.php");
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
     $data->id=4;

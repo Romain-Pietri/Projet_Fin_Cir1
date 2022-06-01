@@ -1,5 +1,5 @@
 body{
-  background-image: url("images/space2.gif");
+  background-image: url("images/space1.gif");
   background-repeat: no-repeat;
   background-size: cover;
 } 
@@ -15,11 +15,13 @@ h2{
   color: transparent;
 }
 
+/*----------Start----------*/
+
 #title{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  float: all;
 }
 
 #speak{
@@ -39,14 +41,13 @@ h2{
 #parametres{
   margin-left: 10px;
   margin-right: 5px;
-  height: 30px;
+  height: 15px;
   float: right;
-  margin-top: 10px;
 }
 
 #logo {
-  margin: 0;
   height: 120px;
+  float: left;
 }
 
 .logout{
@@ -73,7 +74,16 @@ h2{
     height: 80px;
 }
 
-.table,td,th{
+#img{
+    height: 200px;
+}
+
+
+/*----------Start----------*/
+
+
+/*----------Score----------*/
+.score,td,th{
   border: solid; 
   border-collapse:collapse;
   border-color: white;
@@ -83,15 +93,77 @@ h2{
   margin-right: auto;
 }
 
-#img{
-    height: 200px;
+/*----------Score----------*/
+
+
+/*----------Jeu.php----------*/
+
+table,th,td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    display:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
+            
+th,td {
+    text-align: center;
+    width : 75px;
+    height : 75px;
+}
+          
+table#t01 tr {
+    background-color: #eee;
+    color : black;
+}
+
+
+.img{
+    height : 100%;
+    width : 100%;
+}
+
+.boutonjeu{
+    color : black;
+    height : 100%;
+    width : 100%;
+}
+
+#hint{
+    display: block;
+    margin-right: 390px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 8px 2px;
+    width: 8%;
+    color: white;
+    border-color: #000099;
+    border-radius: 10px;
+}
+
+#moula{
+    position: absolute;
+    margin-right: 390px;
+    margin-bottom: 10px;
+    background-color: black;
+    padding: 8px 2px;
+    width: 8%;
+    color: white;
+    border-color: #000099;
+    border-radius: 10px;
+}
+
+#sous{
+    height: 20px;
+}
+/*----------Jeu.php----------*/
 
 select{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
 /*----------Button start----------*/
 #button{
     font-size: 25px;
@@ -111,12 +183,12 @@ select{
 }
 
 #button:hover{
-    background: #368343;
+    background: #000099;
     color: white;
-    box-shadow: 0 0 5px #368343,
-                0 0 25px #368343,
-                0 0 50px #368343,
-                0 0 200px #368343;
+    box-shadow: 0 0 5px #000099,
+                0 0 25px #000099,
+                0 0 50px #000099,
+                0 0 200px #000099;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
 #button:nth-child(1){
@@ -134,7 +206,7 @@ select{
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,transparent,#368343);
+    background: linear-gradient(90deg,transparent,#000099);
     animation: animate1 1s linear infinite;
 }
 @keyframes animate1{
@@ -150,7 +222,7 @@ select{
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg,transparent,#368343);
+    background: linear-gradient(180deg,transparent,#000099);
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
@@ -167,7 +239,7 @@ select{
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg,transparent,#368343);
+    background: linear-gradient(270deg,transparent,#000099);
     animation: animate3 1s linear infinite;
     animation-delay: 0.50s;
 }
@@ -185,7 +257,7 @@ select{
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg,transparent,#368343);
+    background: linear-gradient(360deg,transparent,#000099);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
@@ -215,7 +287,7 @@ input[type=text],input[type=password]{
     background-color: transparent;
     color: white;
     width:40%;
-    border:2px solid #368343368343;
+    border:2px solid #000099;
     border-radius:4px;
     display: block;
     outline:none;
@@ -224,12 +296,18 @@ input[type=text],input[type=password]{
     transition:.3s;
     margin-left: auto;
     margin-right: auto;
-  }
+}
+
+input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
+    background-color: #000099;
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
 
 input[type=submit]{
     color: white;
     background-color: transparent;
-    border-color: #368343368343;
+    border-color: #000099;
     width: 15%;
     display: block;
     margin-top: 40px;
@@ -240,18 +318,12 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-    background-color: #368343368343;
+    background-color: #000099;
     border-color: white;
-    box-shadow: 0 0 8px #368343;
+    box-shadow: 0 0 8px dodgerBlue;
     width: 20%;
     transition: 0.5s;
 }
-  
-input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
-    background-color: #368343368343;
-    border-color:#368343;
-    box-shadow:0 0 8px 0 #368343;
-  }
 
 p{
     color: white;
@@ -259,109 +331,266 @@ p{
 }
 /*----------Formulaire----------*/
 
+
 /*----------Menu----------*/
-nav {
+@font-face {
+    font-family: pirulen;
+    src: url(https://raw.githubusercontent.com/th3knigh7/css-design/black-bg/pirulen.ttf);
+}
+@font-face{
+    font-family: destructob;
+    src: url(https://raw.githubusercontent.com/th3knigh7/css-design/black-bg/destructob.ttf);
+}
+    
+nav li a{
+    color:white;
+    text-decoration: none;
+    transition: letter-spacing .5s;
+}
+
+.circle_main{
+    font-family: pirulen;
+    font-size:10px;
+    color:white;
+    position: relative;
+    margin:0 auto;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background:rgba(15,94,110,.1);
+    transition: width 1s ,height 1s;
+    z-index: 1;
+}
   
-  height: 30px;
-  margin-top: 20px;
-  position: absolute;
-  width: 319px;
-  display: block;
-  margin-left: 850px;
-  transform: translateY(-50%);
+.change .circle_main{
+    width:110px;
+    height:110px;
 }
-
-nav a {
-  position: relative;
-  width: 33.333%;
-  display: table-cell;
-  text-align: center;
-  color: #949494;
-  text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  padding: 10px 20px;
-  transition: 0.2s ease color;
+    
+.circle_main:hover{
+    animation: vibrate .5s infinite ease-out;
 }
-
-nav a:before,
-nav a:after {
-  content: "";
+    
+.bar_left{
+    position:absolute;
+    top:35px;
+    right:43px;
+    width: 4px;
+    height: 33px;
+    border-radius:2px;
+    box-shadow: 0 0 13px 3px rgba(0, 131, 177, 0.77);
+    transition:transform 1s, width 1s;
+    z-index:-2;
+}
+    
+.change .bar_left{
+    width:240px;
+    transform: skewX(20deg);
+    animation: op 1s;   
+}
+    
+.bar_right{
+    position:absolute;
+    top:35px;
+    left:43px;
+    width: 4px;
+    height: 33px;
+    border-radius:2px;
+    box-shadow: 0 0 13px 3px rgba(0, 131, 177, 0.77);
+    transition: transform 1s,width 1s;
+    z-index: -1;
+}
+    
+.change .bar_right{ 
+    width:240px;
+    transform: skewX(-20deg);
+    animation: op 1s;
+}
+    
+@keyframes op{
+    0%{opacity:0;}
+    20%{opacity:0;}
+    100%{opacity:1;}
+}
+    
+.arc1 {
+  content:"";
   position: absolute;
+  width: 90%;
+  height: 90%;
+  left: 4.92%;
+  top: 4.92%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
-  transform: scale(0);
-  transition: 0.2s ease transform;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  animation: rotate 4s linear infinite;
+  text-align: center;
+  line-height: 129px;
+}
+    
+.line1 {
+  border: 2px solid white ;
+  border-left: 1px solid transparent;
+  animation: rotate 5s linear infinite;
 }
 
-nav a:before {
-  top: 0;
-  left: 10px;
-  width: 6px;
-  height: 6px;
+.line2 {
+  border: 4px solid white;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  animation: rotate_anti 4s linear infinite;
 }
 
-nav a:after {
-  top: 5px;
-  left: 18px;
-  width: 4px;
-  height: 4px;
+.line3 {
+  border: 2px solid white;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  animation: rotate 3s linear infinite;
 }
 
-nav a:nth-child(1):before {
-  background-color: #368343;
+.line4 {
+  border: 4px solid white;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  animation: rotate_anti 2s linear infinite;
+}
+ 
+.reactor {
+  position:absolute;
+  background:#fff;
+  width: 30%;
+  height: 30%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(2, 255, 255, 0.15);
+  margin:30%;
+  cursor: pointer;
 }
 
-nav a:nth-child(1):after {
-  background-color: red;
+.change .reactor{animation: flicker .2s infinite;}
+    
+.reacttext{
+    opacity:0;
+    position:absolute;
+    top:25%;
+    margin:2 auto;
+    color:rgba(0,0,0,1);
+    font-size:11px;
+    font-weight: 900;
+    font-family: destructob;        
+    transition: opacity 1s;
 }
 
-nav a:nth-child(2):before {
-  background-color: #368343;
+.change .reacttext{opacity:1;}
+
+.bar_left>ul{
+    padding: 0;
+    margin:10px 70px 0 0px;
+    list-style:none;
+    transform: skewX(-20deg);
+}
+    
+.bar_right>ul{
+    padding:0;
+    margin:10px 0 0 70px;
+    list-style:none;
+    transform: skewX(20deg);
+}
+    
+li{margin:auto;}
+
+nav li a:hover{
+    letter-spacing:2px;
+}
+    
+.nav_top{
+    display:none;
+    flex-direction: row;
+}
+    
+.change .nav_top{display: flex;}
+    
+.nav_bottom{
+    display:none;
+    flex-direction:row-reverse;
 }
 
-nav a:nth-child(2):after {
-  background-color: white;
+.change .nav_bottom{display: flex;}
+
+.hamContainer{
+    position: absolute;
+    top:-6%;
+    transition:opacity 1s;
+}
+    
+.hbar1, .hbar2, .hbar3,.hbar4,.hbar5 {
+    height: 2px;
+    background-color:black;
+    border-radius: 4px;
+    margin:4px auto;      
 }
 
-nav a:nth-child(3):before {
-  background-color: purple;
+ 
+.hbar1 {
+    width:15px;
+    animation: a 1s infinite;
+    animation-delay: .5s;
 }
 
-nav a:nth-child(3):after {
-  background-color: #368343;
+.hbar2 {
+    width:20px;
+    animation:a 1s infinite;
+    animation-delay: .5s;}
+
+.hbar3 {
+    width: 30px;
+    animation:a 1s infinite;
+    animation-delay: .5s;
+    }
+
+.hbar4 {
+    width:20px;
+    animation:a 1s infinite;
+    animation-delay: .5s;
+    }
+
+.hbar5 {
+    width:15px;
+    animation:a 1s infinite;
+    animation-delay: .5s;
+    }
+    
+.change .hamContainer{opacity:0;}
+
+@keyframes a {
+    0% {transform: scaleX(1) skewX(10deg)  ;}
+    50% {transform: scaleX(.7) skewX(20deg)  ;}
+    100% {transform: scaleX(1) skewX(30deg);}
 }
 
-#indicator {
-  position: absolute;
-  left: 5%;
-  bottom: 0;
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 5px;
-  transition: 0.2s ease left;
+@keyframes flicker{
+  0% {box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);}
+  40% {box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);}
+  50% {box-shadow: 0px 0px 50px 17px rgba(150, 255, 255, 0.5), inset 0px 1px 100px 2px rgba(21, 211, 233, 0.3);}
+  60% {box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);}
+  100% {box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5), inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);}
+}
+    
+    
+@keyframes rotate {
+  0% {transform: rotateZ(0deg);}
+  100% {transform: rotateZ(360deg);}
+}
+    
+    
+@keyframes rotate_anti {
+  0% {transform: rotateZ(360deg);}
+  100% {transform: rotateZ(0deg);}
 }
 
-nav a:hover {
-  color: #fff;
-}
-
-nav a:hover:before,
-nav a:hover:after {
-  transform: scale(1);
-}
-
-nav a:nth-child(1):hover ~ #indicator {
-  background: linear-gradient(130deg, #000099, red);
-}
-
-nav a:nth-child(2):hover ~ #indicator {
-  left: 34%;
-  background: linear-gradient(130deg, #000099, white);
-}
-
-nav a:nth-child(3):hover ~ #indicator {
-  left: 70%;
-  background: linear-gradient(130deg, purple, #000099);
-}
-
+/*----------Menu----------*/

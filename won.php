@@ -22,7 +22,6 @@ if($taille==4){
 <br>
 <p> You can try to do the 6x6 and 8x8 grids, to get a better score and appear in the leaderboard !</p>
 <br>
-<?php echo '<a href="taille.php"> New game </a>'; ?>
 </div>
 
 <?php
@@ -38,7 +37,6 @@ else if($taille==6){
 <br>
 <p> You can try to do the 8x8 grid, to get a better score and appear in the leaderboard !</p>
 <br>
-<?php echo '<a href="taille.php"> New game </a>'; ?>
 </div>
 
 <?php

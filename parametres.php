@@ -6,8 +6,8 @@
 <h1> Paramètres </h1>
 		<br><br>
 	</header>
-
-	<p class="mention"> Paramètres du thème :</p>
+	
+	<p> Paramètres du thème :</p>
 	<br>
 
 
@@ -49,7 +49,3 @@
         MENU
     	</a>
 		<br><br>
-
-<form method="post" action = "music.php">
-	<input type="submit" name="Pause" Value="Pause"/>
-</form>
