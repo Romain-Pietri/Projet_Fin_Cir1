@@ -40,7 +40,7 @@
 		<ul class="nav_top" id="navtop">
 		<li><a href="taille.php">Game</a></li>
 		<li><a href="score.php">Score</a></li>
-		<li><a href="regles.php">Rules</a></li>
+		<li><a href="shop.php">Shop</a></li>
 		</ul>	
 	</span>
 	<audio id="myAudio" src="images/music1.mp3" preload="auto">
@@ -91,6 +91,3 @@
 		}
 		?>
 		<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
-
-		
-	?>

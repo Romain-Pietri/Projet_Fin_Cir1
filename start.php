@@ -15,6 +15,7 @@ session_start();
 	</header>
 	<audio autoplay id="myAudio" src="images/music1.mp3" preload="auto"></audio>
 	<main>
+		<br><br><br>
 		<img id="title" src="images/titre.gif">
 		<img id="speak" src="images/bulle.gif">
 		<img id="gadget" src="images/gadget1.gif">

@@ -11,9 +11,6 @@
 </header>
 
 <main>
-
-
-    <img src="images/podium.png">
     
     <?php
     require("connexiondb.php");
@@ -78,6 +75,8 @@
         echo"</table>";
     }
     ?>
+
+    <img src="images/podium.png">
     <br><br>
 
 </main>
