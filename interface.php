@@ -56,7 +56,7 @@ function generator(){
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
-        $seri=serialize($tab[$i]);
+        $seri=json_encode($tab[$i]);
         $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
         $exe = mysqli_query($connexion,$request);
         if( $exe == FALSE ){
