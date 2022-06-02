@@ -52,6 +52,7 @@
 		require("save.php");
 		setcookie("id" , 3 , time()+(365*24*3600));
 		header("Location: interface.php");
+		$_SESSION["Solvetrue"]="1";
 	}
 
 	if(isset($_POST['Create'])){
