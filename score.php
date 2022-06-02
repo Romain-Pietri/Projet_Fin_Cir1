@@ -11,10 +11,7 @@
 </header>
 
 <main>
-
-
-    <img src="images/podium.png">
-    
+    <div class="tableauscore">
     <?php
     require("connexiondb.php");
     $request="SELECT login,Score FROM utilisateurs ORDER BY Score DESC";
@@ -29,55 +26,68 @@
         $count=mysqli_num_rows($result);
         echo"<table class='score'>
             <tr>
-            <th>Nickname </th>
-            <th>Score </th>
+            <th class='ligne'>Nickname </th>
+            <th class='ligne'>Score </th>
             </tr>";
         if($count<10){
-            $i=0;
+            $i=1;
             while($ligne = mysqli_fetch_assoc($result)){
-                echo "<tr>";
+                echo "<tr>"
+                ;
+                if($i==1){$first=$ligne['login'];}
+                if($i==2){$sec=$ligne['login'];}
+                if($i==3){$third=$ligne['login'];}
+
                 foreach ($ligne as $UneLigne) {
-                    echo"
-                    <td> $UneLigne </td>";
-                    $i=$i+1;
-                }   
+                    echo"<td class='ligne'> $UneLigne </td>";
+                }
+                $i=$i+1;
                 echo "</tr>";
             }
 
             
 
-            while($i!=10+$count){
+            while($count!=10){
                 echo"<tr>";
                 echo"
-                <td> ---------- </td>
-                <td> 0 </td>";
+                <td class='ligne'> ---------- </td>
+                <td class='ligne'> 0 </td>";
                 echo "</tr>";
-                $i=$i+1;
+                $count=$count+1;
             }
 
             echo"</table>";
-        }
-    }
 
-    if($count>=10){
+        }
+    
+
+    else{
         $j=0;
-        echo"<table class='table'>
-            <tr>
-            <th>Pseudo </th>
-            <th>Score </th>
-            </tr>";
         while($ligne=mysqli_fetch_assoc($result)&& $j<10){
             echo "<tr>";
+            if($j==1){$first=$ligne['login'];}
+            if($j==2){$sec=$ligne['login'];}
+            if($j==3){$third=$ligne['login'];}
+                
             foreach ($ligne as $UneLigne) {
-                echo"
-                <td> $UneLigne </td>";
-                $i=$i+1;
+                echo"<td class='ligne'> $UneLigne </td>";
+                $j=$j+1;
             }
             echo "</tr>";
         }
         echo"</table>";
     }
+    }
     ?>
+    </div>
+    
+    <br><br>
+
+    <p id="first"><strong><?php echo $first; ?></strong></p>
+    <p id="sec"><strong><?php echo $sec; ?></strong></p>
+    <p id="third"><strong><?php echo $third; ?></strong></p>
+
+    <img id="podium" src="images/podium.png">
     <br><br>
 
 </main>

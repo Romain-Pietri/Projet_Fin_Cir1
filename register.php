@@ -12,6 +12,7 @@
 <style>.error{color: red;margin-left:375px ;}</style>
 
 <main>
+	<img id="gadget" src="images/gadget1.gif">
 
 <?php
 

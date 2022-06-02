@@ -5,6 +5,7 @@
 ?> 
 
     </header>
+    <br><br>
     <img id="title" src="images/titre.gif">
 <main>
 	<img id="gadget" src="images/gadget1.gif">
