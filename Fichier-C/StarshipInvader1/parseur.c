@@ -119,7 +119,7 @@ int main() {
     int taille;
     int id;
     int request;
-    char path[30] = "Programmes-C/json.json"; 
+    char path[30] = "json.json"; 
     char* chaine = readJson(path);
     recup(chaine, tab, &taille, &id, &request);
     if (request == 0) {
