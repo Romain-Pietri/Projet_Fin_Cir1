@@ -5,15 +5,15 @@
 
 if ($_SESSION['taille'] == 4){
     $taille = 400;
-    $money=1000;
+    $money=10;
 }
 if ($_SESSION['taille'] == 6){
     $taille = 1000;
-    $money=2000;
+    $money=30;
 }
 if ($_SESSION['taille'] == 8){
     $taille = 1600;
-    $money=3000;
+    $money=50;
 }
 $login = $_SESSION['login'];
 
