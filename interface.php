@@ -96,11 +96,14 @@ function verif(){
 
 function indice(){
     require("connexiondb.php");
+    require("pulldb.php");
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
+    $data->tableau = $tab;
+    $data->length=$_SESSION["taille"];
+    $data->request=0;
     $data->id=2;
     $data->verif=0;
-    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programme.exe");
