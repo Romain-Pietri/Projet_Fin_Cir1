@@ -83,14 +83,53 @@ h2{
 
 
 /*----------Score----------*/
-table,td,th{
-  border: solid; 
-  border-collapse:collapse;
-  border-color: red;
-  text-align:center;
-  color: red;
-  float: right;
+.score,td,th{
+    border: 1px solid white;
+    border-collapse: collapse;
+    display:auto;
+    float: right;
+    background-color:rgba(0,0,0,0.50);
+    color: white;
+}
 
+.ligne{
+    text-align: center;
+    width : 80px;
+    height : 30px;
+}
+
+.tableauscore{
+    margin-right: 130px;
+}
+
+#podium{
+    margin-left: 100px;
+}
+
+@keyframes score {
+    0% {transform: scaleX(1) skewX(10deg)  ;}
+    50% {transform: scaleX(.7) skewX(20deg)  ;}
+    100% {transform: scaleX(1) skewX(30deg);}
+}
+
+
+#first{
+    color: #DAA520;
+    animation: score 5s infinite;
+}
+
+#sec{
+    color: silver;
+    float: left;
+    animation: score 5s infinite;
+}
+
+#third{
+    color: #8b4513;
+    font-family: bold;
+    float: right;
+    margin-right: 455px;
+    animation: score 5s infinite;
 }
 
 /*----------Score----------*/
@@ -98,15 +137,15 @@ table,td,th{
 
 /*----------Jeu.php----------*/
 
-/*table,th,td {
+#t01,th,td {
     border: 1px solid white;
     border-collapse: collapse;
     display:auto;
     margin-left:auto;
     margin-right:auto;
-}*/
+}
             
-/*th,td {
+th,td {
     text-align: center;
     width : 75px;
     height : 75px;
@@ -115,7 +154,7 @@ table,td,th{
 table#t01 tr {
     background-color: #eee;
     color : black;
-}*/
+}
 
 
 .img{
@@ -326,7 +365,7 @@ input[type=submit]:hover{
 }
 
 p{
-    color: red;
+    color: white;
     text-align: center;
 }
 /*----------Formulaire----------*/
