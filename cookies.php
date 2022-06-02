@@ -33,7 +33,7 @@
 					die();
 				}
 				while($ligne=mysqli_fetch_assoc($result)){
-					if($ligne['Indice']==0){
+					if($ligne['Indice']<=0){
 						mysqli_close($connexion);
 						header("Location:jeu.php");
 					}
