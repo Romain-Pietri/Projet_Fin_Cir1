@@ -261,10 +261,20 @@
 				contenu[x - 1][y - 1] = n;
 				z = x * 10 + y;
 				if (n == 1) {
-					document.getElementById(z).src = "images/img1.png";
+					if (initial_array[x - 1][y - 1] == 1) {
+						document.getElementById(z).src = "images/img3.png";
+					}
+					else{
+						document.getElementById(z).src = "images/img1.png";
+					}
 				}
 				if (n == 2) {
-					document.getElementById(z).src = "images/img2.png";
+					if (initial_array[x - 1][y - 1] == 2) {
+						document.getElementById(z).src = "images/img4.png";
+					}
+					else{
+						document.getElementById(z).src = "images/img2.png";
+					}
 				}
 				if (n == 0) {
 					document.getElementById(z).src = "images/img0.png";
