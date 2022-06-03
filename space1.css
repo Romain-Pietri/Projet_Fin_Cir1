@@ -36,6 +36,7 @@ h2{
   position: fixed; 
   bottom:0; 
   left: 0; 
+  z-index: 2;
 }
 
 #parametres{
@@ -78,6 +79,12 @@ h2{
     height: 200px;
 }
 
+#lost{
+    height: 300px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 /*----------Start----------*/
 
@@ -210,7 +217,7 @@ select{
     overflow: hidden;
     text-align: center;
     float: right;
-    margin-right: 550px;
+    margin-right: 43%;
 }
 
 #button:hover{
@@ -647,11 +654,16 @@ ul{
 }
 
 footer {
-  padding: 20px;
-  background-color: black;
-  color : white; 
-  font-weight: bold;
-  text-align: center;
-}
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: black;
+    color : white; 
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+  }
 
 /*----------Footer----------*/

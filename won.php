@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    
-    $taille=$_SESSION["taille"];
+    $taille = 6;
+    // $taille=$_SESSION["taille"];
     session_destroy();
     require "header.php";
     ?>
