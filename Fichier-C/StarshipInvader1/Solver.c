@@ -553,7 +553,7 @@ Grille* Resoudre(Grille* g) {
     }
     Grille* tmp = Solve(g, 0, 0);
     if (tmp != NULL) {
-        return tmp;
+        if (VerifGrille(tmp)) return tmp;
     }
     else {
         return NULL;
