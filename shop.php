@@ -26,6 +26,7 @@
 <input type="submit" name="ten" value="ACHETER:100$">
 </form>
 </div>
+
 <?php
 if(isset($_POST['one'])){
     $login=$_SESSION['login'];
@@ -98,7 +99,7 @@ if(isset($_POST['ten'])){
     $return=mysqli_fetch_assoc($exe);
 
 
-    if ($return['Moula']>100){
+    if ($return['Moula']>=100){
     $exe2=mysqli_query($connexion,$request2);
     if ( $exe2 == FALSE ){
         echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;

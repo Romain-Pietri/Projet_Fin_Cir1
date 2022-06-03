@@ -87,7 +87,6 @@ h2{
     border: 1px solid white;
     border-collapse: collapse;
     display:auto;
-    float: right;
     background-color:rgba(0,0,0,0.50);
     color: white;
 }
@@ -99,38 +98,31 @@ h2{
 }
 
 .tableauscore{
-    margin-right: 130px;
-}
-
-#podium{
-    margin-left: 100px;
-}
-
-@keyframes score {
-    0% {transform: scaleX(1) skewX(10deg)  ;}
-    50% {transform: scaleX(.7) skewX(20deg)  ;}
-    100% {transform: scaleX(1) skewX(30deg);}
-}
-
-
-#first{
-    color: #DAA520;
-    animation: score 5s infinite;
-}
-
-#sec{
-    color: silver;
-    float: left;
-    animation: score 5s infinite;
-}
-
-#third{
-    color: #8b4513;
-    font-family: bold;
     float: right;
-    margin-right: 455px;
-    animation: score 5s infinite;
+    margin-right: 130px;
+    margin-top: 50px;
 }
+
+#conteneur{
+    background-image:url('images/podium.png');
+    background-size: 410px;
+    height:280px;
+    width:374px;
+    margin-right: 400px;
+}
+#conteneur span{
+    display:inline-block;
+    width:32%;
+    text-align:center;
+    position:relative;
+}
+#conteneur span:nth-child(1){ top:107px; }
+#conteneur span:nth-child(2){ top:0px; }
+#conteneur span:nth-child(3){ top:107px; }
+
+#first{color: gold;font-size: 30px;}
+#sec{color: silver;}
+#third{color: #B1560F}
 
 /*----------Score----------*/
 
@@ -633,3 +625,33 @@ nav li a:hover{
 }
 
 /*----------Menu----------*/
+
+/*----------Footer----------*/
+
+.icon{
+  display: inline;
+  margin-right: 35px;
+}
+
+.reseaux{
+  width: 40px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#legal{
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  padding: 20px;
+  background-color: black;
+  color : white; 
+  font-weight: bold;
+  text-align: center;
+}
+
+/*----------Footer----------*/

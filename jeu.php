@@ -4,6 +4,7 @@
 ?>
 </header>
 <body>
+	<img id="gadget" src="images/gadget1.gif">
 <?php
     
 	

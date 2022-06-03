@@ -5,12 +5,13 @@
 ?>
 
 <h1> Scoreboard :</h1>
-<br>
 
-<br>
 </header>
 
 <main>
+
+    <img id="gadget" src="images/gadget1.gif">
+    
     <div class="tableauscore">
     <?php
     require("connexiondb.php");
@@ -83,11 +84,12 @@
     
     <br><br>
 
-    <p id="first"><strong><?php echo $first; ?></strong></p>
-    <p id="sec"><strong><?php echo $sec; ?></strong></p>
-    <p id="third"><strong><?php echo $third; ?></strong></p>
+    <div id="conteneur">
+    <span class="ville"><p id="sec"><strong><?php echo $sec; ?></strong></p></span>
+    <span class="ville"><p id="first"><strong><?php echo $first; ?></strong></p></span>
+    <span class="ville"><p id="third"><strong><?php echo $third; ?></strong></p></span>
+    <div>
 
-    <img id="podium" src="images/podium.png">
     <br><br>
 
 </main>
