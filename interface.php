@@ -97,19 +97,44 @@ function verif(){
 function indice(){
     require("connexiondb.php");
     require("pulldb.php");
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
     $data->tableau = $tab;
     $data->length=$_SESSION["taille"];
     $data->request=0;
     $data->id=2;
     $data->verif=0;
+
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programme.exe");
     sleep(2);
     $json=file_get_contents('json.json');
     $data=json_decode($json);
+
+    $indicetab = $data->tableau;
+    $indiceset = 0;
+    for($x = 0; $x < 8; $x++) {
+		for($y = 0; $y < 8; $y++){
+			if($tab[$x][$y] != $indicetab[$x][$y]){
+                if(isset($_COOKIE["indice"])){
+                    $_COOKIE["indice"] = "$x$y";
+                }
+                else{
+                    setcookie("indice" , "$x$y"  , time()+(365*24*3600));
+                }
+                $indiceset = 1;
+			}					
+		}
+	}
+    if($indiceset == 0){
+        if(isset($_COOKIE["indice"])){
+            $_COOKIE["indice"] = "suppo";
+        }
+        else{
+            setcookie("indice" , "suppo"  , time()+(365*24*3600));
+        }
+    }
     header("location:jeu.php");
 }
 
