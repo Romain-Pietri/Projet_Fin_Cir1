@@ -5,6 +5,35 @@
 </header>
 <body>
 	<img id="gadget" src="images/gadget1.gif">
+
+
+	<div class=".clickevent">
+	    <button id="btn">Appuyer !</button>
+	  </br>
+	  <div class=regles>
+	    <p><br><br>The rules are simple. Starship invader is played on a square grid of any size. <br>
+	    Initially, some cells contain a rocket or spaceship. All other cells are empty.<br> The goal is to fill each cell so that:<br>
+	    <strong>1.</strong> Each row and column contains the same number of rockets and spaceships.<br>
+	    <strong>2.</strong> You can have two spaceships or rockets in a row but no more.<br>
+	    <strong>3.</strong> Each row and column is unique.<br>
+	    <br>
+	    Your time to play !
+	    </p>
+	   </div>
+
+	  </div> 
+
+	  <script>
+	  const btn = document.querySelector('#btn');
+	  const img = document.getElementById('.regles');
+
+	  btn.addEventListener('click', () => {
+	      img.classList.toggle('show')     // "add" ou "remove" sinon "toggle" pour ajouter si pas présent et enlever si deja la 
+	      console.log("truc");
+	  })
+	  
+	 </script>
+
 <?php
     if(!isset($_SESSION["login"])){
 		header("Location:connexion.php");

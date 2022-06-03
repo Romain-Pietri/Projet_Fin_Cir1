@@ -672,3 +672,26 @@ footer {
   }
 
 /*----------Footer----------*/
+
+
+
+.regles{
+    margin:0 auto;
+    height: 200px;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.show{
+    visibility: visible;
+}
+
+.mouseEvent{
+    border: 6px solid darkslateblue;
+    width: 220px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+
+}
