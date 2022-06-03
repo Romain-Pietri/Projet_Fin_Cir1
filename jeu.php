@@ -126,6 +126,24 @@
 		}
 	}
 	$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
+
+	if(isset($_COOKIE["indice"])){
+		if($_COOKIE["indice"] == "suppo"){
+			echo "Vous devez faire des suppositions, il n'y a plus de déductions logiques.";
+		}
+		else{
+			$x = ($_COOKIE["indice"])/10;
+			$y = ($_COOKIE["indice"])%10;
+			echo "Vous pouvez faire une déduction logique sur la case de la ligne $x et la colonne $y";
+		}
+
+
+		echo "<br>";
+		echo $_COOKIE["indice"];
+		$_COOKIE["indice"] = "";
+	}
+
+	require("pulldb.php");
 ?>
 
     <div id ="container">
@@ -177,7 +195,7 @@
 
 
             
-         <script>
+ <script>
 			
 			function createCookies() {
 				document.cookie = 'Ligne1 = ' + JSON.stringify(contenu[0]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
@@ -198,9 +216,23 @@
 			var initial_array6 = <?php echo '['.implode(', ', $initial_array6). ']'; ?>;
 			var initial_array7 = <?php echo '['.implode(', ', $initial_array7). ']'; ?>;
 			var initial_array8 = <?php echo '['.implode(', ', $initial_array8). ']'; ?>;
+
+			
+			var array_en_cours1 = <?php echo '['.implode(', ', $array1). ']'; ?>;
+			var array_en_cours2 = <?php echo '['.implode(', ', $array2). ']'; ?>;
+			var array_en_cours3 = <?php echo '['.implode(', ', $array3). ']'; ?>;
+			var array_en_cours4 = <?php echo '['.implode(', ', $array4). ']'; ?>;
+			var array_en_cours5 = <?php echo '['.implode(', ', $array5). ']'; ?>;
+			var array_en_cours6 = <?php echo '['.implode(', ', $array6). ']'; ?>;
+			var array_en_cours7 = <?php echo '['.implode(', ', $array7). ']'; ?>;
+			var array_en_cours8 = <?php echo '['.implode(', ', $array8). ']'; ?>;
+			var array_en_cours = [array_en_cours1, array_en_cours2, array_en_cours3, array_en_cours4, array_en_cours5, array_en_cours6, array_en_cours7, array_en_cours8];
+			
 			var initial_array = [initial_array1, initial_array2, initial_array3, initial_array4, initial_array5, initial_array6, initial_array7, initial_array8];
 			var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
 			
+
+
 			for (let x = 0; x < 8; x++) {
 				for (let y = 0; y < 8; y++){
 					if(initial_array[x][y] == 1){
@@ -211,6 +243,18 @@
 					}					
 				}
 			}
+
+			for (let x = 0; x < 8; x++) {
+				for (let y = 0; y < 8; y++){
+					if(array_en_cours[x][y] == 1 && initial_array[x][y] == 0){
+						contenu[x][y] = 1;
+					}
+					else if(array_en_cours[x][y] == 2 && initial_array[x][y] == 0){
+						contenu[x][y] = 2;
+					}					
+				}
+			}
+
 
 			var taille = document.getElementById("variable").value;
 
