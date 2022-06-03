@@ -43,7 +43,7 @@ if ( $result == FALSE ){
 }
 while($ligne=mysqli_fetch_assoc($result)){
     if($ligne["Badge$i"]==0){
-        echo"test 0";
+        $;
     }
     if($ligne["Badge$i"]==1){
         echo"test 1";

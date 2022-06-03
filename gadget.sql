@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 31 mai 2022 à 10:15
+-- Généré le : ven. 03 juin 2022 à 14:12
 -- Version du serveur :  5.7.24
 -- Version de PHP : 8.0.1
 
@@ -48,14 +48,14 @@ CREATE TABLE `grilles` (
 --
 
 INSERT INTO `grilles` (`Ligne`, `ID`) VALUES
-('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:1;i:5;i:1;i:6;i:0;i:7;i:0;}', 1),
-('a:8:{i:0;i:2;i:1;i:1;i:2;i:1;i:3;i:2;i:4;i:0;i:5;i:0;i:6;i:2;i:7;i:0;}', 2),
-('a:8:{i:0;i:0;i:1;i:1;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:1;}', 3),
-('a:8:{i:0;i:0;i:1;i:0;i:2;i:2;i:3;i:0;i:4;i:1;i:5;i:0;i:6;i:0;i:7;i:0;}', 4),
-('a:8:{i:0;i:2;i:1;i:0;i:2;i:0;i:3;i:1;i:4;i:0;i:5;i:2;i:6;i:0;i:7;i:0;}', 5),
-('a:8:{i:0;i:0;i:1;i:1;i:2;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:1;i:7;i:0;}', 6),
-('a:8:{i:0;i:0;i:1;i:0;i:2;i:0;i:3;i:0;i:4;i:2;i:5;i:0;i:6;i:1;i:7;i:0;}', 7),
-('a:8:{i:0;i:1;i:1;i:0;i:2;i:1;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:7;i:2;}', 8);
+('a:8:{i:0;i:2;i:1;i:1;i:2;i:1;i:3;i:2;i:4;i:1;i:5;i:2;i:6;i:1;i:7;i:2;}', 1),
+('a:8:{i:0;i:1;i:1;i:2;i:2;i:1;i:3;i:2;i:4;i:1;i:5;i:2;i:6;i:1;i:7;i:2;}', 2),
+('a:8:{i:0;i:1;i:1;i:2;i:2;i:2;i:3;i:1;i:4;i:2;i:5;i:1;i:6;i:2;i:7;i:1;}', 3),
+('a:8:{i:0;i:2;i:1;i:1;i:2;i:2;i:3;i:1;i:4;i:2;i:5;i:1;i:6;i:1;i:7;i:2;}', 4),
+('a:8:{i:0;i:1;i:1;i:2;i:2;i:1;i:3;i:2;i:4;i:1;i:5;i:2;i:6;i:2;i:7;i:1;}', 5),
+('a:8:{i:0;i:2;i:1;i:2;i:2;i:1;i:3;i:1;i:4;i:2;i:5;i:1;i:6;i:2;i:7;i:1;}', 6),
+('a:8:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:1;i:4;i:2;i:5;i:2;i:6;i:1;i:7;i:2;}', 7),
+('a:8:{i:0;i:2;i:1;i:1;i:2;i:2;i:3;i:2;i:4;i:1;i:5;i:1;i:6;i:2;i:7;i:1;}', 8);
 
 -- --------------------------------------------------------
 
@@ -69,17 +69,27 @@ CREATE TABLE `utilisateurs` (
   `password` varchar(64) NOT NULL,
   `Score` int(11) NOT NULL,
   `Indice` int(11) NOT NULL,
-  `Moula` int(11) NOT NULL
+  `Moula` int(11) NOT NULL,
+  `Badge1` tinyint(1) NOT NULL,
+  `Badge2` tinyint(1) NOT NULL,
+  `Badge3` tinyint(1) NOT NULL,
+  `Badge4` tinyint(1) NOT NULL,
+  `Badge5` tinyint(1) NOT NULL,
+  `Badge6` tinyint(1) NOT NULL,
+  `Badge7` tinyint(1) NOT NULL,
+  `Badge8` tinyint(1) NOT NULL,
+  `Badge9` tinyint(1) NOT NULL,
+  `Badge10` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`ID`, `login`, `password`, `Score`, `Indice`, `Moula`) VALUES
-(1, 'raph', '177d41b0ba61150811f48651f1033e19569b4cd0a8646eb9afb8b6f1cb50fdd2', 0, 5, 0),
-(2, 'test', 'bde25a9204400a92e31f180904001d50e5038a0c3ebab4c1dc7c3aa2a692b8b5', 0, 5, 0),
-(3, 'rafoufou', '695d45103bff6472099a7d5ef87ee44160278c15b6dacea2c3cb86e5df05da61', 0, 5, 0);
+INSERT INTO `utilisateurs` (`ID`, `login`, `password`, `Score`, `Indice`, `Moula`, `Badge1`, `Badge2`, `Badge3`, `Badge4`, `Badge5`, `Badge6`, `Badge7`, `Badge8`, `Badge9`, `Badge10`) VALUES
+(1, 'raph', '177d41b0ba61150811f48651f1033e19569b4cd0a8646eb9afb8b6f1cb50fdd2', 0, 5, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 'test', 'bde25a9204400a92e31f180904001d50e5038a0c3ebab4c1dc7c3aa2a692b8b5', 0, 16, 890, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0),
+(3, 'rafoufou', '695d45103bff6472099a7d5ef87ee44160278c15b6dacea2c3cb86e5df05da61', 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Index pour les tables déchargées
