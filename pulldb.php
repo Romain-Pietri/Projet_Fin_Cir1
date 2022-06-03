@@ -4,13 +4,13 @@
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array1 = json_decode($UneLigne["Ligne"]);        
+			$array1 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	
@@ -19,13 +19,13 @@
 	$resultat = mysqli_query($connexion,$requete);
 		
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array2 = json_decode($UneLigne["Ligne"]);        
+			$array2 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -33,13 +33,13 @@
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array3 = json_decode($UneLigne["Ligne"]);        
+			$array3 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -47,26 +47,26 @@
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array4 = json_decode($UneLigne["Ligne"]);        
+			$array4 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM clone WHERE ID = 5 ";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array5 = json_decode($UneLigne["Ligne"]);        
+			$array5 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -74,41 +74,41 @@
 	$resultat = mysqli_query($connexion,$requete);
 		
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array6 = json_decode($UneLigne["Ligne"]);        
+			$array6 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM clone WHERE ID = 7 ";
 	$resultat = mysqli_query($connexion,$requete);
 		
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array7 = json_decode($UneLigne["Ligne"]);        
+			$array7 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM clone WHERE ID = 8 ";
 	$resultat = mysqli_query($connexion,$requete);
 		
 	if ( $resultat == FALSE ){
-		echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+		echo "<p>Erreur d'exÃ©cution de la requete :".mysqli_error($connexion)."</p>" ;
 		die();
 	}
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array8 = json_decode($UneLigne["Ligne"]);        
+			$array8 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
-	$tab = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
+	$tab = [$array1,$array2,$array3,$array4,$array5,$array6,$array7,$array8];
 
 ?>
