@@ -3,6 +3,9 @@
 
     require "header.php";
     require("connexiondb.php");
+    if(!isset($_SESSION["login"])){
+        header("Location:connexion.php");
+    }
 ?>
 
 <body>

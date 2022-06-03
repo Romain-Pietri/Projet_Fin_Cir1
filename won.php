@@ -3,7 +3,6 @@
 
     
     $taille=$_SESSION["taille"];
-    session_destroy();
     require "header.php";
     ?>
 

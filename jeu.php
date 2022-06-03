@@ -5,10 +5,12 @@
 </header>
 <body>
 <?php
-    
+    if(!isset($_SESSION["login"])){
+		header("Location:connexion.php");
+	}
 	
     if(!isset($_SESSION["taille"])){
-        header("Location: taille.php");
+        header("Location:taille.php");
     }
     else{
     $taille = $_SESSION["taille"];
