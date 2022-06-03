@@ -62,6 +62,9 @@ if(isset($_POST["valider"])){
         $result=mysqli_fetch_assoc($resultat1);
 
         $score = $result['Score'] + $taille - 100*$hintuse;
+        if(isset($_SESSION["Solvetrue"]) || $taille - 100*$hintuse<0){
+            $score=$result['Score'];
+        }
         echo $score;
         
         $request="UPDATE utilisateurs SET Score = '$score' WHERE login = '$login'";

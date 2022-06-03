@@ -13,6 +13,7 @@
         <input type="radio" name="taille" id="taille" value="8"/>
 			<legend for="8x8" class="input">8x8</legend>    
         <input type="submit" name="Generate" Value="Generate"/>
+	<input type="submit" name="Manual_Create" Value="Create your grid"/>
     </form>';
         
     }

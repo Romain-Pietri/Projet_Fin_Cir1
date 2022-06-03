@@ -36,6 +36,7 @@ h2{
   position: fixed; 
   bottom:0; 
   left: 0; 
+  z-index: 2;
 }
 
 #parametres{
@@ -78,59 +79,67 @@ h2{
     height: 200px;
 }
 
+#lost{
+    height: 300px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#dab{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+}
 
 /*----------Start----------*/
 
 
 /*----------Score----------*/
-.score,td,th{
-    border: 1px solid white;
-    border-collapse: collapse;
+table,td,th{
+    
     display:auto;
-    float: right;
-    background-color:rgba(0,0,0,0.50);
     color: white;
 }
 
 .ligne{
+    color: white;
     text-align: center;
     width : 80px;
     height : 30px;
 }
 
 .tableauscore{
-    margin-right: 130px;
-}
-
-#podium{
-    margin-left: 100px;
-}
-
-@keyframes score {
-    0% {transform: scaleX(1) skewX(10deg)  ;}
-    50% {transform: scaleX(.7) skewX(20deg)  ;}
-    100% {transform: scaleX(1) skewX(30deg);}
-}
-
-
-#first{
-    color: #DAA520;
-    animation: score 5s infinite;
-}
-
-#sec{
-    color: silver;
-    float: left;
-    animation: score 5s infinite;
-}
-
-#third{
-    color: #8b4513;
-    font-family: bold;
+    border: 1px solid white;
+    border-collapse: collapse;
     float: right;
-    margin-right: 455px;
-    animation: score 5s infinite;
+    margin-right: 130px;
+    background-color:rgba(0,0,0,0.50);
 }
+
+#conteneur{
+    background-image:url('images/podium.png');
+    background-size: 390px 290px;
+    height:280px;
+    width:374px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+#conteneur span{
+    display:inline-block;
+    width:32%;
+    text-align:center;
+    position:relative;
+}
+#conteneur span:nth-child(1){ top:95px; }
+#conteneur span:nth-child(2){ top:0px; }
+#conteneur span:nth-child(3){ top:95px; }
+
+#first{color: black;font-size: 30px;margin-left: 20px;}
+#sec{color: black;font-size: 25px;margin-left: 20px;}
+#third{color: black;font-size: 25px;margin-left: 20px;}
 
 /*----------Score----------*/
 
@@ -218,7 +227,7 @@ select{
     overflow: hidden;
     text-align: center;
     float: right;
-    margin-right: 550px;
+    margin-right: 43%;
 }
 
 #button:hover{
@@ -230,12 +239,7 @@ select{
                 0 0 200px #000099;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
-#button:nth-child(1){
-    filter: hue-rotate(270deg);
-}
-#button:nth-child(2){
-    filter: hue-rotate(110deg);
-}
+
 #button span{
     position: absolute;
     display: block;
@@ -633,3 +637,38 @@ nav li a:hover{
 }
 
 /*----------Menu----------*/
+
+/*----------Footer----------*/
+
+.icon{
+  display: inline;
+  margin-right: 35px;
+}
+
+.reseaux{
+  width: 40px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#legal{
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: black;
+    color : white; 
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+  }
+
+/*----------Footer----------*/

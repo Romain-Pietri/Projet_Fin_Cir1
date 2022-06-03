@@ -56,7 +56,7 @@ function generator(){
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
-        $seri=serialize($tab[$i]);
+        $seri=json_encode($tab[$i]);
         $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
         $exe = mysqli_query($connexion,$request);
         if( $exe == FALSE ){
@@ -96,11 +96,14 @@ function verif(){
 
 function indice(){
     require("connexiondb.php");
+    require("pulldb.php");
     $json=file_get_contents('Programmes-C/json.json');
     $data=json_decode($json);
+    $data->tableau = $tab;
+    $data->length=$_SESSION["taille"];
+    $data->request=0;
     $data->id=2;
     $data->verif=0;
-    $data->length=$_SESSION["taille"];
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
     echo exec("Programme.exe");
@@ -140,7 +143,7 @@ function solver(){
     $tab=$data->tableau;//envoyer tableau dans BD
     $id=1;
     for ($i=0;$i<8;$i++){
-        $seri=serialize($tab[$i]);
+        $seri=json_encode($tab[$i]);
         $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
         $exe = mysqli_query($connexion,$request);
         if( $exe == FALSE ){

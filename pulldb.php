@@ -13,7 +13,9 @@
 			$initial_array1 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
-		$requete="SELECT Ligne FROM clone WHERE ID = 2 ";
+	
+	
+	$requete="SELECT Ligne FROM clone WHERE ID = 2 ";
 	$resultat = mysqli_query($connexion,$requete);
 		
 	if ( $resultat == FALSE ){

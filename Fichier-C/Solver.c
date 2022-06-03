@@ -375,24 +375,24 @@ bool inteligent(Grille *g){
     for(int i=0; i<g->taille; ++i){
         if(countElemCol(g, i, 0)==g->taille/2 && countElemCol(g, i, 1)!=g->taille/2){
             if(InrowCol(g,i)){
-            for(int j=0; j<g->taille; ++j){
-                
-                if(g->tab[j][i]==-1){
-                    g->tab[j][i]=1;
+                for(int j=0; j<g->taille; ++j){
+                    
+                    if(g->tab[j][i]==-1){
+                        g->tab[j][i]=1;
+                    }
                 }
-            }
-            return true;}
-            return false;
+                return true;
+                }            
         }
         if(countElemLigne(g, i, 0)==g->taille/2 && countElemLigne(g, i, 1)!=g->taille/2){
             if(InrowLigne(g,i)){
-            for(int j=0; j<g->taille; ++j){
-                if(g->tab[i][j]==-1){
-                    g->tab[i][j]=1;
+                for(int j=0; j<g->taille; ++j){
+                    if(g->tab[i][j]==-1){
+                        g->tab[i][j]=1;
+                    }
                 }
-            }
-            return true;}
-            return false;
+                return true;
+                }
         }
         if(countElemCol(g, i, 1)==g->taille/2 && countElemCol(g, i, 0)!=g->taille/2){
             for(int j=0; j<g->taille; ++j){
@@ -412,7 +412,7 @@ bool inteligent(Grille *g){
         }
         for(int j=0; j<g->taille; ++j){
             if(g->tab[i][j]==-1){           
-                if(i!=0 && i!=g->taille-1){
+                if(i>0 && i<g->taille-1){//Si pas sur premiere ou derniere colonne
                     if(g->tab[i-1][j]==0 && g->tab[i+1][j]==0){
                         g->tab[i][j]=1;
                         return true;
@@ -422,9 +422,13 @@ bool inteligent(Grille *g){
                         return true;
                     }
                 }
-                if(j!=0 && j!=g->taille-1){
+                if(j>0 && j<g->taille-1){//Si sur premiere ou derniere ligne
                     if(g->tab[i][j-1]==0 && g->tab[i][j+1]==0){
+                        printGrille(g);
                         g->tab[i][j]=1;
+                        printf("%d %d\n",i,j);
+                        printGrille(g);
+                        
                         return true;
                     }
                     else if(g->tab[i][j-1]==1 && g->tab[i][j+1]==1){
@@ -432,7 +436,9 @@ bool inteligent(Grille *g){
                         return true;
                     }
                 }
-                if(i<=g->taille-3){
+
+
+                if(i<=g->taille-3){//Verification pour les deux prochain sont parreil colone
                     if(g->tab[i+1][j]==0 && g->tab[i+2][j]==0){
                         g->tab[i][j]=1;
                         if(i+3<g->taille){
@@ -452,7 +458,7 @@ bool inteligent(Grille *g){
                         return true;
                     }
                 }
-                if(j<=g->taille-3){
+                if(j<=g->taille-3){//Verification pour les deux prochain  sont parreil ligne
                     if(g->tab[i][j+1]==0 && g->tab[i][j+2]==0){
                         g->tab[i][j]=1;
                         if(j+3<g->taille){
@@ -472,7 +478,10 @@ bool inteligent(Grille *g){
                         return true;
                     }
                 }
-                if(i>=2){
+
+
+
+                if(i>=2){//Deux précedent colone
                     if(g->tab[i-1][j]==0 && g->tab[i-2][j]==0){
                         g->tab[i][j]=1;
                         if(i-3>=0){
@@ -492,7 +501,7 @@ bool inteligent(Grille *g){
                         return true;
                     }
                 }
-                if(j>=2){
+                if(j>=2){//deux precedent ligne
                     if(g->tab[i][j-1]==0 && g->tab[i][j-2]==0){
                         g->tab[i][j]=1;
                         if(j-3>=0){
@@ -512,7 +521,9 @@ bool inteligent(Grille *g){
                         return true;
                     }
                 }
-        }
+                
+
+            }
         }
     }
 
@@ -552,7 +563,6 @@ Grille* Resoudre(Grille* g) {
 
 int main(){
     Grille *g=Newgrille();
-    /*
     int tab[8][8]={
         {-1,-1,-1,-1,-1, 0,-1,-1},
         { 1, 0, 0, 1,-1,-1, 1,-1},
@@ -562,12 +572,12 @@ int main(){
         {-1, 0,-1,-1,-1,-1, 0,-1},
         {-1,-1,-1,-1, 1,-1, 0,-1},
         { 0,-1, 0,-1,-1,-1,-1, 1}     
-    };*/
+    };
 
-    int tab[8][8]={{1,0,0,1,-1,-1,-1,-1},{0,1,1,0,-1,-1,-1,-1},{1,1,0,0,-1,-1,-1,-1},{0,0,1,1,-1,-1,-1,-1},{1,0,0,1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1}};
-    initGrille(g,4, tab);
+    //int tab[8][8]={{1,0,0,1,-1,-1,-1,-1},{0,1,1,0,-1,-1,-1,-1},{1,1,0,0,-1,-1,-1,-1},{0,0,1,1,-1,-1,-1,-1},{1,0,0,1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1}};
+    initGrille(g,8, tab);
     printGrille(g);
-    printf("%d\n",VerifGrille(g));
+    //printf("%d\n",VerifGrille(g));
 
-    //printGrille(Resoudre(g));
+    Resoudre(g);
 }

@@ -4,6 +4,7 @@
 ?>
 </header>
 <body>
+	<img id="gadget" src="images/gadget1.gif">
 <?php
     if(!isset($_SESSION["login"])){
 		header("Location:connexion.php");
@@ -27,7 +28,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array1 = unserialize($UneLigne["Ligne"]);        
+			$initial_array1 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 		$requete="SELECT Ligne FROM grilles WHERE ID = 2 ";
@@ -40,7 +41,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array2 = unserialize($UneLigne["Ligne"]);        
+			$initial_array2 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -54,7 +55,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array3 = unserialize($UneLigne["Ligne"]);        
+			$initial_array3 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -68,7 +69,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array4 = unserialize($UneLigne["Ligne"]);        
+			$initial_array4 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM grilles WHERE ID = 5 ";
@@ -81,7 +82,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array5 = unserialize($UneLigne["Ligne"]);        
+			$initial_array5 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 
@@ -95,7 +96,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array6 = unserialize($UneLigne["Ligne"]);        
+			$initial_array6 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM grilles WHERE ID = 7 ";
@@ -108,7 +109,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array7 = unserialize($UneLigne["Ligne"]);        
+			$initial_array7 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$requete="SELECT Ligne FROM grilles WHERE ID = 8 ";
@@ -121,7 +122,7 @@
 	else
 	{
 		while($UneLigne = mysqli_fetch_assoc($resultat)){
-			$initial_array8 = unserialize($UneLigne["Ligne"]);        
+			$initial_array8 = json_decode($UneLigne["Ligne"]);        
 		}
 	}
 	$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
@@ -150,8 +151,8 @@
 
             <?php
 
-			   $login=$_SESSION['login'];
-	           require("connexiondb.php");
+				$login=$_SESSION['login'];
+	        		require("connexiondb.php");
 			
 				$request="SELECT Indice,Moula FROM utilisateurs WHERE login='$login'";
 				$resultat=mysqli_query($connexion,$request);
@@ -187,16 +188,6 @@
 				document.cookie = 'Ligne6 = ' + JSON.stringify(contenu[5]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 				document.cookie = 'Ligne7 = ' + JSON.stringify(contenu[6]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 				document.cookie = 'Ligne8 = ' + JSON.stringify(contenu[7]) + ' ; max-age = 3600 ; path=/; samesite=lax' ;
-
-				/*document.cookie = 'Ligne1 = "a:8:{i:0;i:' + contenu[0][0] + ';i:1;i:' + contenu[0][1] + ';i:2;i:'+ contenu[0][2] + ';i:3;i:' + contenu[0][3]+ ';i:4;i:' + contenu[0][4] + ';i:5;i:' + contenu[0][5] + ';i:6;i:' + contenu[0][6]+ ';i:7;i:' + contenu[0][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne2 = "a:8:{i:0;i:' + contenu[1][0] + ';i:1;i:' + contenu[1][1] + ';i:2;i:'+ contenu[1][2] + ';i:3;i:' + contenu[1][3]+ ';i:4;i:' + contenu[1][4] + ';i:5;i:' + contenu[1][5] + ';i:6;i:' + contenu[1][6]+ ';i:7;i:' + contenu[1][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne3 = "a:8:{i:0;i:' + contenu[2][0] + ';i:1;i:' + contenu[2][1] + ';i:2;i:'+ contenu[2][2] + ';i:3;i:' + contenu[2][3]+ ';i:4;i:' + contenu[2][4] + ';i:5;i:' + contenu[2][5] + ';i:6;i:' + contenu[2][6]+ ';i:7;i:' + contenu[2][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ; 
-				document.cookie = 'Ligne4 = "a:8:{i:0;i:' + contenu[3][0] + ';i:1;i:' + contenu[3][1] + ';i:2;i:'+ contenu[3][2] + ';i:3;i:' + contenu[3][3]+ ';i:4;i:' + contenu[3][4] + ';i:5;i:' + contenu[3][5] + ';i:6;i:' + contenu[3][6]+ ';i:7;i:' + contenu[3][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne5 = "a:8:{i:0;i:' + contenu[4][0] + ';i:1;i:' + contenu[4][1] + ';i:2;i:'+ contenu[4][2] + ';i:3;i:' + contenu[4][3]+ ';i:4;i:' + contenu[4][4] + ';i:5;i:' + contenu[4][5] + ';i:6;i:' + contenu[4][6]+ ';i:7;i:' + contenu[4][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne6 = "a:8:{i:0;i:' + contenu[5][0] + ';i:1;i:' + contenu[5][1] + ';i:2;i:'+ contenu[5][2] + ';i:3;i:' + contenu[5][3]+ ';i:4;i:' + contenu[5][4] + ';i:5;i:' + contenu[5][5] + ';i:6;i:' + contenu[5][6]+ ';i:7;i:' + contenu[5][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne7 = "a:8:{i:0;i:' + contenu[6][0] + ';i:1;i:' + contenu[6][1] + ';i:2;i:'+ contenu[6][2] + ';i:3;i:' + contenu[6][3]+ ';i:4;i:' + contenu[6][4] + ';i:5;i:' + contenu[6][5] + ';i:6;i:' + contenu[6][6]+ ';i:7;i:' + contenu[6][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				document.cookie = 'Ligne8 = "a:8:{i:0;i:' + contenu[7][0] + ';i:1;i:' + contenu[7][1] + ';i:2;i:'+ contenu[7][2] + ';i:3;i:' + contenu[7][3]+ ';i:4;i:' + contenu[7][4] + ';i:5;i:' + contenu[7][5] + ';i:6;i:' + contenu[7][6]+ ';i:7;i:' + contenu[7][7] + '}" ; max-age = 3600 ; path=/; samesite=lax' ;
-				*/
 			}
 
 			var initial_array1 = <?php echo '['.implode(', ', $initial_array1). ']'; ?>;
@@ -233,10 +224,20 @@
 						contenu[x - 1][y - 1] = n;
 						z = x * 10 + y;
 						if (n == 1) {
-							document.getElementById(z).src = "images/img1.png";
+							if (initial_array[x - 1][y - 1] == 1) {
+								document.getElementById(z).src = "images/img3.png";
+							}
+							else{
+								document.getElementById(z).src = "images/img1.png";
+							}
 						}
 						if (n == 2) {
-							document.getElementById(z).src = "images/img2.png";
+							if (initial_array[x - 1][y - 1] == 2) {
+								document.getElementById(z).src = "images/img4.png";
+							}
+							else{
+								document.getElementById(z).src = "images/img2.png";
+							}
 						}
 						if (n == 0) {
 							document.getElementById(z).src = "images/img0.png";
@@ -262,10 +263,20 @@
 				contenu[x - 1][y - 1] = n;
 				z = x * 10 + y;
 				if (n == 1) {
-					document.getElementById(z).src = "images/img1.png";
+					if (initial_array[x - 1][y - 1] == 1) {
+						document.getElementById(z).src = "images/img3.png";
+					}
+					else{
+						document.getElementById(z).src = "images/img1.png";
+					}
 				}
 				if (n == 2) {
-					document.getElementById(z).src = "images/img2.png";
+					if (initial_array[x - 1][y - 1] == 2) {
+						document.getElementById(z).src = "images/img4.png";
+					}
+					else{
+						document.getElementById(z).src = "images/img2.png";
+					}
 				}
 				if (n == 0) {
 					document.getElementById(z).src = "images/img0.png";

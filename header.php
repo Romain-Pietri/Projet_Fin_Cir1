@@ -38,7 +38,7 @@
 	</div>
 	<span  id="barleft" class="bar_left ">
 		<ul class="nav_top" id="navtop">
-		<li><a href="taille.php">Game</a></li>
+		<li><a href="jeu.php">Game</a></li>
 		<li><a href="score.php">Score</a></li>
 		<li><a href="shop.php">Shop</a></li>
 		</ul>	

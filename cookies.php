@@ -6,6 +6,12 @@
 	if (isset($_COOKIE['id'])){ 
 		$_COOKIE['id'] = "";
 	}
+	
+	if(isset($_POST["Manual_Create"])){
+		$_SESSION["taille"] = $_POST["taille"] * 1;
+		header("Location: manuel.php");
+	}
+
 
 	if(isset($_POST["Generate"])){
 		$_SESSION["taille"] = $_POST["taille"] * 1;
@@ -52,11 +58,12 @@
 		require("save.php");
 		setcookie("id" , 3 , time()+(365*24*3600));
 		header("Location: interface.php");
+		$_SESSION["Solvetrue"]="1";
 	}
 
 	if(isset($_POST['Create'])){
 		require("save2.php");
-		setcookie("id" , 5 , time()+(365*24*3600));
+		setcookie("id" , 4 , time()+(365*24*3600));
 		header("Location: interface.php");
 	}
 	

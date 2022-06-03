@@ -1,41 +1,34 @@
 <?php
     session_start();
 
-    
     $taille=$_SESSION["taille"];
     require "header.php";
-    ?>
+?>
 
 <h1> Congratulations !</h1>
+<img id="title" src="images/win.gif">
+
 </header>
 <main>
 <?php
 if($taille==4){
 ?>
-<div class="regles">
-<br>
+<div>
 <br>
 <p>Congratulations ! You solved the grid, and now everyone is happy, youhou !</p>
-<br>
 <img id="dab" src="images/dab.gif">
-<br>
-<p> You can try to do the 6x6 and 8x8 grids, to get a better score and appear in the leaderboard !</p>
-<br>
+<p> You can try to do the 6x6 and 8x8 grids, to get a better score and climb in the leaderboard !</p>
 </div>
 
 <?php
 }
 else if($taille==6){
 ?>
-<div class="regles">
-<br>
+<div>
 <br>
 <p>Congratulations ! You solved the grid, and now everyone is happy, youhou !</p>
-<br>
 <img id="dab" src="images/dab.gif">
-<br>
-<p> You can try to do the 8x8 grid, to get a better score and appear in the leaderboard !</p>
-<br>
+<p> You can try to do the 8x8 grid, to get a better score and climb in the leaderboard !</p>
 </div>
 
 <?php
@@ -43,31 +36,23 @@ else if($taille==6){
 else if($taille==8){
 ?>
 
-<div class="regles">
-<br>
+<div>
 <br>
 <p>Congratulations ! You solved the biggest grid, and now everyone is happy, youhou !</p>
-<br>
 <img id="dab" src="images/dab.gif">
-<br>
-<p> You can try to do it faster, to get a better score and appear in the leaderboard !</p>
-<br>
+<p> You can try to do another one, to get a better score and climb in the leaderboard !</p>
 </div>
 
-<form class="formLetter" action="calculscore.php" method="post">
-        <fieldset>
-            <legend>Enregistrer le score</legend>
-            <label>Pseudo</label>
-            <input type="text" name="login" placeholder="test" required>
-            <br>
-            <input type="submit" name="valider" value="valider"/>
-            <br>
-        </fieldset>
-     </form>
-</main>
-    
-<?php
-}
+<?php } ?>
 
-    require "footer.php";
-?>
+<a id="button" href="jeu.php">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        RESTART
+        </a>
+
+<br><br><h2>.</h2><br><br>
+    
+<?php require "footer.php";?>
