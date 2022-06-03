@@ -13,7 +13,6 @@
 		<header>
 
 <a><img id="logo" src="images/log.png"></a>
-<img id="gadget" src="images/gadget1.gif">
 
 <div id="container" class="cont_ainer">
 	<nav>

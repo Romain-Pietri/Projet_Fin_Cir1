@@ -19,7 +19,7 @@
         <span></span>
         RESTART
     	</a>
-
+<br><br>
 
 <?php
 	require "footer.php";

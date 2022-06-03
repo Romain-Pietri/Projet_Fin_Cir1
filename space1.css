@@ -86,36 +86,46 @@ h2{
     margin-left: auto;
 }
 
+#dab{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+}
+
 /*----------Start----------*/
 
 
 /*----------Score----------*/
-.score,td,th{
-    border: 1px solid white;
-    border-collapse: collapse;
+table,td,th{
+    
     display:auto;
-    background-color:rgba(0,0,0,0.50);
     color: white;
 }
 
 .ligne{
+    color: white;
     text-align: center;
     width : 80px;
     height : 30px;
 }
 
 .tableauscore{
+    border: 1px solid white;
+    border-collapse: collapse;
     float: right;
     margin-right: 130px;
-    margin-top: 50px;
+    background-color:rgba(0,0,0,0.50);
 }
 
 #conteneur{
     background-image:url('images/podium.png');
-    background-size: 410px;
+    background-size: 390px 290px;
     height:280px;
     width:374px;
-    margin-right: 400px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 #conteneur span{
     display:inline-block;
@@ -123,13 +133,13 @@ h2{
     text-align:center;
     position:relative;
 }
-#conteneur span:nth-child(1){ top:107px; }
+#conteneur span:nth-child(1){ top:95px; }
 #conteneur span:nth-child(2){ top:0px; }
-#conteneur span:nth-child(3){ top:107px; }
+#conteneur span:nth-child(3){ top:95px; }
 
-#first{color: gold;font-size: 30px;}
-#sec{color: silver;}
-#third{color: #B1560F}
+#first{color: black;font-size: 30px;margin-left: 20px;}
+#sec{color: black;font-size: 25px;margin-left: 20px;}
+#third{color: black;font-size: 25px;margin-left: 20px;}
 
 /*----------Score----------*/
 
@@ -229,12 +239,7 @@ select{
                 0 0 200px #000099;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
-#button:nth-child(1){
-    filter: hue-rotate(270deg);
-}
-#button:nth-child(2){
-    filter: hue-rotate(110deg);
-}
+
 #button span{
     position: absolute;
     display: block;

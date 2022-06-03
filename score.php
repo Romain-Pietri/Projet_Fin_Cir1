@@ -4,13 +4,14 @@
     require "header.php";
 ?>
 
-<h1> Scoreboard :</h1>
-
+<br><br>
+    <img id="title" src="images/scoreboard.gif">
 </header>
 
 <main>
-
+    
     <img id="gadget" src="images/gadget1.gif">
+    <img id="title" src="images/victory.gif">
     
     <div class="tableauscore">
     <?php
@@ -82,7 +83,7 @@
     ?>
     </div>
     
-    <br><br>
+    
 
     <div id="conteneur">
     <span class="ville"><p id="sec"><strong><?php echo $sec; ?></strong></p></span>
@@ -94,4 +95,8 @@
 
 </main>
 
-<footer>
+</div>
+</div>
+</main>
+</body>
+</htlm>
