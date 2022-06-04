@@ -161,16 +161,12 @@
 			echo "Vous devez faire des suppositions, il n'y a plus de déductions logiques.";
 		}
 		else{
-			$x = ($_COOKIE["indice"])/10;
 			$y = ($_COOKIE["indice"])%10;
-			echo "Vous pouvez faire une déduction logique sur la case de la ligne $x et la colonne $y";
+			$x = ($_COOKIE["indice"] - $y)/10;
+			echo "Vous pouvez faire une déduction logique sur la ligne $x et la colonne $y";
 		}
-
-
-		echo "<br>";
-		echo $_COOKIE["indice"];
-		$_COOKIE["indice"] = "";
 	}
+	
 	$array1 = "[0,0,0,0,0,0,0,0]";
 	$array2 = "[0,0,0,0,0,0,0,0]";
 	$array3 = "[0,0,0,0,0,0,0,0]";
