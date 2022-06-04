@@ -7,7 +7,7 @@
 	<img id="gadget" src="images/gadget1.gif">
 
 
-	<div class=".clickevent">
+	<!-- <div class=".clickevent">
 	    <button id="btn">Appuyer !</button>
 	  </br>
 	  <div class=regles>
@@ -32,7 +32,7 @@
 	      console.log("truc");
 	  })
 	  
-	 </script>
+	 </script> -->
 
 <?php
     if(!isset($_SESSION["login"])){
