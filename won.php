@@ -1,8 +1,17 @@
 <?php
     session_start();
-
     $taille=$_SESSION["taille"];
+    $_SESSION["taille"] = 0;
     require "header.php";
+    $_COOKIE["Ligne1"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne2"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne3"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne4"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne5"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne6"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne7"] = "[0,0,0,0,0,0,0,0]";
+    $_COOKIE["Ligne8"] = "[0,0,0,0,0,0,0,0]";
+    require("save.php");
 ?>
 
 <h1> Congratulations !</h1>
@@ -45,7 +54,7 @@ else if($taille==8){
 
 <?php } ?>
 
-<a id="button" href="jeu.php">
+<a id="button" href="taille.php">
         <span></span>
         <span></span>
         <span></span>
@@ -56,13 +65,4 @@ else if($taille==8){
 <br><br><h2>.</h2><br><br>
     
 <?php
-    $_COOKIE["Ligne1"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne2"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne3"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne4"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne5"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne6"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne7"] = "[0,0,0,0,0,0,0,0]";
-    $_COOKIE["Ligne8"] = "[0,0,0,0,0,0,0,0]";
-    require("save.php");
     require "footer.php";?>

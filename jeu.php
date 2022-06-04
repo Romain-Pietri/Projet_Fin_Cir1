@@ -39,7 +39,7 @@
 		header("Location:connexion.php");
 	}
 	
-    if(!isset($_SESSION["taille"])){
+    if(!isset($_SESSION["taille"]) || $_SESSION["taille"] == 0){
         header("Location:taille.php");
     }
     else{

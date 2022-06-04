@@ -2,7 +2,7 @@
     session_start();
     require "header.php";
 
-    if(!isset($_SESSION["taille"])){
+    if(!isset($_SESSION["taille"]) || $_SESSION["taille"] == 0){
 
         echo '<br><br><legend class="input">Choisissez la taille de la grille :</legend>
     <form method="post" action="cookies.php">
@@ -18,6 +18,6 @@
         
     }
     else{
-        header("Location : jeu.php");
+        header("Location: jeu.php");
     }
 ?>
