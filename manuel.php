@@ -113,5 +113,4 @@ require("header.php");
 		</script>
     </div>
 
-require("footer.php");
-?>
+</table></div></body></html>

@@ -119,6 +119,4 @@ if(isset($_POST['ten'])){
 }
 ?>
 </body>
-<footer>
-
-</footer>
+</html

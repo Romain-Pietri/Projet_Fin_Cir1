@@ -56,5 +56,7 @@ while($ligne=mysqli_fetch_assoc($result)){
 
 <?php
 }
-}
+}?>
+</body>
+</html>
 

@@ -6,33 +6,42 @@
 <body>
 	<img id="gadget" src="images/gadget1.gif">
 
+	<div class="score"><button class="trophy"><img id="regles" src="images/rules.png"></button></div>
 
-	<!-- <div class=".clickevent">
-	    <button id="btn">Appuyer !</button>
-	  </br>
-	  <div class=regles>
-	    <p><br><br>The rules are simple. Starship invader is played on a square grid of any size. <br>
-	    Initially, some cells contain a rocket or spaceship. All other cells are empty.<br> The goal is to fill each cell so that:<br>
-	    <strong>1.</strong> Each row and column contains the same number of rockets and spaceships.<br>
-	    <strong>2.</strong> You can have two spaceships or rockets in a row but no more.<br>
-	    <strong>3.</strong> Each row and column is unique.<br>
-	    <br>
-	    Your time to play !
-	    </p>
-	   </div>
 
-	  </div> 
+	<ul id="Menu">
+        <div class="score_box">
+            <div class="quit_btn"><img id="cross" src="images/cross.png"></i></div>
+            <div class="info_title"> Game Rules : </div>
+            <div class="score_text">
+                <div class="info">The rules are simple. Starship invader is played on a square grid of any size. <br>
+				    Initially, some cells contain a rocket or spaceship. All other cells are empty.<br> The goal is to fill each cell so that:<br>
+				    <strong>1.</strong> Each row and column contains the same number of rockets and spaceships.<br>
+				    <strong>2.</strong> You can have two spaceships or rockets in a row but no more.<br>
+				    <strong>3.</strong> Each row and column is unique.<br>
+				</div>
+               
+               </div>
+        </div>
+    </ul>
+     
 
 	  <script>
-	  const btn = document.querySelector('#btn');
-	  const img = document.getElementById('.regles');
+	  	const score_box = document.querySelector(".score_box");
+const trophee = document.querySelector(".score button.trophy");
+const quit_btn = document.querySelector(".score_box .quit_btn")
 
-	  btn.addEventListener('click', () => {
-	      img.classList.toggle('show')     // "add" ou "remove" sinon "toggle" pour ajouter si pas présent et enlever si deja la 
-	      console.log("truc");
-	  })
-	  
-	 </script> -->
+
+//trophée cliqué
+trophee.onclick = ()=>{
+    score_box.classList.add("appear");
+} 
+
+//Croix cliquée
+quit_btn.onclick = () =>{
+    score_box.classList.remove("appear");
+}
+	 </script> 
 
 <?php
     if(!isset($_SESSION["login"])){
@@ -158,12 +167,12 @@
 
 	if(isset($_COOKIE["indice"])){
 		if($_COOKIE["indice"] == "suppo"){
-			echo "Vous devez faire des suppositions, il n'y a plus de déductions logiques.";
+			echo "<p>Vous devez faire des suppositions, il n'y a plus de déductions logiques.</p>";
 		}
 		else{
 			$y = ($_COOKIE["indice"])%10;
 			$x = ($_COOKIE["indice"] - $y)/10;
-			echo "Vous pouvez faire une déduction logique sur la ligne $x et la colonne $y";
+			echo "<p>Vous pouvez faire une déduction logique sur la ligne $x et la colonne $y</p>";
 		}
 	}
 	

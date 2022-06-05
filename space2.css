@@ -1,5 +1,5 @@
 body{
-  background-image: url("images/space1.gif");
+  background-image: url("images/space2.gif");
   background-repeat: no-repeat;
   background-size: cover;
 } 
@@ -36,6 +36,7 @@ h2{
   position: fixed; 
   bottom:0; 
   left: 0; 
+  z-index: 2;
 }
 
 #parametres{
@@ -78,27 +79,74 @@ h2{
     height: 200px;
 }
 
+#lost{
+    height: 300px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#dab{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+}
 
 /*----------Start----------*/
 
 
 /*----------Score----------*/
-.score,td,th{
-  border: solid; 
-  border-collapse:collapse;
-  border-color: white;
-  text-align:center;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
+table,td,th{
+    
+    display:auto;
+    color: white;
 }
+
+.ligne{
+    color: white;
+    text-align: center;
+    width : 80px;
+    height : 30px;
+}
+
+.tableauscore{
+    border: 1px solid white;
+    border-collapse: collapse;
+    float: right;
+    margin-right: 130px;
+    background-color:rgba(0,0,0,0.50);
+}
+
+#conteneur{
+    background-image:url('images/podium.png');
+    background-size: 390px 290px;
+    height:280px;
+    width:374px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+#conteneur span{
+    display:inline-block;
+    width:32%;
+    text-align:center;
+    position:relative;
+}
+#conteneur span:nth-child(1){ top:95px; }
+#conteneur span:nth-child(2){ top:0px; }
+#conteneur span:nth-child(3){ top:95px; }
+
+#first{color: black;font-size: 30px;margin-left: 20px;}
+#sec{color: black;font-size: 25px;margin-left: 20px;}
+#third{color: black;font-size: 25px;margin-left: 20px;}
 
 /*----------Score----------*/
 
 
 /*----------Jeu.php----------*/
 
-table,th,td {
+#t01,th,td {
     border: 1px solid white;
     border-collapse: collapse;
     display:auto;
@@ -137,7 +185,7 @@ table#t01 tr {
     padding: 8px 2px;
     width: 8%;
     color: white;
-    border-color: #000099;
+    border-color: #448744;
     border-radius: 10px;
 }
 
@@ -149,7 +197,7 @@ table#t01 tr {
     padding: 8px 2px;
     width: 8%;
     color: white;
-    border-color: #000099;
+    border-color: #448744;
     border-radius: 10px;
 }
 
@@ -179,24 +227,19 @@ select{
     overflow: hidden;
     text-align: center;
     float: right;
-    margin-right: 550px;
+    margin-right: 43%;
 }
 
 #button:hover{
-    background: #000099;
+    background: #448744;
     color: white;
-    box-shadow: 0 0 5px #000099,
-                0 0 25px #000099,
-                0 0 50px #000099,
-                0 0 200px #000099;
+    box-shadow: 0 0 5px #448744,
+                0 0 25px #448744,
+                0 0 50px #448744,
+                0 0 200px #448744;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
-#button:nth-child(1){
-    filter: hue-rotate(270deg);
-}
-#button:nth-child(2){
-    filter: hue-rotate(110deg);
-}
+
 #button span{
     position: absolute;
     display: block;
@@ -206,7 +249,7 @@ select{
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,transparent,#000099);
+    background: linear-gradient(90deg,transparent,#448744);
     animation: animate1 1s linear infinite;
 }
 @keyframes animate1{
@@ -222,7 +265,7 @@ select{
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg,transparent,#000099);
+    background: linear-gradient(180deg,transparent,#448744);
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
@@ -239,7 +282,7 @@ select{
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg,transparent,#000099);
+    background: linear-gradient(270deg,transparent,#448744);
     animation: animate3 1s linear infinite;
     animation-delay: 0.50s;
 }
@@ -257,7 +300,7 @@ select{
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg,transparent,#000099);
+    background: linear-gradient(360deg,transparent,#448744);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
@@ -287,7 +330,7 @@ input[type=text],input[type=password]{
     background-color: transparent;
     color: white;
     width:40%;
-    border:2px solid #000099;
+    border:2px solid #448744;
     border-radius:4px;
     display: block;
     outline:none;
@@ -299,7 +342,7 @@ input[type=text],input[type=password]{
 }
 
 input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
-    background-color: #000099;
+    background-color: #448744;
     border-color:dodgerBlue;
     box-shadow:0 0 8px 0 dodgerBlue;
 }
@@ -307,7 +350,7 @@ input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
 input[type=submit]{
     color: white;
     background-color: transparent;
-    border-color: #000099;
+    border-color: #448744;
     width: 15%;
     display: block;
     margin-top: 40px;
@@ -318,7 +361,7 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-    background-color: #000099;
+    background-color: #448744;
     border-color: white;
     box-shadow: 0 0 8px dodgerBlue;
     width: 20%;
@@ -594,3 +637,61 @@ nav li a:hover{
 }
 
 /*----------Menu----------*/
+
+/*----------Footer----------*/
+
+.icon{
+  display: inline;
+  margin-right: 35px;
+}
+
+.reseaux{
+  width: 40px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#legal{
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: black;
+    color : white; 
+    font-weight: bold;
+    text-align: center;
+    margin: 0px;
+  }
+
+/*----------Footer----------*/
+
+
+
+.regles{
+    margin:0 auto;
+    height: 200px;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.show{
+    visibility: visible;
+}
+
+.mouseEvent{
+    border: 6px solid darkslateblue;
+    width: 220px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+
+}
