@@ -35,7 +35,7 @@ switch($i){
         $text="Badge 8";
         break;
 }
-$request="SELECT Badge$i FROM utilisateurs WHERE login='$login'";
+$request="SELECT Badge$i FROM badge INNER JOIN utilisateurs ON badge.ID=utilisateurs.ID";
 $result=mysqli_query($connexion,$request);
 if ( $result == FALSE ){
     echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -43,7 +43,7 @@ if ( $result == FALSE ){
 }
 while($ligne=mysqli_fetch_assoc($result)){
     if($ligne["Badge$i"]==0){
-        $;
+        echo "test 0";
     }
     if($ligne["Badge$i"]==1){
         echo"test 1";

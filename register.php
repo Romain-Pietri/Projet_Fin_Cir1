@@ -94,7 +94,13 @@
 								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
 								die();
 							}
+				$request2="INSERT INTO badge(Badge1,Badge2,Badge3,Badge4,Badge5,Badge6,Badge7,Badge8,Badge9,Badge10) VALUES ('0','0','0','0','0','0','0','0','0','0')";
 				mysqli_close($connexion);
+				$resultat=mysqli_query($connexion,$request2);
+				if ( $resultat == FALSE ){
+								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+								die();
+							}
 				header("Location:connexion.php");
 				}
 			
