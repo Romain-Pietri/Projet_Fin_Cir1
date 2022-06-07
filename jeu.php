@@ -175,6 +175,11 @@ quit_btn.onclick = () =>{
 			echo "<p>Vous pouvez faire une déduction logique sur la ligne $x et la colonne $y</p>";
 		}
 	}
+	if(isset($_COOKIE["indice"])){
+		$_COOKIE["indice"] = "";
+    }
+
+	
 	
 	$array1 = "[0,0,0,0,0,0,0,0]";
 	$array2 = "[0,0,0,0,0,0,0,0]";
@@ -228,7 +233,9 @@ quit_btn.onclick = () =>{
             <form method="post" action = "cookies.php">
                 <input type="submit" id="verif" name="Verify" Value="Verify"/>
                 <input type="submit" id="solve" name="Solve" Value="Solve"/>
-                <input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
+                <input type="submit" id="restart" name="Restart" Value="Restart"/>
+				<input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
+				
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 

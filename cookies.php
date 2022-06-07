@@ -8,8 +8,8 @@
 	}
 	
 	if(isset($_POST["Manual_Create"])){
-		$_SESSION["taille"] = $_POST["taille"] * 1;
-		header("Location: manuel.php");
+		$_SESSION["taille2"] = $_POST["taille"] * 1;
+		header("Location:manuel.php");
 	}
 
 
@@ -65,6 +65,23 @@
 		require("save2.php");
 		setcookie("id" , 4 , time()+(365*24*3600));
 		header("Location: interface.php");
+	}
+
+	if(isset($_POST["Restart"])){
+		require("connexiondb.php");
+		for($i = 1; $i <= 8; $i++){
+			$requete="UPDATE clone SET Ligne= '[0,0,0,0,0,0,0,0]' WHERE ID = $i";
+			$resultat = mysqli_query($connexion,$requete);
+			$_COOKIE["Ligne1"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne2"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne3"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne4"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne5"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne6"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne7"] = "[0,0,0,0,0,0,0,0]";
+			$_COOKIE["Ligne8"] = "[0,0,0,0,0,0,0,0]";
+		}
+		header("Location:jeu.php");
 	}
 	
 ?>

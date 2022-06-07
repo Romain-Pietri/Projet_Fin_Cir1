@@ -4,8 +4,8 @@
 	$requete = "DELETE FROM grilles";
 	$resultat = mysqli_query($connexion,$requete);
 
-	$ligne= json_encode($_COOKIE["Ligne1"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',1)";
+	$ligne= ($_COOKIE["Ligne1"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',1)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -13,8 +13,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne2"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',2)";
+	$ligne= ($_COOKIE["Ligne2"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',2)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -22,8 +22,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne3"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',3)";
+	$ligne= ($_COOKIE["Ligne3"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',3)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -31,8 +31,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne4"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',4)";
+	$ligne= ($_COOKIE["Ligne4"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',4)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -40,8 +40,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne5"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',5)";
+	$ligne= ($_COOKIE["Ligne5"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',5)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -49,8 +49,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne6"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',6)";
+	$ligne= ($_COOKIE["Ligne6"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',6)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -58,8 +58,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne7"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',7)";
+	$ligne= ($_COOKIE["Ligne7"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',7)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
@@ -67,8 +67,8 @@
 		die();
 	}
 
-	$ligne= json_encode($_COOKIE["Ligne8"]); 
-	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('$ligne',8)";
+	$ligne= ($_COOKIE["Ligne8"]); 
+	$requete="INSERT INTO grilles(Ligne, ID) VALUES ('[$ligne]',8)";
 	$resultat = mysqli_query($connexion,$requete);
 			
 	if ( $resultat == FALSE ){
