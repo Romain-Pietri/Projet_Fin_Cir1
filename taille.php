@@ -43,12 +43,10 @@
     }
 ?>
 
-<div href="taillegen.php" class="wrapper">
-  <button class="but">
-    Create your own grid !
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</div>
+        <a id="button" href="taillegen.php">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Create your own grid !
+        </a>
