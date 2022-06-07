@@ -11,7 +11,11 @@ if(!isset($_SESSION["taille2"]) || $_SESSION["taille2"] == 0){
 }
 else{
 	$taille = $_SESSION["taille2"];
-    require("connexiondb.php");
+   	require("connexiondb.php");
+	if(isset($_SESSION["erreur"]) && $_SESSION["erreur"] == 1){
+		echo "Il y a eu une erreur lors de la résolution de cett grille";
+		unset($_SESSION["erreur"]);
+	}
 ?> 
 
 <div id="container">
