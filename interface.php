@@ -187,6 +187,12 @@ function solver(){
         $id = $id + 1;
     }
     mysqli_close($connexion);
+    if($data->verif==0){
+        $_SESSION["erreur"] = 1;
+    }
+
+
+    
     header("Location:jeu.php");
 }
 
@@ -220,7 +226,9 @@ function verifgen(){
         header("location:jeu.php");
     }
     else{
+        $_SESSION["erreur"] = 1;
         header("location:manuel.php");
     }
 }
 ?>
+
