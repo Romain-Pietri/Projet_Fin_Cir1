@@ -165,18 +165,18 @@ quit_btn.onclick = () =>{
 	}
 	$initial_array = [$initial_array1,$initial_array2,$initial_array3,$initial_array4,$initial_array5,$initial_array6,$initial_array7,$initial_array8];
 
-	if(isset($_COOKIE["indice"])){
-		if($_COOKIE["indice"] == "suppo"){
+	if(isset($_SESSION["indice"])){
+		if($_SESSION["indice"] == "suppo"){
 			echo "<p>Vous devez faire des suppositions, il n'y a plus de déductions logiques.</p>";
 		}
 		else{
-			$y = ($_COOKIE["indice"])%10;
-			$x = ($_COOKIE["indice"] - $y)/10;
+			$y = ($_SESSION["indice"])%10;
+			$x = ($_SESSION["indice"] - $y)/10;
 			echo "<p>Vous pouvez faire une déduction logique sur la ligne $x et la colonne $y</p>";
 		}
 	}
-	if(isset($_COOKIE["indice"])){
-		$_COOKIE["indice"] = "";
+	if(isset($_SESSION["indice"])){
+		unset($_SESSION["indice"]);
     }
 
 	

@@ -65,6 +65,11 @@ function generator(){
         }
         $id = $id + 1;
     }
+
+    if(isset($_SESSION["indice"])){
+		unset($_SESSION["indice"]);
+    }
+
     mysqli_close($connexion);
     header("Location:jeu.php");
 }
@@ -125,19 +130,19 @@ function indice(){
     for($x = 1; $x <= 8; $x++) {
 		for($y = 1; $y <= 8; $y++){
 			if($tab[$x - 1][$y - 1] != $indicetab[$x - 1][$y - 1] && $indiceset == 0){
-                if(isset($_COOKIE["indice"])){
-                    $_COOKIE["indice"] = "";
+                if(isset($_SESSION["indice"])){
+                    unset($_SESSION["indice"]);
                 }
-                setcookie("indice" , "$x$y"  , time()+(365*24*3600));
+                $_SESSION["indice"] = "$x$y";
                 $indiceset = 1;
 			}					
 		}
 	}
     if($indiceset == 0){
-        if(isset($_COOKIE["indice"])){
-            $_COOKIE["indice"] = "";
+        if(isset($_SESSION["indice"])){
+            unset($_SESSION["indice"]);
         }
-        setcookie("indice" , "suppo"  , time()+(365*24*3600));
+        $_SESSION["indice"] = "suppo";
     }
     header("location:jeu.php");
 }

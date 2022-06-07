@@ -1,7 +1,7 @@
 <?php
     session_start();
     $taille=$_SESSION["taille"];
-    $_SESSION["taille"] = 0;
+    unset($_SESSION["taille"]);
     require "header.php";
     $_COOKIE["Ligne1"] = "[0,0,0,0,0,0,0,0]";
     $_COOKIE["Ligne2"] = "[0,0,0,0,0,0,0,0]";
@@ -65,4 +65,5 @@ else if($taille==8){
 <br><br><h2>.</h2><br><br>
     
 <?php
-    require "footer.php";?>
+    require "footer.php";
+?>
