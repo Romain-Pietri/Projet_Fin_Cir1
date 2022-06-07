@@ -205,9 +205,14 @@ function verifgen(){
     $data=json_decode($json);
     
     if($data->verif==1){
-        header("location:jeu.php");
         $_SESSION["taille"] = $_SESSION["taille2"];
         $_SESSION["taille2"] = 0;
+
+
+        //requete de raph
+
+
+        header("location:jeu.php");
     }
     else{
         header("location:manuel.php");
