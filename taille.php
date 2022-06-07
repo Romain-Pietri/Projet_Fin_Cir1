@@ -11,11 +11,11 @@
 <div class="containerOuter">
   <legend class="size">Choose your grid size : </legend>
   <div class="container">
-    <input type="radio" class="hidden" id="input1" name="inputs" value="4">
+    <input type="radio" class="hidden" id="input1" name="taille" value="4">
     <label class="entry" for="input1"><div class="circle"></div><div class="entry-label">4x4</div></label>
-    <input type="radio" class="hidden" id="input2" name="inputs" value="6">
+    <input type="radio" class="hidden" id="input2" name="taille" value="6">
     <label class="entry" for="input2"><div class="circle"></div><div class="entry-label">6x6</div></label>
-    <input type="radio" class="hidden" id="input3" name="inputs" value="8">
+    <input type="radio" class="hidden" id="input3" name="taille" value="8">
     <label class="entry" for="input3"><div class="circle"></div><div class="entry-label">8x8</div></label>
     <div class="highlight"></div>
     <div class="overlay"></div>
@@ -43,10 +43,12 @@
     }
 ?>
 
-<a id="button" href="taillegen.php">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Create your own grid :
-    </a>
+<div href="taillegen.php" class="wrapper">
+  <button class="but">
+    Create your own grid !
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
