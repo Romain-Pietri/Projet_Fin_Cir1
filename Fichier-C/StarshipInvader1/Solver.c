@@ -395,20 +395,24 @@ bool inteligent(Grille* g) {
             }
         }
         if (countElemCol(g, i, 1) == g->taille / 2 && countElemCol(g, i, 0) != g->taille / 2) {
-            for (int j = 0; j < g->taille; ++j) {
-                if (g->tab[j][i] == -1) {
-                    g->tab[j][i] = 0;
+            if (InrowCol(g, i)) {
+                for (int j = 0; j < g->taille; ++j) {  
+                    if (g->tab[j][i] == -1) {
+                        g->tab[j][i] = 0;
+                    }
                 }
+                return true;
             }
-            return true;
         }
         if (countElemLigne(g, i, 1) == g->taille / 2 && countElemLigne(g, i, 0) != g->taille / 2) {
-            for (int j = 0; j < g->taille; ++j) {
-                if (g->tab[i][j] == -1) {
-                    g->tab[i][j] = 0;
+            if (InrowCol(g, i)) {
+                for (int j = 0; j < g->taille; ++j) {
+                    if (g->tab[i][j] == -1) {
+                        g->tab[i][j] = 0;
+                    }
                 }
-            }
             return true;
+            }
         }
         for (int j = 0; j < g->taille; ++j) {
             if (g->tab[i][j] == -1) {

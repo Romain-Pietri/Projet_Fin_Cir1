@@ -673,25 +673,82 @@ footer {
 
 /*----------Footer----------*/
 
-
-
-.regles{
-    margin:0 auto;
-    height: 200px;
-    visibility: hidden;
-    transition: 1s;
+div.score{
+    text-align: center;
 }
 
-.show{
-    visibility: visible;
+.score button{
+    background: none;
+    border: transparent;
 }
 
-.mouseEvent{
-    border: 6px solid darkslateblue;
-    width: 220px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+
+div.score i{
+    color:darkgoldenrod;
+    margin-top: 1vh;
+    font-size: 4em;
+
+}
+
+.score_box{
+    width: 30vw;
+    position: relative;
+    top: 1vw;
+    left: 35vw;
+    border-radius: 5px;
     padding: 10px;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+}
 
+.score_box .info_title{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.score_box .quit_btn{
+    position:relative;
+    width: 3vw;
+    left: 65%;
+    top: 10%;
+    border-radius: 100%;
+}
+
+.score_box .quit_btn i{
+    color: rgb(160, 30, 30);
+    font-size: 30px;
+    width: 3vw;
+}
+
+
+.score_box .score_text{
+    height: 100px;
+    padding: 20px 10px;
+}
+
+.score_box .score_text .info {
+    font-size: 17px;
+    margin-bottom: 5px ;
+}
+
+.appear{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#regles{
+    height: 50px;
+}
+
+#cross{
+    height: 30px;
 }

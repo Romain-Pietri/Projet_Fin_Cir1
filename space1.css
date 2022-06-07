@@ -673,40 +673,32 @@ footer {
 
 /*----------Footer----------*/
 
-div.score{
-    text-align: center;
-}
-
-.score button{
+/*----------Regles----------*/
+.trophy{
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 10px;
     background: none;
     border: transparent;
 }
 
-
-div.score i{
-    color:darkgoldenrod;
-    margin-top: 1vh;
-    font-size: 4em;
-
-}
-
 .score_box{
-    width: 30vw;
-    position: relative;
+    width: 500px;
+    height: 260px;
+    position: fixed;
     top: 1vw;
-    left: 35vw;
+    right: 1vw;
     border-radius: 5px;
     padding: 10px;
     background-color: rgb(230, 230, 230);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 0;
     pointer-events: none;
     transition: all 0.2s;
+    z-index: 2;
 }
 
 .score_box .info_title{
-    height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
     display: flex;
@@ -716,28 +708,17 @@ div.score i{
 }
 
 .score_box .quit_btn{
-    position:fixed;
+    position:relative;
     width: 3vw;
-    left: 65%;
-    top: 10%;
+    left: 93%;
+    top: 0%;
     border-radius: 100%;
-}
-
-.score_box .quit_btn i{
-    color: rgb(160, 30, 30);
-    font-size: 30px;
-    width: 3vw;
-}
-
-
-.score_box .score_text{
-    height: 100px;
-    padding: 20px 10px;
 }
 
 .score_box .score_text .info {
     font-size: 17px;
     margin-bottom: 5px ;
+    padding-top: 5px;
 }
 
 .appear{
@@ -752,3 +733,75 @@ div.score i{
 #cross{
     height: 30px;
 }
+
+/*----------Regles----------*/
+
+/*----------Taille----------*/
+.checkboxes-and-radios {
+  margin: 80px auto 0;
+  width: 280px;
+  padding: 30px;
+  background-color:rgba(0,0,0,0.65);
+  border : solid white ;
+  border-radius: 20px;
+}
+
+input {
+    display: none;
+}
+
+label {
+    color: white;
+    cursor: pointer;
+    padding-right: 35px;
+    position: relative;
+    display: block;
+    font-size: 18px;
+    padding: 15px 0
+  }
+
+input[type="radio"] {
+    position: absolute; 
+    visibility: hidden !important;
+  }
+
+input[type="radio"] + label::before{
+    content: '';
+      position: absolute;
+      top: 50%;
+      margin-top: -7.5px;
+      box-sizing: border-box;
+    }
+
+input[type="radio"] + label::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      margin-top: -7.5px;
+      box-sizing: border-box;
+    }
+
+input[type="radio"] + label::before {
+
+      width: 30px;
+      height: 15px;
+      right: 0px;
+      background: #fff;
+      border: 1px solid #e4e3e1;
+      border-radius: 15px;
+    }
+
+input[type="radio"] + label::after {
+      width: 15px;
+      height: 15px;
+      right: 15px;
+      background: #484894;
+      border-radius: 50%;
+      transition: all 200ms ease-out;
+    }
+
+input[type="radio"]:checked + label::after {
+      right: 0px;
+      background: #000099;
+    }
+/*----------Taille----------*/

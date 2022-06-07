@@ -28,19 +28,19 @@
 
 	  <script>
 	  	const score_box = document.querySelector(".score_box");
-const trophee = document.querySelector(".score button.trophy");
-const quit_btn = document.querySelector(".score_box .quit_btn")
+		const trophee = document.querySelector(".score button.trophy");
+		const quit_btn = document.querySelector(".score_box .quit_btn")
 
 
-//trophée cliqué
-trophee.onclick = ()=>{
-    score_box.classList.add("appear");
-} 
+		//trophée cliqué
+		trophee.onclick = ()=>{
+		    score_box.classList.add("appear");
+		} 
 
-//Croix cliquée
-quit_btn.onclick = () =>{
-    score_box.classList.remove("appear");
-}
+		//Croix cliquée
+		quit_btn.onclick = () =>{
+		    score_box.classList.remove("appear");
+		}
 	 </script> 
 
 <?php
