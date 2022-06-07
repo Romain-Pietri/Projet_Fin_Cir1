@@ -88,7 +88,7 @@
 				
 				require("connexiondb.php");
 				
-				$request="INSERT INTO utilisateurs(login,password,Score,Indice,Moula) VALUES ('$log','$pass','0','5','0')";
+				$request="INSERT INTO utilisateurs(login,password,Score,Indice,Moula,NbGrille,Grille4,Grille6,Grille8,ManuGrille) VALUES ('$log','$pass','0','5','0','0','0','0','0','0')";
 				$resultat=mysqli_query($connexion,$request);
 				if ( $resultat == FALSE ){
 								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
