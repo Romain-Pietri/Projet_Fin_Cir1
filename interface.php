@@ -87,7 +87,7 @@ function verif(){
     $json=file_get_contents('json.json');
     $data=json_decode($json);
     if($data->verif == 1){
-        header("location:won.php");
+        header("location:calculscore.php");
     }
     else{
         header("location:lost.php");
@@ -210,7 +210,25 @@ function verifgen(){
 
 
         //requete de raph
-
+        $login=$_SESSION["login"];
+        $request="UPDATE utilisateurs SET ManuGrille=ManuGrille+1 WHERE login='$login'";
+        $request2="SELECT ManuGrille FROM utilisateurs";
+        $request3="UPDATE badge INNER JOIN utilisateurs ON badge.ID=utilisateurs.ID SET Badge2=Badge2+1";
+        $result=mysqli_query($connexion,$request);
+        if( $result == FALSE ){
+            echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
+            die();
+        }
+        $result2=mysqli_query($connexion,$request2);
+        while($ligne=mysqli_fetch_assoc($result2)){
+            if($ligne["Badge2"]>=1){
+                $result3=mysqli_query($connexion,$request3);
+                if( $result3 == FALSE ){
+                    echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
+                    die();
+                }
+            }
+        }
 
         header("location:jeu.php");
     }
