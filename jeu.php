@@ -167,10 +167,15 @@
 	
 	    
 	if(isset($_SESSION["erreur"]) && $_SESSION["erreur"] == 1){
-		echo "An error has occured during the resolution of this grid";
+		echo "<p class='error'>An error has occured during the resolution of this grid</p>";
 		unset($_SESSION["erreur"]);
 	}    
 	
+	if(isset($_SESSION["solvable"]) && $_SESSION["solvable"] == 0){
+		echo "<p class = 'error'> Your grid may be unsolvable </p>";
+		unset($_SESSION["solvable"]);
+	}
+
 	if(isset($_SESSION["indice"])){
 		if($_SESSION["indice"] == "suppo"){
 			echo "<p>There is no logic deductions anymore, you need to make suppositions</p>";
