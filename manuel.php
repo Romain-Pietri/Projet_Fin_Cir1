@@ -1,8 +1,20 @@
 <?php
+session_start();
 require("header.php");
+
+if(!isset($_SESSION["login"])){
+	header("Location:connexion.php");
+}
+	
+if(!isset($_SESSION["taille2"]) || $_SESSION["taille2"] == 0){
+    header("Location:taillegen.php");
+}
+else{
+	$taille = $_SESSION["taille2"];
+    require("connexiondb.php");
 ?> 
 
-<div id ="container">
+<div id="container">
             
         
         <table id="t01">
@@ -23,11 +35,10 @@ require("header.php");
             
             ?>
             
-            <form method="post" action = "cookies.php">
-                <input type="submit" name="Create" Value="Create"/>
+			<form method="post" action = "cookies.php">
+                <input type="submit" id="create" name="Create" Value="Create"/>
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
-
 
             
          <script>
@@ -44,17 +55,6 @@ require("header.php");
 				document.cookie = 'Ligne8 = ' + contenu[7] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
 			}
 
-			
-			for (let x = 0; x < 8; x++) {
-				for (let y = 0; y < 8; y++){
-					if(initial_array[x][y] == 1){
-						contenu[x][y] = 1;
-					}
-					else if(initial_array[x][y] == 2){
-						contenu[x][y] = 2;
-					}					
-				}
-			}
 
 			var taille = document.getElementById("variable").value;
 
@@ -88,12 +88,6 @@ require("header.php");
 
 				let n = contenu[x - 1][y - 1];
 				n = (n + 1) % 3;
-				if (initial_array[x - 1][y - 1] == 1) {
-					n = 1;
-				}
-				if (initial_array[x - 1][y - 1] == 2) {
-					n = 2;
-				}
 				contenu[x - 1][y - 1] = n;
 				z = x * 10 + y;
 				if (n == 1) {
@@ -103,7 +97,7 @@ require("header.php");
 					document.getElementById(z).src = "images/img2.png";
 				}
 				if (n == 0) {
-					document.getElementById(z).src = "images/img0	.png";
+					document.getElementById(z).src = "images/img0.png";
 				}
 				createCookies();
 			}
@@ -111,6 +105,6 @@ require("header.php");
 			afficher(<?php echo $taille; ?>);
 
 		</script>
-    </div>
-
+</div>
+<?php } ?>
 </table></div></body></html>

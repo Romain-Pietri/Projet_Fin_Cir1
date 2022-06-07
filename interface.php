@@ -183,27 +183,34 @@ function solver(){
     }
     mysqli_close($connexion);
     header("Location:jeu.php");
-
 }
+
 
 function verifgen(){
     require("connexiondb.php");
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
+    require("pull_initial_array.php");
+    $data->tabeau= $tab;
+    $data->length=$_SESSION["taille2"];
+    $data->request=0;
     $data->id=4;
     $data->verif=0;
-    $data->length=$_SESSION["taille"];
+    
     $edata=json_encode($data, false);
     file_put_contents("json.json",$edata);
-    echo exec("Programmes-C/StarshipInvader/Programme.exe");
+    echo exec("Programme.exe");
     sleep(2);
-    $json=file_get_contents('Programmes-C/json.json');
+    $json=file_get_contents('json.json');
     $data=json_decode($json);
+    
     if($data->verif==1){
-        header("location:won.php");
+        header("location:jeu.php");
+        $_SESSION["taille"] = $_SESSION["taille2"];
+        $_SESSION["taille2"] = 0;
     }
     else{
-        header("location:lost.php");
+        header("location:manuel.php");
     }
 }
 ?>
