@@ -63,7 +63,7 @@
 				<div class="logout">
 				<h1> Go back to game !</h1>
 				<br>
-				<a href="taille.php"><img id="logout" src="images/log.png"></a>
+				<a href="reset.php"><img id="logout" src="images/log.png"></a>
 				</div>';
 	?>
 

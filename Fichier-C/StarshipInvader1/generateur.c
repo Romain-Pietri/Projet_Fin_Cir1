@@ -56,7 +56,7 @@ void randomEmpty(Grille* g) {
 }
 Grille* GenerateGrid(int taille) {
     Grille* tmp = Newgrille();
-    tmp = randomFill(tmp, 4);
+    tmp = randomFill(tmp, taille);
     randomEmpty(tmp);
     return tmp;
 }

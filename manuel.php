@@ -12,10 +12,13 @@ if(!isset($_SESSION["taille2"]) || $_SESSION["taille2"] == 0){
 else{
 	$taille = $_SESSION["taille2"];
    	require("connexiondb.php");
-	if(isset($_SESSION["erreur"]) && $_SESSION["erreur"] == 1){
-		echo "Il y a eu une erreur lors de la résolution de cett grille";
-		unset($_SESSION["erreur"]);
+
+	
+	if(isset($_SESSION["solvable"]) && $_SESSION["solvable"] == 0){
+		echo "<p class = 'error'> Your grid may be unsolvable </p>";
+		unset($_SESSION["solvable"]);
 	}
+	
 ?> 
 
 <div id="container">

@@ -48,7 +48,7 @@ function generator(){
         file_put_contents("json.json",$edata);
     do{
         echo exec("Programme.exe");
-        sleep(4);
+        sleep(2);
         $json=file_get_contents("json.json");
         $data=json_decode($json);
     }while ($data->verif==0) ;
@@ -202,7 +202,7 @@ function verifgen(){
     $json=file_get_contents('json.json');
     $data=json_decode($json);
     require("pull_initial_array.php");
-    $data->tabeau= $tab;
+    $data->tableau= $initial_array;
     $data->length=$_SESSION["taille2"];
     $data->request=0;
     $data->id=4;
@@ -217,7 +217,7 @@ function verifgen(){
     
     if($data->verif==1){
         $_SESSION["taille"] = $_SESSION["taille2"];
-        $_SESSION["taille2"] = 0;
+        unset($_SESSION["taille2"]);
 
 
         //requete de raph
@@ -252,8 +252,10 @@ function verifgen(){
         header("location:jeu.php");
     }
     else{
-        $_SESSION["erreur"] = 1;
-        header("location:manuel.php");
+        $_SESSION["solvable"] = 0;
+        $_SESSION["taille"] = $_SESSION["taille2"];
+        unset($_SESSION["taille2"]);
+        header("location:jeu.php");
     }
 }
 ?>
