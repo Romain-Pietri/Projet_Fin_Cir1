@@ -1,7 +1,7 @@
 <?php
     session_start();
     require("connexiondb.php");
-
+    
 
 if ($_SESSION['taille'] == 4){
     $taille = 400;
@@ -16,6 +16,14 @@ if ($_SESSION['taille'] == 8){
     $money=50;
 }
 $login = $_SESSION['login'];
+$request1="SELECT ID FROM utilisateurs WHERE login='$login'";
+$result=mysqli_query($connexion,$request1);
+if ( $result == FALSE ){
+    echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+    die();
+}
+$ligne=mysqli_fetch_assoc($result);
+$id=$ligne["ID"];
 
 
 
@@ -33,6 +41,7 @@ if(isset($_POST["valider"])){
     $indice=$ligne['Indice'];
     $startindice=$_SESSION["indice"];
     $hintuse=$startindice-$indice;
+    $_SESSION['Indice']=$indice;
     
     $exe2=mysqli_query($connexion,$requete2);
     $return2=mysqli_fetch_assoc($exe2);
@@ -54,6 +63,7 @@ if(isset($_POST["valider"])){
 
 
         $request1="SELECT Score FROM utilisateurs WHERE login = '$login'";
+        
         $resultat1=mysqli_query($connexion,$request1);
         if ( $resultat1 == FALSE ){
             echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -65,8 +75,15 @@ if(isset($_POST["valider"])){
         if(isset($_SESSION["Solvetrue"]) || $taille - 100*$hintuse<0){
             $score=$result['Score'];
         }
-        echo $score;
-        
+        if ($score>=10000){
+            $request="UPDATE badge SET Badge6=Badge6+1 WHERE ID='$id'";
+            $result=mysqli_query($connexion,$request);
+            if ( $result == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+            
+        }
         $request="UPDATE utilisateurs SET Score = '$score' WHERE login = '$login'";
         $resultat=mysqli_query($connexion,$request);
         if ( $resultat == FALSE ){
@@ -74,7 +91,7 @@ if(isset($_POST["valider"])){
             die();
         }
         mysqli_close($connexion);
-        header("Location:score.php");
+        header("Location:won.php");
         }
 
 ?>

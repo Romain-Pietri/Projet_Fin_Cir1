@@ -222,9 +222,17 @@ function verifgen(){
 
         //requete de raph
         $login=$_SESSION["login"];
+        $request1="SELECT ID FROM utilisateurs WHERE login='$login'";
+        $result=mysqli_query($connexion,$request1);
+        if ( $result == FALSE ){
+            echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+            die();
+        }
+        $ligne=mysqli_fetch_assoc($result);
+        $id=$ligne["ID"];
         $request="UPDATE utilisateurs SET ManuGrille=ManuGrille+1 WHERE login='$login'";
         $request2="SELECT ManuGrille FROM utilisateurs";
-        $request3="UPDATE badge INNER JOIN utilisateurs ON badge.ID=utilisateurs.ID SET Badge2=Badge2+1";
+        $request3="UPDATE badge SET Badge2=Badge2+1 WHERE ID='$id'";
         $result=mysqli_query($connexion,$request);
         if( $result == FALSE ){
             echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
@@ -232,7 +240,7 @@ function verifgen(){
         }
         $result2=mysqli_query($connexion,$request2);
         while($ligne=mysqli_fetch_assoc($result2)){
-            if($ligne["Badge2"]>=1){
+            if($ligne["ManuGrille"]>=1){
                 $result3=mysqli_query($connexion,$request3);
                 if( $result3 == FALSE ){
                     echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;

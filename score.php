@@ -2,6 +2,15 @@
     session_start();
 
     require "header.php";
+    $login=$_SESSION['login'];
+    $request1="SELECT ID FROM utilisateurs WHERE login='$login'";
+    $result=mysqli_query($connexion,$request1);
+    if ( $result == FALSE ){
+        echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+        die();
+    }
+    $ligne=mysqli_fetch_assoc($result);
+    $id=$ligne["ID"];
 ?>
 
 <br><br>
@@ -77,6 +86,46 @@
             }
             echo "</tr>";
         }
+        $request1="UPDATE badge SET Badge8=Badge8+1 WHERE ID='$id'";
+        $request2="UPDATE badge SET Badge9=Badge9+1 WHERE ID='$id'";
+        $request3="UPDATE badge SET Badge10=Badge10+1 WHERE ID='$id'";
+        if($login=$first){
+            $exe=mysqli_query($connexion,$request1);
+            if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+            $exe2=mysqli_query($connexion,$request2);
+            if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+            $exe3=mysqli_query($connexion,$request3);
+            if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+        }
+        if($login=$sec){
+            $exe=mysqli_query($connexion,$request1);
+            if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+            $exe2=mysqli_query($connexion,$request2);
+            if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+        }
+        if($login=$third){
+            $exe=mysqli_query($connexion,$request1);
+            if ( $exe == FALSE ){
+                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                die();
+            }
+        }
+        
         echo"</table>";
     }
     }

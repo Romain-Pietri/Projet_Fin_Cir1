@@ -8,7 +8,15 @@ require("header.php");
 <h1> Votre collection de badges </h1>
 
 <?php 
-for ($i=1;$i<=8;$i++){
+$request1="SELECT ID FROM utilisateurs WHERE login='$login'";
+$result=mysqli_query($connexion,$request1);
+if ( $result == FALSE ){
+    echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+    die();
+}
+$ligne=mysqli_fetch_assoc($result);
+$id=$ligne["ID"];
+for ($i=1;$i<=9;$i++){
 switch($i){
     case 1:
         $text="Badge 1";
@@ -34,8 +42,14 @@ switch($i){
     case 8:
         $text="Badge 8";
         break;
+    case 9:
+        $text="Badge 9";
+        break;
+    case 10:
+        $text="Badge 10";
+        break;
 }
-$request="SELECT Badge$i FROM badge INNER JOIN utilisateurs ON badge.ID=utilisateurs.ID";
+$request="SELECT Badge$i FROM badge WHERE ID='$id'";
 $result=mysqli_query($connexion,$request);
 if ( $result == FALSE ){
     echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -43,15 +57,15 @@ if ( $result == FALSE ){
 }
 while($ligne=mysqli_fetch_assoc($result)){
     if($ligne["Badge$i"]==0){
-        echo "test 0";
+        $image="nobadge$i";
     }
-    if($ligne["Badge$i"]==1){
-        echo"test 1";
+    if($ligne["Badge$i"]>=1){
+        $image="yesbadge$i";
     }
 ?>
 <div>
 <p> <?php echo"$text"?></p>
-<img src="images/dab.gif">
+<img src="images/<?php echo $image?>.png">
 </div>
 
 <?php
