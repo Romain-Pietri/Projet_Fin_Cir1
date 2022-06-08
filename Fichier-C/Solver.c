@@ -657,16 +657,12 @@ Grille *Solvenb(Grille *g, int ligne, int col,List * liste){
 }
 
 
-
-
-
-
-
-
 int nbsolution(Grille* g ,List *liste){
     Grille* tmp=Solvenb(g,0,0,liste);
     return liste->size;
 }
+
+
 /*
 int main(){
     Grille *g=Newgrille();
@@ -751,7 +747,6 @@ void UniqueSolve(Grille *g){
                 }
                 }
             }
-        printf("hello");
         resetList(liste);
     }
 }

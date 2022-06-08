@@ -2,8 +2,53 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Solver.h"
-
-
+/*Creer une noubelle liste chainée*/
+List* Newlist() {
+    List* liste = malloc(sizeof(List));
+    liste->size = 0;
+    liste->head = NULL;
+    liste->tail = NULL;
+    return liste;
+}
+/*creer un nouveau Node*/
+Node* NewLinkedListItem(Grille* value) {
+    Node* tmp;
+    tmp = (Node*)malloc(sizeof(Node));
+    if (tmp != NULL) {
+        tmp->g = value;
+        tmp->next = NULL;
+    }
+    return(tmp);
+}
+/*ajoute un element dans la liste*/
+int AddList(List* list, Node* elem) {
+    if (list == NULL || elem == NULL || elem->next != NULL) return 0;
+    // si la liste est vide
+    if (list->tail == NULL) {
+        list->tail = elem;
+        list->head = elem;
+        list->size = 1;
+    }
+    else {
+        // on ajoute l'élément en fin
+        list->tail->next = elem;
+        list->tail = elem;
+        list->size += 1;
+    }
+    return 1;
+}
+/*Supprime toute la liste*/
+List* resetList(List* list) {
+    if (list == NULL) return NULL;
+    Node* tmp = list->head;
+    Node* tmp2 = NULL;
+    while (tmp != NULL) {
+        tmp2 = tmp;
+        tmp = tmp->next;
+        free(tmp2);
+    }
+    return NULL;
+}
 /*
 Alloue de la mémoire dynamiquement pour la grille
 */
@@ -563,6 +608,61 @@ Grille* Resoudre(Grille* g) {
         return NULL;
     }
 }
+
+
+Grille* Solvenb(Grille* g, int ligne, int col, List* liste) {
+    Grille* clone = cloneGrille(g);
+    if (g->tab[ligne][col] != -1) {
+        if (col < g->taille - 1) {
+            return Solvenb(g, ligne, col + 1, liste);
+        }
+        else if (ligne < g->taille - 1) {
+            return Solvenb(g, ligne + 1, 0, liste);
+        }
+        else {
+            return g;
+        }
+    }
+
+    for (int i = 0; i < 2; ++i) {
+        if (g->tab[ligne][col] == -1) clone->tab[ligne][col]++;
+        if (col < g->taille - 1) {
+            if (checkElem(g, ligne, col, clone->tab[ligne][col])) {
+
+                Grille* tmp = Solvenb(cloneGrille(clone), ligne, col + 1, liste);
+                if (tmp != NULL && VerifGrille(tmp)) {
+
+                    AddList(liste, NewLinkedListItem(tmp));
+                    //printGrille(tmp);
+
+                }
+            }
+        }
+        else if (ligne < g->taille - 1) {
+            if (checkElem(g, ligne, col, clone->tab[ligne][col])) {
+                Grille* tmp = Solvenb(cloneGrille(clone), ligne + 1, 0, liste);
+                if (tmp != NULL && VerifGrille(tmp)) {
+
+                    AddList(liste, NewLinkedListItem(tmp));
+                    //printGrille(tmp);
+
+                }
+            }
+        }
+        else {
+            if (VerifGrille(clone)) { AddList(liste, NewLinkedListItem(clone)); }
+            return NULL;
+        }
+    }
+    return NULL;
+}
+
+
+int nbsolution(Grille* g, List* liste) {
+    Grille* tmp = Solvenb(g, 0, 0, liste);
+    return liste->size;
+}
+
 /*
 int main() {
     Grille* g = Newgrille();
