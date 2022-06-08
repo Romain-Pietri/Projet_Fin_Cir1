@@ -89,9 +89,9 @@
             }
             echo "</tr>";
         }
-        $request1="UPDATE badge SET Badge8=Badge8+1 WHERE ID='$id'";
-        $request2="UPDATE badge SET Badge9=Badge9+1 WHERE ID='$id'";
-        $request3="UPDATE badge SET Badge10=Badge10+1 WHERE ID='$id'";
+        $request1="UPDATE badge SET Badge8=Badge8+1 WHERE ID=$id";
+        $request2="UPDATE badge SET Badge9=Badge9+1 WHERE ID=$id";
+        $request3="UPDATE badge SET Badge10=Badge10+1 WHERE ID=$id";
         if($login=$first){
             $exe=mysqli_query($connexion,$request1);
             if ( $exe == FALSE ){

@@ -16,7 +16,7 @@ if ( $result == FALSE ){
 }
 $ligne=mysqli_fetch_assoc($result);
 $id=$ligne["ID"];
-for ($i=1;$i<=9;$i++){
+for ($i=1;$i<=10;$i++){
 switch($i){
     case 1:
         $text="Badge 1";
@@ -49,7 +49,7 @@ switch($i){
         $text="Badge 10";
         break;
 }
-$request="SELECT Badge$i FROM badge WHERE ID='$id'";
+$request="SELECT Badge$i FROM badge WHERE ID=$id";
 $result=mysqli_query($connexion,$request);
 if ( $result == FALSE ){
     echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
