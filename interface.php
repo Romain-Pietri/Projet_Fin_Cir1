@@ -60,7 +60,7 @@ function generator(){
         $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
         $exe = mysqli_query($connexion,$request);
         if( $exe == FALSE ){
-                echo "<p>Erreur d'exécution de la requete :" . mysqli_error($connexion) . "</p>" ;
+                echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
                 die(); 
         }
         $id = $id + 1;
@@ -151,6 +151,7 @@ function solver(){
     require("connexiondb.php");
     $json=file_get_contents('json.json');
     $data=json_decode($json);
+
     require("pull_initial_array.php");
     $data->tableau= $initial_array;
     $data->length=$_SESSION["taille"];
@@ -173,23 +174,25 @@ function solver(){
     sleep(2);
     $json=file_get_contents('json.json');
     $data=json_decode($json);
-
-    $tab=$data->tableau;//envoyer tableau dans BD
-    $id=1;
-    for ($i=0;$i<8;$i++){
-        $seri=json_encode($tab[$i]);
-        $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
-        $exe = mysqli_query($connexion,$request);
-        if( $exe == FALSE ){
-                echo "<p>Erreur d'exécution de la requete :" . mysqli_error($connexion) . "</p>" ;
-                die(); 
+    if($data->request==1){
+        $tab=$data->tableau;//envoyer tableau dans BD
+        $id=1;
+        for ($i=0;$i<8;$i++){
+            $seri=json_encode($tab[$i]);
+            $request = "INSERT INTO grilles (Ligne,ID) VALUES ('$seri',$id)";
+            $exe = mysqli_query($connexion,$request);
+            if( $exe == FALSE ){
+                    echo "<p>Erreur d'exécution de la requete :" . mysql_error($connexion) . "</p>" ;
+                    die(); 
+            }
+            $id = $id + 1;
         }
-        $id = $id + 1;
-    }
-    mysqli_close($connexion);
-    if($data->verif==0){
-        $_SESSION["erreur"] = 1;
-    }
+        mysqli_close($connexion);
+        if($data->verif==0){
+            $_SESSION["erreur"] = 1;
+        }
+    }   
+
 
 
     
@@ -225,7 +228,7 @@ function verifgen(){
         $request1="SELECT ID FROM utilisateurs WHERE login='$login'";
         $result=mysqli_query($connexion,$request1);
         if ( $result == FALSE ){
-            echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+            echo "<p>Erreur d'exécution de la requete :".mysql_error($connexion)."</p>" ;
             die();
         }
         $ligne=mysqli_fetch_assoc($result);
