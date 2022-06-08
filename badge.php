@@ -19,34 +19,34 @@ $id=$ligne["ID"];
 for ($i=1;$i<=10;$i++){
 switch($i){
     case 1:
-        $text="Badge 1";
+        $text="1 grille résolue";
         break;
     case 2:
-        $text="Badge 2";
+        $text="1 grille créée";
         break;
     case 3:
-        $text="Badge 3";
+        $text="3 grilles 4X4 résolues";
         break;
     case 4:
-        $text="Badge 4";
+        $text="3 grilles 6X6 résolues";
         break;
     case 5:
-        $text="Badge 5";
+        $text="3 grilles 8X8 résolues";
         break;
     case 6:
-        $text="Badge 6";
+        $text="Score supérieur à 10000 !";
         break;
     case 7:
-        $text="Badge 7";
+        $text="5 grilles résolues ";
         break;
     case 8:
-        $text="Badge 8";
+        $text="3e place sur le leaderboard atteinte !";
         break;
     case 9:
-        $text="Badge 9";
+        $text="2e place sur le leaderboard atteinte !";
         break;
     case 10:
-        $text="Badge 10";
+        $text="Vous êtes au sommet ! Bravo !";
         break;
 }
 $request="SELECT Badge$i FROM badge WHERE ID=$id";
