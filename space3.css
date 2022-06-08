@@ -893,7 +893,7 @@ label{
     color: white;
     background-color: transparent;
     border-color: #000099;
-    width: 40%;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -908,7 +908,14 @@ label{
     background-color: #000099;
     border-color: white;
     box-shadow: 0 0 8px dodgerBlue;
-    width: 50%;
+    width: 80%;
     transition: 0.5s;
 }
 /*----------Taille----------*/
+
+#badges{
+    height: 100px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

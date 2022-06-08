@@ -893,7 +893,7 @@ label{
     color: white;
     background-color: transparent;
     border-color: #448744;
-    width: 40%;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -908,7 +908,7 @@ label{
     background-color: #448744;
     border-color: white;
     box-shadow: 0 0 8px green;
-    width: 50%;
+    width: 80%;
     transition: 0.5s;
 }
 /*----------Taille----------*/

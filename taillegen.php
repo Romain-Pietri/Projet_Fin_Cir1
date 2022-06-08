@@ -5,6 +5,7 @@
     if(!isset($_SESSION["taille2"]) || $_SESSION["taille2"] == 0){
 
         echo '
+        <img id="gadget" src="images/gadget1.gif">
         <br><br>
 <main class="taille">
 <form method="post" action="cookies.php">
