@@ -92,7 +92,7 @@
         $request1="UPDATE badge SET Badge8=Badge8+1 WHERE ID=$id";
         $request2="UPDATE badge SET Badge9=Badge9+1 WHERE ID=$id";
         $request3="UPDATE badge SET Badge10=Badge10+1 WHERE ID=$id";
-        if($login=$first){
+        if($login==$first){
             $exe=mysqli_query($connexion,$request1);
             if ( $exe == FALSE ){
                 echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -109,7 +109,7 @@
                 die();
             }
         }
-        if($login=$sec){
+        if($login==$sec){
             $exe=mysqli_query($connexion,$request1);
             if ( $exe == FALSE ){
                 echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -121,7 +121,7 @@
                 die();
             }
         }
-        if($login=$third){
+        if($login==$third){
             $exe=mysqli_query($connexion,$request1);
             if ( $exe == FALSE ){
                 echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
