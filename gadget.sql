@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 07 juin 2022 à 09:23
+-- Généré le : mer. 08 juin 2022 à 09:52
 -- Version du serveur :  5.7.24
--- Version de PHP : 8.0.1
+-- Version de PHP : 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -47,7 +48,8 @@ CREATE TABLE `badge` (
 
 INSERT INTO `badge` (`ID`, `Badge1`, `Badge2`, `Badge3`, `Badge4`, `Badge5`, `Badge6`, `Badge7`, `Badge8`, `Badge9`, `Badge10`) VALUES
 (1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0),
-(2, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0);
+(2, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0),
+(3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -59,6 +61,22 @@ CREATE TABLE `clone` (
   `Ligne` varchar(512) NOT NULL,
   `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `clone`
+--
+
+INSERT INTO `clone` (`Ligne`, `ID`) VALUES
+('[0,0,1,2,1,0,0,0]', 1),
+('[0,0,2,1,1,2,0,0]', 2),
+('[0,0,1,2,1,0,0,0]', 1),
+('[0,0,2,1,1,2,0,0]', 2),
+('[1,2,1,2,2,1,0,0]', 3),
+('[2,1,0,0,1,2,0,0]', 4),
+('[0,2,0,1,2,1,0,0]', 5),
+('[1,2,1,2,1,2,1,2]', 6),
+('[2,1,2,1,2,0,0,0]', 7),
+('[0,0,0,0,0,0,2,0]', 8);
 
 -- --------------------------------------------------------
 
@@ -76,14 +94,14 @@ CREATE TABLE `grilles` (
 --
 
 INSERT INTO `grilles` (`Ligne`, `ID`) VALUES
-('a:8:{i:0;i:2;i:1;i:1;i:2;i:1;i:3;i:2;i:4;i:1;i:5;i:2;i:6;i:1;i:7;i:2;}', 1),
-('a:8:{i:0;i:1;i:1;i:2;i:2;i:1;i:3;i:2;i:4;i:1;i:5;i:2;i:6;i:1;i:7;i:2;}', 2),
-('a:8:{i:0;i:1;i:1;i:2;i:2;i:2;i:3;i:1;i:4;i:2;i:5;i:1;i:6;i:2;i:7;i:1;}', 3),
-('a:8:{i:0;i:2;i:1;i:1;i:2;i:2;i:3;i:1;i:4;i:2;i:5;i:1;i:6;i:1;i:7;i:2;}', 4),
-('a:8:{i:0;i:1;i:1;i:2;i:2;i:1;i:3;i:2;i:4;i:1;i:5;i:2;i:6;i:2;i:7;i:1;}', 5),
-('a:8:{i:0;i:2;i:1;i:2;i:2;i:1;i:3;i:1;i:4;i:2;i:5;i:1;i:6;i:2;i:7;i:1;}', 6),
-('a:8:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:1;i:4;i:2;i:5;i:2;i:6;i:1;i:7;i:2;}', 7),
-('a:8:{i:0;i:2;i:1;i:1;i:2;i:2;i:3;i:2;i:4;i:1;i:5;i:1;i:6;i:2;i:7;i:1;}', 8);
+('[0,0,1,0,1,0,0,0]', 1),
+('[0,0,2,1,1,2,0,0]', 2),
+('[1,0,0,2,0,1,0,0]', 3),
+('[2,0,0,0,1,2,0,0]', 4),
+('[0,2,0,1,2,1,0,0]', 5),
+('[1,2,0,0,0,0,1,2]', 6),
+('[2,0,0,1,2,0,0,0]', 7),
+('[0,0,0,0,0,0,2,0]', 8);
 
 -- --------------------------------------------------------
 
@@ -112,7 +130,8 @@ CREATE TABLE `utilisateurs` (
 INSERT INTO `utilisateurs` (`ID`, `login`, `password`, `Score`, `Indice`, `Moula`, `NbGrille`, `Grille4`, `Grille6`, `Grille8`, `ManuGrille`) VALUES
 (1, 'raph', '177d41b0ba61150811f48651f1033e19569b4cd0a8646eb9afb8b6f1cb50fdd2', 0, 5, 1000, 0, 0, 0, 0, 0),
 (2, 'test', 'bde25a9204400a92e31f180904001d50e5038a0c3ebab4c1dc7c3aa2a692b8b5', 0, 16, 890, 0, 0, 0, 0, 0),
-(3, 'rafoufou', '695d45103bff6472099a7d5ef87ee44160278c15b6dacea2c3cb86e5df05da61', 0, 5, 0, 0, 0, 0, 0, 0);
+(3, 'rafoufou', '695d45103bff6472099a7d5ef87ee44160278c15b6dacea2c3cb86e5df05da61', 0, 5, 0, 0, 0, 0, 0, 0),
+(4, 'Cactus', '19513fdc9da4fb72a4a05eb66917548d3c90ff94d5419e1f2363eea89dfee1dd', 0, 497, 0, 0, 0, 0, 0, 2);
 
 --
 -- Index pour les tables déchargées
@@ -144,13 +163,13 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `badge`
 --
 ALTER TABLE `badge`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
