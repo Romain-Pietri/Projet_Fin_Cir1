@@ -13,11 +13,21 @@ else{
 	$taille = $_SESSION["taille2"];
    	require("connexiondb.php");
 
-	
+	$initial_array1 = [0,0,0,0,0,0,0,0];
+	$initial_array2 = [0,0,0,0,0,0,0,0];
+	$initial_array3 = [0,0,0,0,0,0,0,0];
+	$initial_array4 = [0,0,0,0,0,0,0,0];
+	$initial_array5 = [0,0,0,0,0,0,0,0];
+	$initial_array6 = [0,0,0,0,0,0,0,0];
+	$initial_array7 = [0,0,0,0,0,0,0,0];
+	$initial_array8 = [0,0,0,0,0,0,0,0];
+
 	if(isset($_SESSION["solvable"]) && $_SESSION["solvable"] == 0){
 		echo "<p class = 'error'> Your grid may be unsolvable </p>";
 		unset($_SESSION["solvable"]);
+		require("pull_initial_array.php");
 	}
+	
 	
 ?> 
 
@@ -49,7 +59,15 @@ else{
 
             
          <script>
-			var contenu = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+			var initial_array1 = <?php echo '['.implode(', ', $initial_array1). ']'; ?>;
+			var initial_array2 = <?php echo '['.implode(', ', $initial_array2). ']'; ?>;
+			var initial_array3 = <?php echo '['.implode(', ', $initial_array3). ']'; ?>;
+			var initial_array4 = <?php echo '['.implode(', ', $initial_array4). ']'; ?>;
+			var initial_array5 = <?php echo '['.implode(', ', $initial_array5). ']'; ?>;
+			var initial_array6 = <?php echo '['.implode(', ', $initial_array6). ']'; ?>;
+			var initial_array7 = <?php echo '['.implode(', ', $initial_array7). ']'; ?>;
+			var initial_array8 = <?php echo '['.implode(', ', $initial_array8). ']'; ?>;
+			var contenu = [initial_array1,initial_array2,initial_array3,initial_array4,initial_array5,initial_array6,initial_array7,initial_array8];
 
 			function createCookies() {
 				document.cookie = 'Ligne1 = ' + contenu[0] + ' ; max-age = 3600 ; path=/; samesite=lax' ;
