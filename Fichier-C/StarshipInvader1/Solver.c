@@ -582,9 +582,7 @@ bool inteligent(Grille* g) {
 Resout la grille avec Backtracking et l'intelligence
 */
 bool Solveur(Grille* g) {
-    while (inteligent(g)) {
-        NULL;
-    }
+    
     Grille* tmp = Solve(g, 0, 0);
     if (tmp != NULL) {
         //printGrille(tmp);
@@ -597,9 +595,7 @@ bool Solveur(Grille* g) {
 
 }
 Grille* Resoudre(Grille* g) {
-    while (inteligent(g)) {
-        NULL;
-    }
+    
     Grille* tmp = Solve(g, 0, 0);
     if (tmp != NULL) {
         if (VerifGrille(tmp)) return tmp;
