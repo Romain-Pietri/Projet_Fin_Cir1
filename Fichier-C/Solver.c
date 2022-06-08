@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Solver.h"
-
+#include <time.h>
 
 /*
 Alloue de la mémoire dynamiquement pour la grille
@@ -56,7 +56,8 @@ void printGrille(Grille * g){
     printf("\n");
     for(int i=0;i<g->taille;i++){
         for(int j=0;j<g->taille;j++){
-            printf(" |%3d ",g->tab[i][j]);
+            if(g->tab[i][j]!=-1)printf(" |%3d ",g->tab[i][j]);
+            else{ printf(" |    ");}
         }
         printf("|\n");
         if(i!=g->taille-1){
@@ -68,6 +69,52 @@ void printGrille(Grille * g){
         }
     }
     printf("\n");
+}
+List * Newlist(){
+    List *liste=malloc(sizeof(List));
+    liste->size=0;
+    liste->head=NULL;
+    liste->tail=NULL;
+    return liste;
+}
+/*creer un nouveau Node*/
+Node *NewLinkedListItem(Grille * value) {
+    Node *tmp;
+    tmp = (Node *) malloc(sizeof(Node));
+    if (tmp != NULL) {
+        tmp->g = value;
+        tmp->next = NULL;
+    }
+    return(tmp);
+}
+/*ajoute un element dans la liste*/
+int AddList(List *list ,Node * elem) {
+    if (list == NULL || elem == NULL || elem->next!=NULL) return 0;
+    // si la liste est vide
+    if (list->tail == NULL) {
+        list->tail = elem;
+        list->head = elem;
+        list->size = 1;
+    }
+    else {
+        // on ajoute l'élément en fin
+        list->tail->next = elem;
+        list->tail = elem;
+        list->size += 1;
+        }
+    return 1;
+}
+/*Supprime toute la liste*/
+List * resetList(List *list){
+    if(list==NULL) return NULL;
+    Node *tmp=list->head;
+    Node *tmp2=NULL;
+    while(tmp!=NULL){
+        tmp2=tmp;
+        tmp=tmp->next;
+        free(tmp2);
+    }
+    return NULL;
 }
 /*
 Compte le nombre le nombre de valeur dans une colone
@@ -424,10 +471,9 @@ bool inteligent(Grille *g){
                 }
                 if(j>0 && j<g->taille-1){//Si sur premiere ou derniere ligne
                     if(g->tab[i][j-1]==0 && g->tab[i][j+1]==0){
-                        printGrille(g);
+                        
                         g->tab[i][j]=1;
-                        printf("%d %d\n",i,j);
-                        printGrille(g);
+                        
                         
                         return true;
                     }
@@ -551,9 +597,9 @@ Grille* Resoudre(Grille* g) {
     while(inteligent(g)){
         NULL;
     }
-    printGrille(g);
+    //printGrille(g);
     Grille* tmp = Solve(g, 0, 0);
-    if (tmp != NULL) {
+    if (tmp != NULL && VerifGrille(tmp)) {
         return tmp;
     }
     else {
@@ -561,23 +607,166 @@ Grille* Resoudre(Grille* g) {
     }
 }
 
+
+
+Grille *Solvenb(Grille *g, int ligne, int col,List * liste){
+    Grille *clone=cloneGrille(g);
+    if(g->tab[ligne][col]!=-1){
+        if (col<g->taille-1){
+            return Solvenb(g, ligne, col+1,liste);
+        }
+        else if (ligne<g->taille-1){
+            return Solvenb(g, ligne+1, 0,liste);
+        }
+        else{
+            return g;
+        }
+    }
+
+    for(int i=0 ; i<2;++i){
+        if(g->tab[ligne][col]==-1) clone->tab[ligne][col]++;
+        if(col<g->taille-1){
+            if(checkElem(g,ligne, col, clone->tab[ligne][col])){
+                
+                Grille *tmp=Solvenb(cloneGrille(clone),ligne,col+1,liste);
+                if(tmp!=NULL && VerifGrille(tmp)){
+                    
+                    AddList(liste,NewLinkedListItem(tmp));
+                    //printGrille(tmp);
+                    
+                }
+            }
+        }
+        else if(ligne<g->taille-1){
+            if(checkElem(g,ligne, col, clone->tab[ligne][col])){
+                Grille *tmp=Solvenb(cloneGrille(clone),ligne+1,0,liste);
+                if(tmp!=NULL && VerifGrille(tmp)){
+                    
+                    AddList(liste,NewLinkedListItem(tmp));
+                    //printGrille(tmp);
+                    
+                }
+            }
+        }
+        else{
+            if(VerifGrille(clone)) {AddList(liste,NewLinkedListItem(clone)); }
+            return NULL;
+        }
+    }
+    return NULL;
+}
+
+
+
+
+
+
+
+
+int nbsolution(Grille* g ,List *liste){
+    Grille* tmp=Solvenb(g,0,0,liste);
+    return liste->size;
+}
+/*
 int main(){
     Grille *g=Newgrille();
     int tab[8][8]={
-        {-1,-1,-1,-1,-1, 0,-1,-1},
-        { 1, 0, 0, 1,-1,-1, 1,-1},
-        {-1, 0,-1,-1,-1,-1,-1, 0},
-        {-1,-1, 1,-1, 0,-1,-1,-1},
-        { 1,-1,-1, 0,-1, 1,-1,-1},
-        {-1, 0,-1,-1,-1,-1, 0,-1},
-        {-1,-1,-1,-1, 1,-1, 0,-1},
-        { 0,-1, 0,-1,-1,-1,-1, 1}     
+        {1,0,1,-1,-1, -1,-1,-1},
+        {0,-1,-1,-1,-1, -1,-1,-1},
+        {-1,-1,-1,-1,-1, -1,-1,-1},
+        {-1,-1,-1,-1,-1, -1,-1,-1},
+        {-1,-1,-1,-1,-1, -1,-1,-1},
+        {-1,-1,-1,-1,-1, -1,-1,-1},
+        {-1,-1,-1,-1,-1, -1,-1,-1},
+        {-1,-1,-1,-1,-1, -1,-1,-1}
     };
+        
 
     //int tab[8][8]={{1,0,0,1,-1,-1,-1,-1},{0,1,1,0,-1,-1,-1,-1},{1,1,0,0,-1,-1,-1,-1},{0,0,1,1,-1,-1,-1,-1},{1,0,0,1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1,-1,-1}};
-    initGrille(g,8, tab);
-    printGrille(g);
+    initGrille(g,4, tab);
+    //printGrille(g);
     //printf("%d\n",VerifGrille(g));
+    List * liste=Newlist();
+    printf("%d\n",nbsolution(cloneGrille(g),liste));
+    //Resoudre(g);
+}
+*/
 
-    Resoudre(g);
+Grille * randomFill(Grille *g,int taille){
+    srand(time(NULL));
+    g->taille=taille;
+    int val;
+    int pos;   
+    for(int i=0;i<taille;++i){
+        val=rand()%2;
+        g->tab[i][i]=val;
+    }
+    //printGrille(g);
+    return Resoudre(g);
+}
+
+void randomEmpty(Grille *g){
+    srand(time(NULL));
+    int tour;
+    int posx,posy;
+    int upperx,lowerx;
+    int uppery,lowery;
+    switch (g->taille) {
+     case 4: tour=2; break;
+     case 6: tour=5; break;
+     case 8: tour=10; break;
+    }
+    for(int i=0; i<tour;++i){
+        for(int j=0;j<=3;++j){
+            switch (j) {
+                case 0: lowerx=0;lowery=0;upperx=g->taille/2-1;uppery=g->taille/2-1; break;
+
+                case 1: lowerx=g->taille/2;lowery=0;upperx=g->taille-1;uppery=g->taille/2-1;break;
+
+                case 2: lowerx=0;lowery=g->taille/2;upperx=g->taille/2-1;uppery=g->taille-1; break;
+
+                case 3: lowerx=g->taille/2;lowery=g->taille/2;upperx=g->taille-1;uppery=g->taille-1;break;
+            }
+            //printf("\n%d : \n",j);
+            //printf("%d %d %d %d\n",lowerx,upperx,lowery,uppery);
+            do {
+                posx=(rand()%(upperx-lowerx +1))+lowerx;
+                posy=(rand()%(uppery-lowery +1))+lowery;
+                //printf("%d | %d\n",posx,posy);
+            }while (g->tab[posy][posx]==-1);
+            g->tab[posy][posx]=-1;
+            
+        }
+    }
+    //printGrille(g);
+}
+void UniqueSolve(Grille *g){
+    srand(time(NULL));
+    List* liste=Newlist();
+    while(nbsolution(g, liste)>1){
+        for(int i=0;i<g->taille;++i){
+            for(int j=0;j<g->taille;++j){
+                if(liste->head->g->tab[i][j]!=liste->head->next->g->tab[i][j]){
+                    g->tab[i][j]=liste->head->g->tab[i][j];
+                }
+                }
+            }
+        printf("hello");
+        resetList(liste);
+    }
+}
+
+
+
+
+Grille * GenerateGrid(int taille){
+    Grille* tmp=Newgrille();
+    tmp=randomFill(tmp,taille);
+    randomEmpty(tmp);
+    UniqueSolve(tmp);
+    return tmp;
+}
+
+int main(){
+    printGrille(GenerateGrid(4));
 }

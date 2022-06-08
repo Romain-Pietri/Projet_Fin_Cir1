@@ -6,6 +6,22 @@ typedef struct Grille{
     int taille;
     int tab[8][8];
 }Grille;
+typedef struct Node{
+    Grille *g;
+    struct Node *next;
+}Node;
+
+typedef struct List{
+    Node *head;
+    Node *tail;
+    int size;
+}List;
+
+
+
+
+
+
 
 Grille * Newgrille();
 void initGrille(Grille *grid, int taille, int tab[8][8]);
