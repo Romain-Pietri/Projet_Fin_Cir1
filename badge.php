@@ -76,7 +76,7 @@ while($ligne=mysqli_fetch_assoc($result)){
 ?>
 <div>
 <p> <?php echo"$text"?></p>
-<img src="images/<?php echo $image?>.png">
+<img id="badges" src="images/<?php echo $image?>.png">
 </div>
 
 <?php

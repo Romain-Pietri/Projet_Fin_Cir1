@@ -912,3 +912,10 @@ label{
     transition: 0.5s;
 }
 /*----------Taille----------*/
+
+#badges{
+    height: 100px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
