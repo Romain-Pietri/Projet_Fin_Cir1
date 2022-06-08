@@ -2,6 +2,7 @@
     session_start();
 
     require "header.php";
+    require("connexiondb.php");
     $login=$_SESSION['login'];
     $request1="SELECT ID FROM utilisateurs WHERE login='$login'";
     $result=mysqli_query($connexion,$request1);
@@ -12,6 +13,8 @@
     $ligne=mysqli_fetch_assoc($result);
     $id=$ligne["ID"];
 ?>
+
+    <img id="regles" class="trophy" href="badge.php" src="images/badge.png">
 
 <br><br>
     <img id="title" src="images/scoreboard.gif">

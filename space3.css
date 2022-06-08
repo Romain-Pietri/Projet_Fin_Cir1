@@ -214,6 +214,12 @@ select{
 
 /*----------Button start----------*/
 #button{
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height:auto;
     font-size: 25px;
     position: relative;
     display: inline-block;
@@ -226,8 +232,6 @@ select{
     letter-spacing: 4px;
     overflow: hidden;
     text-align: center;
-    float: right;
-    margin-right: 43%;
 }
 
 #button:hover{
@@ -673,40 +677,32 @@ footer {
 
 /*----------Footer----------*/
 
-div.score{
-    text-align: center;
-}
-
-.score button{
+/*----------Regles----------*/
+.trophy{
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 10px;
     background: none;
     border: transparent;
 }
 
-
-div.score i{
-    color:darkgoldenrod;
-    margin-top: 1vh;
-    font-size: 4em;
-
-}
-
 .score_box{
-    width: 30vw;
-    position: relative;
+    width: 500px;
+    height: 260px;
+    position: fixed;
     top: 1vw;
-    left: 35vw;
+    right: 1vw;
     border-radius: 5px;
     padding: 10px;
     background-color: rgb(230, 230, 230);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 0;
     pointer-events: none;
     transition: all 0.2s;
+    z-index: 2;
 }
 
 .score_box .info_title{
-    height: 60px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
     display: flex;
@@ -718,26 +714,15 @@ div.score i{
 .score_box .quit_btn{
     position:relative;
     width: 3vw;
-    left: 65%;
-    top: 10%;
+    left: 93%;
+    top: 0%;
     border-radius: 100%;
-}
-
-.score_box .quit_btn i{
-    color: rgb(160, 30, 30);
-    font-size: 30px;
-    width: 3vw;
-}
-
-
-.score_box .score_text{
-    height: 100px;
-    padding: 20px 10px;
 }
 
 .score_box .score_text .info {
     font-size: 17px;
     margin-bottom: 5px ;
+    padding-top: 5px;
 }
 
 .appear{
@@ -752,3 +737,124 @@ div.score i{
 #cross{
     height: 30px;
 }
+
+/*----------Regles----------*/
+
+/*----------Taille----------*/
+
+.taille{
+  align-items: center;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.size{
+    color: white;
+    font-size: 30px;
+    font-family: bold;
+    padding: 20px;
+}
+
+label{
+    color: white;
+}
+
+.containerOuter {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 6px 20px 2px rgba(10,10,120,0.15);
+  border : solid white ;
+  border-radius: 20px;
+  background-color:rgba(0,0,0,0.65);
+}
+
+.container {
+  position: relative;
+  margin: 20px;
+  overflow: hidden;
+  width: 160px;
+}
+
+.hidden {
+  display: none;
+}
+.entry {
+  height: 25px;
+  position: absolute;
+  width: 160px;
+  background-color: transparent;
+}
+.entry:nth-child(2) {
+  left: 8px;
+  top: 8px;
+}
+.entry:nth-child(4) {
+  left: 8px;
+  top: 58px;
+}
+.entry:nth-child(6) {
+  left: 8px;
+  top: 108px;
+}
+.circle {
+  border: 2px solid #545556;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  position: absolute;
+  transition: border-color 300ms;
+  width: 20px;
+}
+.entry-label {
+  cursor: pointer;
+  margin-top: -3px;
+  padding-left: 40px;
+  user-select: none;
+  -moz-user-select: none;
+}
+.overlay {
+  background: #fff;
+  
+  height: 140px;
+  pointer-events: none;
+  transition: background 300ms;
+  width: 40px;
+}
+.highlight {
+  background: #000099;
+  border-radius: 50%;
+  height: 12px;
+  left: 14px;
+  pointer-events: none;
+  position: absolute;
+  top: 14px;
+  transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  transform: translateY(-50px);
+  width: 12px;
+}
+.hidden:nth-child(1):checked ~ .highlight {
+  transform: translateY(0);
+}
+.hidden:nth-child(3):checked ~ .highlight {
+  transform: translateY(50px);
+}
+.hidden:nth-child(5):checked ~ .highlight {
+  transform: translateY(100px);
+}
+.hidden:nth-child(1):checked + .entry .circle {
+  border-color: #000099;
+}
+.hidden:nth-child(3):checked + .entry .circle {
+  border-color: #000099;
+}
+.hidden:nth-child(5):checked + .entry .circle {
+  border-color: #000099;
+}
+.check:checked ~ .containerOuter .overlay {
+  background: #ecf0f4;
+}
+/*----------Taille----------*/
