@@ -54,6 +54,15 @@
     else{
     $taille = $_SESSION["taille"];
     
+	$initial_array1 = [0,0,0,0,0,0,0,0];
+	$initial_array2 = [0,0,0,0,0,0,0,0];
+	$initial_array3 = [0,0,0,0,0,0,0,0];
+	$initial_array4 = [0,0,0,0,0,0,0,0];
+	$initial_array5 = [0,0,0,0,0,0,0,0];
+	$initial_array6 = [0,0,0,0,0,0,0,0];
+	$initial_array7 = [0,0,0,0,0,0,0,0];
+    	$initial_array8 = [0,0,0,0,0,0,0,0];
+	    
     require("connexiondb.php");
 	    
 	$requete="SELECT Ligne FROM grilles WHERE ID = 1 ";
