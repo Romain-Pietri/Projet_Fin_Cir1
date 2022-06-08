@@ -14,9 +14,14 @@
 
 
 	if(isset($_POST["Generate"])){
-		$_SESSION["taille"] = $_POST["taille"] * 1;
-		setcookie("id" , 0 , time()+(365*24*3600));
-		header("Location: interface.php");
+		if(!isset($_POST["taille"])){
+			header("Location:taille.php");
+		}
+		else {
+			$_SESSION["taille"] = $_POST["taille"] * 1;
+			setcookie("id" , 0 , time()+(365*24*3600));
+			header("Location: interface.php");
+		}
 	}
 
 
