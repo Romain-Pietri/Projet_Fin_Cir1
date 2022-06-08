@@ -77,7 +77,7 @@ else if($taille==6){
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
     $request4="UPDATE utilisateurs SET Grille6=Grille6+1 WHERE login='$login'";
-    $request5="SELECT Grille6 FROM utilisateurs WHERE login=$login";
+    $request5="SELECT Grille6 FROM utilisateurs WHERE login='$login'";
     $request6="UPDATE badge SET Badge4=Badge4+1 WHERE ID=$id";
     $request7="UPDATE badge SET Badge7=Badge7+1 WHERE ID=$id";
     $result1=mysqli_query($connexion,$request1);
