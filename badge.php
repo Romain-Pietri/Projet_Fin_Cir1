@@ -57,7 +57,18 @@ if ( $result == FALSE ){
 }
 while($ligne=mysqli_fetch_assoc($result)){
     if($ligne["Badge$i"]==0){
-        $image="nobadge$i";
+        if($i==1||$i==2||$i==3){
+            $image="nobadge123";
+        }
+        else if($i==5||$i==6){
+            $image="nobadge56";
+        }
+        else if($i==7||$i==8){
+            $image="nobadge78";
+        }
+        else{
+            $image="nobadge$i";
+        }
     }
     if($ligne["Badge$i"]>=1){
         $image="yesbadge$i";
