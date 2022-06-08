@@ -87,16 +87,19 @@
 			if(isset($_POST["envoi"]) && $logErr == "" && $passErr == "" && $confirmErr =="" ){
 				
 				require("connexiondb.php");
-				
-				$request="INSERT INTO utilisateurs(login,password,Score,Indice,Moula,NbGrille,Grille4,Grille6,Grille8,ManuGrille) VALUES ('$log','$pass','0','5','0','0','0','0','0','0')";
+				$request0="SELECT * FROM utilisateurs";
+				$result0=mysqli_query($connexion,$request0);
+				$count=mysqli_num_rows($result0);
+				$count=$count+1;
+				$request="INSERT INTO utilisateurs(ID,login,password,Score,Indice,Moula,NbGrille,Grille4,Grille6,Grille8,ManuGrille) VALUES ('$count','$log','$pass','0','5','0','0','0','0','0','0')";
 				$resultat=mysqli_query($connexion,$request);
 				if ( $resultat == FALSE ){
 								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
 								die();
 							}
-				$request2="INSERT INTO badge(Badge1,Badge2,Badge3,Badge4,Badge5,Badge6,Badge7,Badge8,Badge9,Badge10) VALUES ('0','0','0','0','0','0','0','0','0','0')";
-				$resultat=mysqli_query($connexion,$request2);
-				if ( $resultat == FALSE ){
+				$request2="INSERT INTO badge(ID,Badge1,Badge2,Badge3,Badge4,Badge5,Badge6,Badge7,Badge8,Badge9,Badge10) VALUES ('$count','0','0','0','0','0','0','0','0','0','0')";
+				$resultat2=mysqli_query($connexion,$request2);
+				if ( $resultat2 == FALSE ){
 								echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
 								die();
 							}
