@@ -8,15 +8,25 @@
 	}
 	
 	if(isset($_POST["Manual_Create"])){
-		$_SESSION["taille2"] = $_POST["taille"] * 1;
-		header("Location:manuel.php");
+		if(!isset($_POST["taille"])){
+			header("Location:taillegen.php");
+		}
+		else{
+			$_SESSION["taille2"] = $_POST["taille"] * 1;
+			header("Location:manuel.php");
+		}
 	}
 
 
 	if(isset($_POST["Generate"])){
-		$_SESSION["taille"] = $_POST["taille"] * 1;
-		setcookie("id" , 0 , time()+(365*24*3600));
-		header("Location: interface.php");
+		if(!isset($_POST["taille"])){
+			header("Location:taille.php");
+		}
+		else {
+			$_SESSION["taille"] = $_POST["taille"] * 1;
+			setcookie("id" , 0 , time()+(365*24*3600));
+			header("Location: interface.php");
+		}
 	}
 
 

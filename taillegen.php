@@ -20,9 +20,9 @@
     <div class="highlight"></div>
     <div class="overlay"></div>
   </div>
-  <input type="submit" name="Manual_Create" Value="Create Manually"/>
-  <br><br>
 </div>
+<br>
+<input type="submit" id="tt" name="Manual_Create" Value="Create Manually"/>
 <svg width="0" height="0" viewBox="0 0 40 140">
   <defs>
     <mask id="holes">
