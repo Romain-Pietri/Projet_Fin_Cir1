@@ -32,12 +32,11 @@ while($ligne=mysqli_fetch_assoc($result)){
     $requete="SELECT Indice FROM utilisateurs WHERE login='$login'";
     $requete2="SELECT Moula FROM utilisateurs WHERE login='$login";
     $exe=mysqli_query($connexion,$requete);
-    $return=mysqli_fetch_assoc($exe);
-    if ( $return == FALSE ){
+    if ( $exe == FALSE ){
         echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
         die();
     }
-    $ligne=mysqli_fetch_assoc($return);
+    $ligne=mysqli_fetch_assoc($exe);
     $indice=$ligne['Indice'];
     $startindice=$_SESSION["indice"];
     $hintuse=$startindice-$indice;
