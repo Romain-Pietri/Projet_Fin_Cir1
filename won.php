@@ -35,7 +35,7 @@ if($taille==4){
     $request1="UPDATE utilisateurs SET NbGrille=NbGrille+1 WHERE login='$login'";
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
-    $request4="UPDATE utilisateurs SET Grille4=Grille4 WHERE login='$login'";
+    $request4="UPDATE utilisateurs SET Grille4=Grille4+1 WHERE login='$login'";
     $request5="SELECT Grille4 FROM utilisateurs WHERE login='$login'";
     $request6="UPDATE badge SET Badge3=Badge3+1 WHERE ID=$id";
     $request7="UPDATE badge SET Badge7=Badge7+1 WHERE ID=$id";
@@ -76,7 +76,7 @@ else if($taille==6){
     $request1="UPDATE utilisateurs SET NbGrille=NbGrille+1 WHERE login='$login'";
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
-    $request4="UPDATE utilisateurs SET Grille6=Grille6 WHERE login='$login'";
+    $request4="UPDATE utilisateurs SET Grille6=Grille6+1 WHERE login='$login'";
     $request5="SELECT Grille6 FROM utilisateurs WHERE login=$login";
     $request6="UPDATE badge SET Badge4=Badge4+1 WHERE ID=$id";
     $request7="UPDATE badge SET Badge7=Badge7+1 WHERE ID=$id";
@@ -117,7 +117,7 @@ else if($taille==8){
     $request1="UPDATE utilisateurs SET NbGrille=NbGrille+1 WHERE login='$login'";
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
-    $request4="UPDATE utilisateurs SET Grille8=Grille8 WHERE login='$login'";
+    $request4="UPDATE utilisateurs SET Grille8=Grille8+1 WHERE login='$login'";
     $request5="SELECT Grille8 FROM utilisateurs WHERE login='$login'";
     $request6="UPDATE badge SET Badge5=Badge5+1 WHERE ID=$id";
     $request7="UPDATE badge SET Badge7=Badge7+1 WHERE ID=$id";
