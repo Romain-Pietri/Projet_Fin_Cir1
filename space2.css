@@ -2,10 +2,11 @@ body{
   background-image: url("images/space2.gif");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: pirulen;
+  src: url(https://raw.githubusercontent.com/th3knigh7/css-design/black-bg/pirulen.ttf);
 } 
 
 h1{
-  font-family: 'OCR A Std', 'monospace';
   font-weight: bold;
   color: white;
   text-align: center;
@@ -44,7 +45,6 @@ h2{
   margin-right: 5px;
   height: 15px;
   float: right;
-  cursor: pointer;
 }
 
 #logo {
@@ -350,7 +350,7 @@ select{
 legend{
     text-align: center;
     color: white;
-    font-family: bold;
+    font-family: pirulen;
 }
 
 #connect{
@@ -379,6 +379,7 @@ input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
 }
 
 input[type=submit]{
+    font-family: pirulen;
     color: white;
     background-color: transparent;
     border-color: #448744;
@@ -394,12 +395,13 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #448744;
     border-color: white;
-    box-shadow: 0 0 8px green;
+    box-shadow: 0 0 8px dodgerBlue;
     width: 20%;
     transition: 0.5s;
 }
 
 p{
+    font-family: pirulen;
     color: white;
     text-align: center;
 }
@@ -772,7 +774,7 @@ footer {
 .taille{
   align-items: center;
   display: flex;
-  font-family: "Open Sans", sans-serif;
+  font-family: pirulen;
   font-size: 20px;
   height: 100vh;
   justify-content: center;
@@ -788,6 +790,7 @@ footer {
 }
 
 label{
+    font-family: pirulen;
     color: white;
 }
 
