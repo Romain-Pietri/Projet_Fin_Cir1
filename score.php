@@ -14,7 +14,7 @@
     $id=$ligne["ID"];
 ?>
 
-    <img id="regles" class="trophy" href="badge.php" src="images/badge.png">
+    <button href="badge.php"><img id="regles" class="trophy" src="images/badge.png"></button>
 
 <br><br>
     <img id="title" src="images/scoreboard.gif">
