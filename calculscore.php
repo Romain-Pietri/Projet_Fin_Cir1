@@ -73,6 +73,7 @@ while($ligne=mysqli_fetch_assoc($result)){
         $score = $result['Score'] + $taille - 100*$hintuse;
         if(isset($_SESSION["Solvetrue"]) || $taille - 100*$hintuse<0){
             $score=$result['Score'];
+            unset($_SESSION["Solvetrue"]);
         }
         if ($score>=10000){
             $request="UPDATE badge SET Badge6=Badge6+1 WHERE ID=$id";
