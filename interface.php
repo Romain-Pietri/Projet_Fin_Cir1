@@ -255,6 +255,7 @@ function verifgen(){
         $_SESSION["solvable"] = 0;
         $_SESSION["taille"] = $_SESSION["taille2"];
         unset($_SESSION["taille2"]);
+        mysqli_close($connexion);
         header("location:jeu.php");
     }
 }

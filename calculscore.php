@@ -22,12 +22,12 @@ if ( $result == FALSE ){
     echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
     die();
 }
-$ligne=mysqli_fetch_assoc($result);
-$id=$ligne["ID"];
+while($ligne=mysqli_fetch_assoc($result)){
+    $id=$ligne["ID"];
+}
 
 
 
-if(isset($_POST["valider"])){
         
     $requete="SELECT Indice FROM utilisateurs WHERE login='$login'";
     $requete2="SELECT Moula FROM utilisateurs WHERE login='$login";
@@ -92,6 +92,5 @@ if(isset($_POST["valider"])){
         }
         mysqli_close($connexion);
         header("Location:won.php");
-        }
 
 ?>
