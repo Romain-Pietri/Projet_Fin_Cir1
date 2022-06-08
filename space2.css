@@ -130,7 +130,7 @@ table,td,th{
 }
 #conteneur span{
     display:inline-block;
-    width:32%;
+    width:30%;
     text-align:center;
     position:relative;
 }
@@ -139,8 +139,8 @@ table,td,th{
 #conteneur span:nth-child(3){ top:95px; }
 
 #first{color: black;font-size: 30px;margin-left: 20px;}
-#sec{color: black;font-size: 25px;margin-left: 20px;}
-#third{color: black;font-size: 25px;margin-left: 20px;}
+#sec{color: black;font-size: 20px;margin-left: 20px;}
+#third{color: black;font-size: 20px;margin-left: 20px;}
 
 /*----------Score----------*/
 
