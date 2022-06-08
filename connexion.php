@@ -91,7 +91,7 @@
 						$request2="SELECT Indice FROM utilisateurs WHERE login='$login'";
 						$result2=mysqli_query($connexion,$request2);
 						$startindice=mysqli_fetch_assoc($result2);
-						$_SESSION["indice"]=$startindice;
+						$_SESSION["indice"]=$startindice["Indice"];
 						mysqli_close($connexion);
 						header("location:taille.php");
 					}
