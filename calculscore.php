@@ -15,8 +15,8 @@ if ($_SESSION['taille'] == 8){
     $taille = 1600;
     $money=50;
 }
-$login = $_SESSION['login'];
-$request1="SELECT ID FROM utilisateurs WHERE login='$login'";
+$login = $_SESSION["login"];
+$request1 = "SELECT ID FROM utilisateurs WHERE login = '$login'";
 $result=mysqli_query($connexion,$request1);
 if ( $result == FALSE ){
     echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -30,7 +30,7 @@ while($ligne=mysqli_fetch_assoc($result)){
 
         
     $requete="SELECT Indice FROM utilisateurs WHERE login='$login'";
-    $requete2="SELECT Moula FROM utilisateurs WHERE login='$login";
+    $requete2="SELECT Moula FROM utilisateurs WHERE login='$login'";
     $exe=mysqli_query($connexion,$requete);
     if ( $exe == FALSE ){
         echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -38,26 +38,26 @@ while($ligne=mysqli_fetch_assoc($result)){
     }
     $ligne=mysqli_fetch_assoc($exe);
     $indice=$ligne['Indice'];
-    $startindice=$_SESSION["indice"];
+    $startindice=$_SESSION["hint"];
     $hintuse=$startindice-$indice;
-    $_SESSION['Indice']=$indice;
+    $_SESSION["hint"]=$indice;
     
     $exe2=mysqli_query($connexion,$requete2);
-    $return2=mysqli_fetch_assoc($exe2);
-    if ( $return2 == FALSE ){
+    if ( $exe2 == FALSE ){
         echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
         die();
     }
-    $ligne=mysqli_fetch_assoc($return2);
+    $ligne=mysqli_fetch_assoc($exe2);
     $moula=$ligne['Moula'];
     $moula=$moula+$money;
-    $requete3="UPDATE Moula FROM utilisateurs WHERE login='$login'";
+    $requete3="UPDATE utilisateurs SET Moula=$moula WHERE login='$login'";
     $exe3=mysqli_query($connexion,$requete3);
-    $return3=mysqli_fetch_assoc($exe3);
-    if ( $return3== FALSE ){
+    
+    if ( $exe3== FALSE ){
         echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
         die();
     }
+    
 
 
 
@@ -75,7 +75,7 @@ while($ligne=mysqli_fetch_assoc($result)){
             $score=$result['Score'];
         }
         if ($score>=10000){
-            $request="UPDATE badge SET Badge6=Badge6+1 WHERE ID='$id'";
+            $request="UPDATE badge SET Badge6=Badge6+1 WHERE ID=$id";
             $result=mysqli_query($connexion,$request);
             if ( $result == FALSE ){
                 echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
@@ -83,7 +83,7 @@ while($ligne=mysqli_fetch_assoc($result)){
             }
             
         }
-        $request="UPDATE utilisateurs SET Score = '$score' WHERE login = '$login'";
+        $request="UPDATE utilisateurs SET Score = $score WHERE login = '$login'";
         $resultat=mysqli_query($connexion,$request);
         if ( $resultat == FALSE ){
             echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;

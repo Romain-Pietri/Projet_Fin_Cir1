@@ -1,5 +1,6 @@
 <?php
     session_start();
+	require("connexiondb.php");
 ?> 
 
 <!DOCTYPE html> 
@@ -74,7 +75,7 @@
 				$login=$_POST["login"];
 				$mdp=hash('sha256', $_POST['passwd']);
 
-				require("connexiondb.php");
+				
 
 				$request="SELECT login, password FROM utilisateurs";
 				$result=mysqli_query($connexion,$request);
@@ -87,11 +88,17 @@
 				while($ligne=mysqli_fetch_assoc($result)){
 
 					if($ligne['login']==$login && $ligne['password']==$mdp){
-						$_SESSION["login"]=$login;
-						$request2="SELECT Indice FROM utilisateurs WHERE login='$login'";
+						$_SESSION["login"] = $login;
+						$request2="SELECT Indice FROM utilisateurs WHERE login = '$login' ";
 						$result2=mysqli_query($connexion,$request2);
-						$startindice=mysqli_fetch_assoc($result2);
-						$_SESSION["indice"]=$startindice["Indice"];
+						if ( $result2 == FALSE ){
+							echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+							die();
+						}
+						while($startindice=mysqli_fetch_assoc($result2)){
+							$_SESSION["hint"]=$startindice["Indice"];
+						}
+						
 						mysqli_close($connexion);
 						header("location:taille.php");
 					}
