@@ -8,8 +8,13 @@
 	}
 	
 	if(isset($_POST["Manual_Create"])){
-		$_SESSION["taille2"] = $_POST["taille"] * 1;
-		header("Location:manuel.php");
+		if(!isset($_POST["taille"])){
+			header("Location:taillegen.php");
+		}
+		else{
+			$_SESSION["taille2"] = $_POST["taille"] * 1;
+			header("Location:manuel.php");
+		}
 	}
 
 
