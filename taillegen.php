@@ -20,7 +20,7 @@
     <div class="highlight"></div>
     <div class="overlay"></div>
   </div>
-  <input type="submit" name="Generate" Value="Generate"/>
+  <input type="submit" name="Manual_Create" Value="Create Manually"/>
   <br><br>
 </div>
 <svg width="0" height="0" viewBox="0 0 40 140">
