@@ -5,6 +5,7 @@
     if(!isset($_SESSION["taille"]) || $_SESSION["taille"] == 0){
 
         echo '
+        <img id="gadget" src="images/gadget1.gif">
         <br><br>
 <main class="taille">
 <form method="post" action="cookies.php">
@@ -20,9 +21,9 @@
     <div class="highlight"></div>
     <div class="overlay"></div>
   </div>
-  <input type="submit" name="Generate" Value="Generate"/>
-  <br><br>
 </div>
+<br>
+<input type="submit" id="tt" name="Generate" Value="Generate"/>
 <svg width="0" height="0" viewBox="0 0 40 140">
   <defs>
     <mask id="holes">
@@ -33,7 +34,6 @@
     </mask>
   </defs>
 </svg>
-
 </form>
 </main>';
         
