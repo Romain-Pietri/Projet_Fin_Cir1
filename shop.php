@@ -12,21 +12,21 @@
 <div>
 <h1> 1 Indice </h1>
 <form action="" method="post">
-<input type="submit" name="one" value="ACHETER: 10$">
+<input type="submit" name="one" value="ACHETER : 10$">
 </form>
 </div>
 
 <div>
 <h1> 5 Indices </h1>
 <form action="" method="post">
-<input type="submit" name="five" value="ACHETER:50$">
+<input type="submit" name="five" value="ACHETER : 50$">
 </form>
 </div>
 
 <div>
 <h1> 10 Indices </h1>
 <form action="" method="post">
-<input type="submit" name="ten" value="ACHETER:100$">
+<input type="submit" name="ten" value="ACHETER : 100$">
 </form>
 </div>
 
