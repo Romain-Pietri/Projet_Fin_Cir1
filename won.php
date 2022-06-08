@@ -32,6 +32,7 @@
 <main>
 <?php
 if($taille==4){
+    if(!isset($_SESSION["Solvetrue"])){
     $request1="UPDATE utilisateurs SET NbGrille=NbGrille+1 WHERE login='$login'";
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
@@ -62,6 +63,7 @@ if($taille==4){
     if($ligne["Grille4"]>=3){
         $result6=mysqli_query($connexion,$request6);
     }
+    }
 ?>
 <div>
 <br>
@@ -73,6 +75,7 @@ if($taille==4){
 <?php
 }
 else if($taille==6){
+    if(!isset($_SESSION["Solvetrue"])){
     $request1="UPDATE utilisateurs SET NbGrille=NbGrille+1 WHERE login='$login'";
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
@@ -103,6 +106,7 @@ else if($taille==6){
     if($ligne["Grille6"]>=3){
         $result6=mysqli_query($connexion,$request6);
     }
+}
 ?>
 <div>
 <br>
@@ -114,6 +118,7 @@ else if($taille==6){
 <?php
 }
 else if($taille==8){
+    if(!isset($_SESSION["Solvetrue"])){
     $request1="UPDATE utilisateurs SET NbGrille=NbGrille+1 WHERE login='$login'";
     $request2="SELECT NbGrille FROM utilisateurs WHERE login='$login'";
     $request3="UPDATE badge SET Badge1=Badge1+1 WHERE ID=$id";
@@ -144,6 +149,7 @@ else if($taille==8){
     if($ligne["Grille8"]>=3){
         $result6=mysqli_query($connexion,$request6);
     }
+}
 ?>
 
 <div>
