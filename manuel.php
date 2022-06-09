@@ -31,6 +31,9 @@ else{
 	
 ?> 
 
+    <img id="gadget" src="images/gadget1.gif">
+
+
 <div id="container">
             
         
@@ -56,6 +59,7 @@ else{
 		<input type="submit" id="Abandon" name="Abandon" Value="Abandon"/>
                 <input type="submit" id="create" name="Create" Value="Create"/>
             </form>
+            <br>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
 
             

@@ -8,6 +8,8 @@
 ?>
 
 <body>
+        <img id="gadget" src="images/gadget1.gif">
+
     <?php
 
                 $login=$_SESSION['login'];
