@@ -92,7 +92,8 @@ h2{
     margin-right: auto;
     margin-left: auto;
 }
-}
+
+.error{color: red;font-size: 10px;margin-left:375px ;}
 
 /*----------Start----------*/
 
@@ -158,7 +159,7 @@ div .container{
     display:auto;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
     position: relative;
     z-index: 5;
 }
@@ -199,8 +200,9 @@ table#t01 tr {
 }
 
 #moula{
-    position: absolute;
-    margin-right: 390px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 10px;
     background-color: black;
     padding: 8px 2px;
@@ -210,25 +212,27 @@ table#t01 tr {
     border-radius: 10px;
 }
 
-#sous{
-    height: 20px;
-}
-
-#verif, #solve{
+#verif{
+    display: block;
+    float: right;
     position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    width: 50%;
-    height: 8%;
+    right: 100px;
+    bottom: 50px;
     z-index: 3;
 }
 
-#solve{
-    height: 50px;
+#solve, #verify{
+    height: 40px;
     width: 100px;
+    background-color:rgba(0,0,0,0.65);
 }
+
+#restart{
+    
+    display: block;
+    margin: 0 auto;
+}
+
 
 /*----------Jeu.php----------*/
 
@@ -358,6 +362,7 @@ legend{
 }
 
 input[type=text],input[type=password]{
+    font-family: pirulen;
     background-color: transparent;
     color: white;
     width:40%;
@@ -373,6 +378,7 @@ input[type=text],input[type=password]{
 }
 
 input[type=text]:focus,input[type=password]:focus,input[type=submit]:focus{
+    font-family: pirulen;
     background-color: #448744;
     border-color:green;
     box-shadow:0 0 8px 0 green;
@@ -395,7 +401,7 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #448744;
     border-color: white;
-    box-shadow: 0 0 8px dodgerBlue;
+    box-shadow: 0 0 8px green;
     width: 20%;
     transition: 0.5s;
 }
@@ -749,6 +755,7 @@ footer {
 }
 
 .score_box .score_text .info {
+    font-family: "Open Sans", sans-serif;
     font-size: 17px;
     margin-bottom: 5px ;
     padding-top: 5px;
@@ -774,9 +781,8 @@ footer {
 .taille{
   align-items: center;
   display: flex;
-  font-family: pirulen;
   font-size: 20px;
-  height: 100vh;
+  height: 35vw;
   justify-content: center;
   margin: 0;
   z-index: 1;
@@ -791,14 +797,13 @@ footer {
 
 label{
     font-family: pirulen;
-    color: white;
+    color: white ;
 }
 
 .containerOuter {
-  background: white;
   border-radius: 8px;
   box-shadow: 2px 6px 20px 2px rgba(10,10,120,0.15);
-  border : solid white ;
+  border : 5px solid white ;
   border-radius: 20px;
   background-color:rgba(0,0,0,0.65);
 }
@@ -848,15 +853,13 @@ label{
   -moz-user-select: none;
 }
 .overlay {
-  background: #fff;
-  
   height: 140px;
   pointer-events: none;
   transition: background 300ms;
   width: 40px;
 }
 .highlight {
-  background: #448744;
+  background-color: #448744;
   border-radius: 50%;
   height: 12px;
   left: 14px;
@@ -899,7 +902,7 @@ label{
     margin-right: auto;
     padding: 8px;
     border-radius: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     margin-top: 0px;
     z-index: 2;
 }
@@ -913,9 +916,14 @@ label{
 }
 /*----------Taille----------*/
 
+/*----------Badges----------*/
+
 #badges{
     height: 100px;
     display: block;
     margin-right: auto;
     margin-left: auto;
 }
+
+/*----------Badges----------*/
+

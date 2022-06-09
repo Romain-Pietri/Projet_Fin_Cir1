@@ -2,35 +2,58 @@
     session_start();
 
     require "header.php";
-    require("connexiondb.php");
     if(!isset($_SESSION["login"])){
         header("Location:connexion.php");
     }
 ?>
 
 <body>
+    <?php
+
+                $login=$_SESSION['login'];
+                require("connexiondb.php");
+            
+                $request="SELECT Indice,Moula FROM utilisateurs WHERE login='$login'";
+                $resultat=mysqli_query($connexion,$request);
+                if ( $resultat == FALSE ){
+                                echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+                                die();
+                            }
+                $indice=mysqli_fetch_assoc($resultat);
+                $hint=$indice['Indice'];
+                $moula=$indice['Moula'];
+                mysqli_close($connexion);
+            ?>
+            
+
+        <input type="submit" id="moula" name="Hint" Value="🔍 <?php echo $hint; ?>"/>             
+        <input type="submit" id="moula" name="Moula" Value="💰 <?php echo $moula;?>"/>
+
 <div>
-<h1> 1 Indice </h1>
+<h1> 1 hint </h1>
 <form action="" method="post">
-<input type="submit" name="one" value="ACHETER : 10$">
+<input type="submit" name="one" value="BUY : 10$">
 </form>
 </div>
 
 <div>
-<h1> 5 Indices </h1>
+<h1> 5 hint </h1>
 <form action="" method="post">
-<input type="submit" name="five" value="ACHETER : 50$">
+<input type="submit" name="five" value="BUY : 50$">
 </form>
 </div>
 
 <div>
-<h1> 10 Indices </h1>
+<h1> 10 hint </h1>
 <form action="" method="post">
-<input type="submit" name="ten" value="ACHETER : 100$">
+<input type="submit" name="ten" value="BUY : 100$">
 </form>
 </div>
 
 <?php
+
+    require("connexiondb.php");
+
 if(isset($_POST['one'])){
     $login=$_SESSION['login'];
     $request="SELECT Moula FROM utilisateurs WHERE login='$login'";

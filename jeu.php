@@ -43,6 +43,11 @@
 		}
 	 </script> 
 
+	 <form method="post" action = "cookies.php">
+	 	<br>
+        <input type="submit" id="restart" name="Restart" Value="Restart"/>
+    </form>
+
 <?php
     if(!isset($_SESSION["login"])){
 		header("Location:connexion.php");
@@ -251,15 +256,11 @@
             ?>
             
             <form method="post" action = "cookies.php">
-                <div id="verif"><input type="submit" name="Solve" Value="Solve"/>
-                <input type="submit" id="solve" name="Verify" Value="Verify"/></div>
-                <input type="submit" id="restart" name="Restart" Value="Restart"/>
-				<input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>
-				
+                <div id="verif"><input type="submit" id="verify" name="Verify" Value="Verify"/>
+                <input type="submit" id="solve" name="Solve" Value="Solve"/></div>
+				<input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>				
             </form>
             <input type = "hidden" id="variable" value = <?php echo $taille ?> />
-
-            <p id="moula"><img id="sous" src="images/sous.png"><?php echo $moula;?></p>
 
 
             

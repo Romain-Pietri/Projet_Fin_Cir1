@@ -11,7 +11,7 @@
 <br><br>
 
 <img src="images/failed.png" id="lost">
-
+<br><br><br>
 <a id="button" href="jeu.php">
         <span></span>
         <span></span>
@@ -19,7 +19,7 @@
         <span></span>
         RESTART
     	</a>
-<br><br>
+
 
 <?php
     $_COOKIE["Ligne1"] = "[0,0,0,0,0,0,0,0]";
@@ -33,3 +33,7 @@
     require("save.php");
 	require "footer.php";
 ?>
+
+
+</body>
+</html>

@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 	<link rel="icon" href="images/log.png">
 </head>
-
+ 
 <body>
+
+
 		<header>
 
 <a><img id="logo" src="images/log.png"></a>
@@ -91,3 +93,4 @@
 		}
 		?>
 		<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
+

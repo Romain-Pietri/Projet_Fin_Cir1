@@ -3,11 +3,11 @@
 	require "header.php";
 ?>
 
-<h1> Paramètres </h1>
+<h1> Settings </h1>
 		<br><br>
 	</header>
 	
-	<p> Paramètres du thème :</p>
+	<p> Theme settings : </p>
 	<br>
 
 
@@ -28,7 +28,7 @@
 
 	
 		<form method="post" action="themeappli.php">		
-			<p class="mention">Choissisez votre thème préféré : </p>
+			<p class="mention">Choose your favorite theme :</p>
 			<select name="Choixtheme">
 				<option value="space1">1</option>
 				<option value="space2">2</option>

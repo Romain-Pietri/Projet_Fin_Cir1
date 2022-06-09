@@ -5,7 +5,7 @@ require("connexiondb.php");
 require("header.php");
 ?>
 
-<h1> Votre collection de badges </h1>
+<h1> Your badges collection </h1>
 
 <?php 
 $request1="SELECT ID FROM utilisateurs WHERE login='$login'";
@@ -19,34 +19,34 @@ $id=$ligne["ID"];
 for ($i=1;$i<=10;$i++){
 switch($i){
     case 1:
-        $text="1 grille résolue";
+        $text="1 grid solved";
         break;
     case 2:
-        $text="1 grille créée";
+        $text="1 grid created";
         break;
     case 3:
-        $text="3 grilles 4X4 résolues";
+        $text="3 solved 4x4 grids";
         break;
     case 4:
-        $text="3 grilles 6X6 résolues";
+        $text="3 solved 6x6 grids";
         break;
     case 5:
-        $text="3 grilles 8X8 résolues";
+        $text="3 solved 8x8 grids";
         break;
     case 6:
-        $text="Score supérieur à 10000 !";
+        $text="Score over 10000 !";
         break;
     case 7:
-        $text="5 grilles résolues ";
+        $text="5 grids solved";
         break;
     case 8:
-        $text="3e place sur le leaderboard atteinte !";
+        $text="3rd place on the leaderboard reached !";
         break;
     case 9:
-        $text="2e place sur le leaderboard atteinte !";
+        $text="2nd place on the leaderboard reached !";
         break;
     case 10:
-        $text="Vous êtes au sommet ! Bravo !";
+        $text="You are at the top ! Cheer !";
         break;
 }
 $request="SELECT Badge$i FROM badge WHERE ID=$id";

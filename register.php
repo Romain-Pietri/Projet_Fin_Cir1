@@ -35,9 +35,6 @@
 
     	</header>
     
-
-<style>.error{color: red;margin-left:375px ;}</style>
-
 <main>
 	<img id="gadget" src="images/gadget1.gif">
 
@@ -81,6 +78,9 @@
      		<span class="error"> <?php echo $confirmErr;?></span>
      		<br><br>
      		<input type="submit" name="envoi" value="Register"/>
+		</form>
+		<form action="taille.php">
+		<input type="submit" name="send" value="GO BACK"/>
 		</form>
 
 		<?php
