@@ -56,7 +56,7 @@ else{
             ?>
             
 			<form method="post" action = "cookies.php">
-		<input type="submit" id="Abandon" name="Abandon" Value="Abandon"/>
+		<input type="submit" id="Abandon" name="Abandon" Value="Give Up"/>
                 <input type="submit" id="create" name="Create" Value="Create"/>
             </form>
             <br>
