@@ -6,7 +6,6 @@
 #include "Solver.h"
 #include <time.h>
 Grille* randomFill(Grille* g, int taille) {
-    srand(time(NULL));
     g->taille = taille;
     int val;
     int pos;
@@ -19,7 +18,6 @@ Grille* randomFill(Grille* g, int taille) {
 }
 
 void randomEmpty(Grille* g) {
-    srand(time(NULL));
     int tour;
     int posx, posy;
     int upperx, lowerx;
@@ -61,18 +59,23 @@ void resetGrid(Grille* grid) {
     }
 }
 
-void UniqueSolve(Grille* g) {
+Grille* UniqueSolve(Grille* g) {
     List* liste = Newlist();
     Grille* tmp = cloneGrille(g);
     int nb = nbsolution(tmp, liste);
     while (nb == 0) {
+
         resetList(liste);
         resetGrid(g);
         g = randomFill(g, g->taille);
+
         randomEmpty(g);
+
         tmp = cloneGrille(g);
         nb = nbsolution(tmp, liste);
+
     }
+    if (nb == 1) { return g; }
     while (nb > 1) {
 
         //printGrille(g);
@@ -84,16 +87,19 @@ void UniqueSolve(Grille* g) {
             }
         }
         resetList(liste);
-        nb = nbsolution(g, liste);
+        tmp = cloneGrille(g);
+        nb = nbsolution(tmp, liste);
     }
+    return g;
 }
 
 
 
 Grille* GenerateGrid(int taille) {
+    srand(time(NULL));
     Grille* tmp = Newgrille();
     tmp = randomFill(tmp, taille);
     randomEmpty(tmp);
-    UniqueSolve(tmp);
+    tmp = UniqueSolve(tmp);
     return tmp;
 }
