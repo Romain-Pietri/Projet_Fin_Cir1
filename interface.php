@@ -48,7 +48,7 @@ function generator(){
         file_put_contents("json.json",$edata);
     do{
         echo exec("Programme.exe");
-        sleep(1);
+        sleep(2);
         $json=file_get_contents("json.json");
         $data=json_decode($json);
     }while ($data->verif==0) ;

@@ -47,6 +47,9 @@ List* resetList(List* list) {
         tmp = tmp->next;
         free(tmp2);
     }
+    list->head = NULL;
+    list->tail = NULL;
+    list->size = 0;
     return NULL;
 }
 /*
@@ -98,6 +101,7 @@ Grille* cloneGrille(Grille* g) {
 Affiche la grille fournie en paramètre
 */
 void printGrille(Grille* g) {
+    if (g == NULL) return; 
     printf("\n");
     for (int i = 0; i < g->taille; i++) {
         for (int j = 0; j < g->taille; j++) {
@@ -582,7 +586,7 @@ bool inteligent(Grille* g) {
 Resout la grille avec Backtracking et l'intelligence
 */
 bool Solveur(Grille* g) {
-    
+    while (inteligent(g)) { NULL; }
     Grille* tmp = Solve(g, 0, 0);
     if (tmp != NULL) {
         //printGrille(tmp);
@@ -595,14 +599,14 @@ bool Solveur(Grille* g) {
 
 }
 Grille* Resoudre(Grille* g) {
-    
+    while (inteligent(g)) { NULL; }
     Grille* tmp = Solve(g, 0, 0);
     if (tmp != NULL) {
         if (VerifGrille(tmp)) return tmp;
     }
-    else {
-        return NULL;
-    }
+    
+    return NULL;
+    
 }
 
 
