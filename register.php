@@ -15,7 +15,7 @@
 
 <body>
 		<header>
-
+			<audio autoplay id="myAudio" src="images/music1.mp3" preload="auto"></audio>
 			<a><img id="logo" src="images/log.png"></a>
 			<br><br>
 				<?php		

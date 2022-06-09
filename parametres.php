@@ -35,7 +35,7 @@
 				<option value="space3">3</option>
 			</select>
 			<br><br>
-			<input type="submit" name="Envoyer" Value="Sélectionner"/>
+			<input type="submit" name="Envoyer" Value="Select"/>
 		</form>
 
 		<br>
