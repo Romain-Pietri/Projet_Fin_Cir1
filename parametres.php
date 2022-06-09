@@ -28,13 +28,15 @@
 
 	
 		<form method="post" action="themeappli.php">		
-			<p class="mention">Choose your favorite theme :</p>
+		<p class="mention">Choose your favorite theme :</p>
+		<div class="box">
 			<select name="Choixtheme">
 				<option value="space1">1</option>
 				<option value="space2">2</option>
 				<option value="space3">3</option>
 			</select>
-			<br><br>
+		</div>
+			<br>
 			<input type="submit" name="Envoyer" Value="Select"/>
 		</form>
 

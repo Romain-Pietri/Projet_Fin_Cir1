@@ -97,6 +97,26 @@ h2{
 
 /*----------Start----------*/
 
+/*----------Parametres----------*/
+.box select {
+  background-color: #448744;
+  color: white;
+  padding: 12px;
+  width: 150px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  border: 3px solid black;
+  font-family: pirulen;
+}
+
+.box select option{
+  padding: 30px;
+}
+/*----------Parametres----------*/
 
 /*----------Score----------*/
 table,td,th{

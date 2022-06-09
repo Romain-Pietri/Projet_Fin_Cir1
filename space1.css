@@ -93,10 +93,35 @@ h2{
     margin-left: auto;
 }
 
+.theme{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .error{color: red;font-size: 10px;margin-left:375px ;}
 
 /*----------Start----------*/
 
+/*----------Parametres----------*/
+.box select {
+  background-color: #000099;
+  color: white;
+  padding: 12px;
+  width: 150px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  border: 3px solid black;
+  font-family: pirulen;
+}
+
+.box select option{
+  padding: 30px;
+}
+/*----------Parametres----------*/
 
 /*----------Score----------*/
 table,td,th{
@@ -189,14 +214,15 @@ table#t01 tr {
 
 #hint{
     display: block;
-    margin-right: 390px;
-    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: black;
     padding: 8px 2px;
     width: 8%;
     color: white;
     border-color: #000099;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 #moula{
