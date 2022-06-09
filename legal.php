@@ -3,7 +3,7 @@
 	require "header.php";
 ?>
     
-      <h1>Mentions légales</h1>
+      <h1>Legal Mentions</h1>
     </header>
 
     <main>
@@ -19,7 +19,7 @@
 		<br>
 		The connection and navigation on the Site by the User implies full and unreserved acceptance
 		of these legal notices.
-		These are accessible on the Site under the heading “Legal notices”.
+		These are accessible on the Site under the heading “Legal Mention”.
 		<br><br>
 		<strong>ARTICLE 1 - THE PUBLISHER</strong>
 		<br>
@@ -29,12 +29,12 @@
 		<br><br>
 		<strong>ARTICLE 2 - THE HOST</strong>
 		<br>
-		The host of the Site is the company ISS compagnie, whose head office is located at 1 rue demars
+		The host of the Site is the company ISS company, whose head office is located at 1 rue demars
 		Lille, with the telephone number: (+33) (0) 6 24 31 06 38
 		<br><br>
 		<strong>ARTICLE 3 - ACCESS TO THE SITE</strong>
 		<br>
-		The wesite is accessible anywhere, 7 days a week, 24 hours a day, except in cases of force majeure, interruption
+		The website is accessible anywhere, 7 days a week, 24 hours a day, except in cases of force majeure, interruption
 		programmed or not and which may result from a need for maintenance.
 		In the event of modification, interruption or suspension of the Site, the Publisher cannot be held responsible.
 		<br><br>
