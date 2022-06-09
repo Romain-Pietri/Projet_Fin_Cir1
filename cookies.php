@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require("connexiondb.php");
-	
+	$login=$_SESSION["login"];
 
 	if (isset($_COOKIE['id'])){ 
 		$_COOKIE['id'] = "";
@@ -30,6 +30,14 @@
 		require("save2.php");
 		unset($_SESSION["taille"]);
 		unset($_SESSION["taille2"]);
+		$indicereset=$_SESSION["indice"];
+		$request="UPDATE utilisateurs SET Indice=$indicereset";
+		$exe=mysqli_query($connexion,$request);
+		if ( $exe == FALSE ){
+			echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
+			die();
+		}
+
 		header("Location:taille.php");
 	}
 	
