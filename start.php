@@ -37,7 +37,7 @@ session_start();
 		<img id="gadget" src="images/gadget1.gif">
 
 
-		<a id="button" href="connexion.php">
+		<a id="button" href="Projet/connexion.php">
         <span></span>
         <span></span>
         <span></span>
