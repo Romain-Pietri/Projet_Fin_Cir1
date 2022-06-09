@@ -50,6 +50,10 @@ while($ligne=mysqli_fetch_assoc($result)){
     $ligne=mysqli_fetch_assoc($exe2);
     $moula=$ligne['Moula'];
     $moula=$moula+$money;
+    if(isset($_SESSION["Solvetrue"])){
+        $moula=$ligne['Moula'];
+        unset($_SESSION["Solvetrue"]);
+    }
     $requete3="UPDATE utilisateurs SET Moula=$moula WHERE login='$login'";
     $exe3=mysqli_query($connexion,$requete3);
     
