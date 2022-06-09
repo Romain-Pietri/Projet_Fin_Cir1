@@ -15,26 +15,17 @@ session_start();
 
 <body>
 		<header>
-
-		<?php		
-			if (isset($_COOKIE['theme'])){ 
-				$style=$_COOKIE['theme'];	
-			}
-			else {
-				$style="space1";
-			}
-		?>
-		<link rel="stylesheet" href ="<?php echo $style; ?>.css"/>
+		<link rel="stylesheet" href ="Projet/space1.css"/>
 
 		</header>
 
-		<audio autoplay id="myAudio" src="images/music1.mp3" preload="auto"></audio>
+		<audio autoplay id="myAudio" src="Projet/images/music1.mp3" preload="auto"></audio>
 	
 	<main>
 		<br><br><br>
-		<img id="title" src="images/titre.gif">
-		<img id="speak" src="images/bulle.gif">
-		<img id="gadget" src="images/gadget1.gif">
+		<img id="title" src="Projet/images/titre.gif">
+		<img id="speak" src="Projet/images/bulle.gif">
+		<img id="gadget" src="Projet/images/gadget1.gif">
 
 
 		<a id="button" href="Projet/connexion.php">
