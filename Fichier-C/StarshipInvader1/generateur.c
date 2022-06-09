@@ -53,10 +53,29 @@ void randomEmpty(Grille* g) {
     }
     //printGrille(g);
 }
+void resetGrid(Grille* grid) {
+    for (int i = 0; i < grid->taille; i++) {
+        for (int j = 0; j < grid->taille; j++) {
+            grid->tab[i][j] = -1;
+        }
+    }
+}
+
 void UniqueSolve(Grille* g) {
-    srand(time(NULL));
     List* liste = Newlist();
-    while (nbsolution(g, liste) > 1) {
+    Grille* tmp = cloneGrille(g);
+    int nb = nbsolution(tmp, liste);
+    while (nb == 0) {
+        resetList(liste);
+        resetGrid(g);
+        g = randomFill(g, g->taille);
+        randomEmpty(g);
+        tmp = cloneGrille(g);
+        nb = nbsolution(tmp, liste);
+    }
+    while (nb > 1) {
+
+        //printGrille(g);
         for (int i = 0; i < g->taille; ++i) {
             for (int j = 0; j < g->taille; ++j) {
                 if (liste->head->g->tab[i][j] != liste->head->next->g->tab[i][j]) {
@@ -65,9 +84,9 @@ void UniqueSolve(Grille* g) {
             }
         }
         resetList(liste);
+        nb = nbsolution(g, liste);
     }
 }
-
 
 
 
