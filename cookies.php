@@ -30,14 +30,14 @@
 		require("save2.php");
 		unset($_SESSION["taille"]);
 		unset($_SESSION["taille2"]);
-		$indicereset=$_SESSION["indice"];
-		$request="UPDATE utilisateurs SET Indice=$indicereset";
+		$request="SELECT Indice FROM utilisateurs WHERE login='$login'";
 		$exe=mysqli_query($connexion,$request);
 		if ( $exe == FALSE ){
 			echo "<p>Erreur d'exécution de la requete :".mysqli_error($connexion)."</p>" ;
 			die();
 		}
-
+		$ligne=mysqli_fetch_assoc($exe);
+		$_SESSION["hint"]=$ligne["Indice"];
 		header("Location:taille.php");
 	}
 	
