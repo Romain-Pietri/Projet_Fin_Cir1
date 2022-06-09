@@ -256,7 +256,7 @@
             ?>
             
             <form method="post" action = "cookies.php">
-		<input type="submit" id="Abandon" name="Abandon" Value="Abandon"/>
+		<input type="submit" id="Abandon" name="Abandon" Value="Give up"/>
                 <div id="verif"><input type="submit" id="verify" name="Verify" Value="Verify"/>
                 <input type="submit" id="solve" name="Solve" Value="Solve"/></div>
 				<input type="submit" id="hint" name="Hint" Value="🔍 <?php echo $hint; ?>"/>				
