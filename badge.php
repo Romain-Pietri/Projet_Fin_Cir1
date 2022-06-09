@@ -34,7 +34,7 @@ switch($i){
         $text="3 solved 8x8 grids";
         break;
     case 6:
-        $text="Score over 10000 !";
+        $text="Score over 9000 !";
         break;
     case 7:
         $text="5 grids solved";
